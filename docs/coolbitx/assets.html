@@ -1,0 +1,701 @@
+<!-- 基本說明資訊
+**** 案件名稱: CoolBitX 網站切版 ***********************
+**** 客戶名稱: CoolBitX Technology *********************
+	 連絡資料: Michael Ou, michaelo@coolbitx.com *******
+**** 開 發 者: Tzuchien Kao, oyan114@gmail.com *********
+**** 案件描述: 含電腦版與手機版，兩種版型開發。含RWD ***
+**** 程式語言: html, css3, css, javascript, jQuery  ***
+基本說明資訊 End -->
+<!-- 增修說明資訊
+[2015/02/02]
+全站-header: 已登入按鈕增加Acct1~5, 超連結文字修改Trade, Market, Assets, Account, Support, 增加hover樣式
+[2015/02/10]
+market: Market overview加入Data規則
+index: 修改Market overview html結構
+[2015/02/11]
+sign, trade, market: 增加顏色制定及按鈕變化
+增修說明資訊 End -->
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CoolBitX Technology</title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/style_pc.css" media="only screen and (min-width:581px)" rel="stylesheet" type="text/css">
+	<link href="css/style_m.css" media="only screen and (max-width:580px)" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:600,400,300" rel="stylesheet" type="text/css">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!-- header -->
+	<div class="header clear">
+		<div class="content">
+			<ul class="nav">
+				<li class="m_nav_menu font_24">
+					<a href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+				</li>
+				<li class="nav_logo">
+					<a href="index.html" title="CoolBitX" class="logo"><img src="img/logo.png" alt="CoolBitX"></a>
+				</li>
+				<li class="nav_top">
+					<ul class="nav_setting">
+						<li class="nav_last">
+							<!-- Last price: 小數點前六位 點後兩位 -->
+							<p>Last price: <span>123456.12</span> USD</p>
+						</li>
+						<li class="nav_bala">
+							<!-- Balance: 小數點前八位 點後兩位 -->
+							<label>Balance: </label><span>12345678.12</span> <span>USD</span>
+						</li>
+						<!-- 已登入 -->
+						<li class="nav_acct">
+							<a href="javascript:void(0);" title="" class="main_acct">Acct1: 1000.222 BTC</a>
+							<ul class="sub_acct">
+								<li><a href="javascript:void(0);" title="">Acct1: 1000.222 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct2: 1000.2322 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct3: 1000.23422 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct4: 1000.223452 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct5: 1000.2345622 BTC</a></li>
+							</ul>
+						</li>
+						<!-- 已登入 End -->
+						<li class="nav_lang">
+							<a href="javascript:void(0);" title="Language" class="main_lang">Language</a>
+							<ul class="sub_lang">
+								<li><a href="javascript:void(0);" title="繁體中文">繁體中文</a></li>
+								<li><a href="javascript:void(0);" title="English">English</a></li>
+								<li><a href="javascript:void(0);" title="簡體中文">簡體中文</a></li>
+							</ul>
+						</li>
+						<!-- 已登入 -->
+						<li class="nav_login"><!-- User name: 16位英文數字 -->
+							<a href="javascript:void(0);" title="User name"><span>onetwothree45678</span></a>
+						</li>
+						<li class="nav_signout"><a href="index.html" title="Sign out">Sign out</a></li>
+						<!-- 已登入 End -->
+						<!-- 未登入 -->
+						<li class="nav_signin"><a href="sign_in.html" title="Sign in">Sign in</a></li>
+						<li class="nav_signup"><a href="sign_up.html" title="Sign up">Sign up</a></li>
+						<!-- 未登入 End -->
+					</ul>
+				</li>
+				<li class="nav_bottom">
+					<ul class="nav_menu">
+						<li><a href="trade.html" title="Trade" class="">Trade</a></li>
+						<li><a href="market.html" title="Market" class="">Market</a></li>
+						<li><a href="assets.html" title="Assets" class="current">Assets</a></li>
+						<li><a href="account.html" title="Account" class="">Account</a></li>
+						<li><a href="support.html" title="Support" class="">Support</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header End -->
+	<!-- wrapper -->
+	<div class="wrapper clear">
+		<div class="content main">
+			<div class="assets">
+				<!-- 手機版顯示 -->
+				<div class="wrap_nav_acct clear">
+					<ul class="nav_top clear">
+						<li class="nav_bala">
+							<!-- Balance: 小數點前八位 點後兩位 -->
+							<label>Balance: </label><span>12345678.12</span> <span>USD</span>
+						</li>
+						<!-- 已登入 -->
+						<li class="nav_acct">
+							<a href="javascript:void(0);" title="" class="main_acct">Acct1: 1000.222 BTC</a>
+							<ul class="sub_acct">
+								<li><a href="javascript:void(0);" title="">Acct1: 1000.222 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct2: 1000.2322 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct3: 1000.23422 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct4: 1000.223452 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct5: 1000.2345622 BTC</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- 手機版顯示 End -->
+				<ul class="assets_tabs tabsMenu clear">
+					<li class="assetsOverview current"><a href="javascript:void(0);" title="Overview" class="">Overview</a></li>
+					<li class="assetsHistory"><a href="javascript:void(0);" title="History" class="">History</a></li>
+					<li class="assetsDep"><a href="javascript:void(0);" title="Deposit" class="">Deposit</a></li>
+					<li class="assetsWith"><a href="javascript:void(0);" title="Withdraw" class="">Withdraw</a></li>
+				</ul>
+				<ul class="assets_wrap tabsWrap font_12 clear">
+					<li class="assetsOverview clear">
+						<div class="content">
+							<div class="assets_table tabsTable">
+								<!-- 無限欄位數 欄高：40 px font size: 16 px -->
+								<table class="">
+									<tbody>
+										<tr>
+											<td colspan="4">All assets</td>
+										</tr>
+										<tr>
+											<td width="19%">Currency</td>
+											<td width="27%">Available</td>
+											<td width="27%">Reserved</td>
+											<td>Total</td>
+										</tr>
+										<tr>
+											<td>Acct 1.</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+										</tr>
+										<tr>
+											<td>Acct 2.</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+										</tr>
+										<tr>
+											<td>Acct 3.</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+										</tr>
+										<tr>
+											<td>Acct 4.</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+										</tr>
+										<tr>
+											<td>Acct 5.</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+										</tr>
+										<tr>
+											<td>Acct 6.</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+										</tr>
+										<tr>
+											<td>Acct 7.</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+										</tr>
+										<tr>
+											<td>Acct 8.</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+										</tr>
+										<tr>
+											<td>Acct 9.</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+										</tr>
+										<tr>
+											<td>Acct 10.</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+											<td>1000000.000000</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="assets_table tabsTable">
+								<!-- 無限欄位數 欄高：40 px font size: 16 px -->
+								<table class="">
+									<tbody>
+										<tr>
+											<td colspan="5">Open Orders</td>
+										</tr>
+										<tr>
+											<td width="17%;">Time</td>
+											<td width="17%;">Price($)</td>
+											<td width="25%;">Qty(BTC)</td>
+											<td width="25%;">Total</td>
+											<td>Manage</td>
+										</tr>
+										<!-- 顏色取決於訂單性質：紅色為賣單 綠色為買單
+										未連線錢包上的訂單將會呈現灰色 -->
+										<tr class="orderForm red">
+											<td>01/01/15</td>
+											<td>100.00</td>
+											<td>$10000.000000</td>
+											<td>10000000.00</td>
+											<td>
+												<!-- cancel 按下後有yes/no二次確認。按下yes後要確認使用者有卡片連線 -->
+												<a href="javascript:void(0);" class="orderMag" title="Cancel">Cancel</a>
+												<span class="orderMsg" style="display: none;">
+													<a href="javascript:void(0);" class="orderMsgY" title="Yes">Yes</a> / <a href="javascript:void(0);" class="orderMsgN" title="No">No</a>
+												</span>
+											</td>
+										</tr>
+										<tr class="orderForm green">
+											<td>01/01/15</td>
+											<td>100.00</td>
+											<td>$10000.000000</td>
+											<td>10000000.00</td>
+											<td>
+												<!-- cancel 按下後有yes/no二次確認。按下yes後要確認使用者有卡片連線 -->
+												<a href="javascript:void(0);" class="orderMag" title="Cancel">Cancel</a>
+												<span class="orderMsg" style="display: none;">
+													<a href="javascript:void(0);" class="orderMsgY" title="Yes">Yes</a> / <a href="javascript:void(0);" class="orderMsgN" title="No">No</a>
+												</span>
+											</td>
+										</tr>
+										<tr class="orderForm bgGray red">
+											<td>01/01/15</td>
+											<td>100.00</td>
+											<td>$10000.000000</td>
+											<td>10000000.00</td>
+											<td>
+												<!-- cancel 按下後有yes/no二次確認。按下yes後要確認使用者有卡片連線 -->
+												<a href="javascript:void(0);" class="orderMag" title="Cancel">Cancel</a>
+												<span class="orderMsg" style="display: none;">
+													<a href="javascript:void(0);" class="orderMsgY" title="Yes">Yes</a> / <a href="javascript:void(0);" class="orderMsgN" title="No">No</a>
+												</span>
+											</td>
+										</tr>
+										<tr class="orderForm bgGray green">
+											<td>01/01/15</td>
+											<td>100.00</td>
+											<td>$10000.000000</td>
+											<td>10000000.00</td>
+											<td>
+												<!-- cancel 按下後有yes/no二次確認。按下yes後要確認使用者有卡片連線 -->
+												<a href="javascript:void(0);" class="orderMag" title="Cancel">Cancel</a>
+												<span class="orderMsg" style="display: none;">
+													<a href="javascript:void(0);" class="orderMsgY" title="Yes">Yes</a> / <a href="javascript:void(0);" class="orderMsgN" title="No">No</a>
+												</span>
+											</td>
+										</tr>
+										<tr class="orderForm green">
+											<td>01/01/15</td>
+											<td>100.00</td>
+											<td>$10000.000000</td>
+											<td>10000000.00</td>
+											<td>
+												<!-- cancel 按下後有yes/no二次確認。按下yes後要確認使用者有卡片連線 -->
+												<a href="javascript:void(0);" class="orderMag" title="Cancel">Cancel</a>
+												<span class="orderMsg" style="display: none;">
+													<a href="javascript:void(0);" class="orderMsgY" title="Yes">Yes</a> / <a href="javascript:void(0);" class="orderMsgN" title="No">No</a>
+												</span>
+											</td>
+										</tr>
+										<tr class="orderForm green">
+											<td>01/01/15</td>
+											<td>100.00</td>
+											<td>$10000.000000</td>
+											<td>10000000.00</td>
+											<td>
+												<!-- cancel 按下後有yes/no二次確認。按下yes後要確認使用者有卡片連線 -->
+												<a href="javascript:void(0);" class="orderMag" title="Cancel">Cancel</a>
+												<span class="orderMsg" style="display: none;">
+													<a href="javascript:void(0);" class="orderMsgY" title="Yes">Yes</a> / <a href="javascript:void(0);" class="orderMsgN" title="No">No</a>
+												</span>
+											</td>
+										</tr>
+										<tr class="orderForm red">
+											<td>01/01/15</td>
+											<td>100.00</td>
+											<td>$10000.000000</td>
+											<td>10000000.00</td>
+											<td>
+												<!-- cancel 按下後有yes/no二次確認。按下yes後要確認使用者有卡片連線 -->
+												<a href="javascript:void(0);" class="orderMag" title="Cancel">Cancel</a>
+												<span class="orderMsg" style="display: none;">
+													<a href="javascript:void(0);" class="orderMsgY" title="Yes">Yes</a> / <a href="javascript:void(0);" class="orderMsgN" title="No">No</a>
+												</span>
+											</td>
+										</tr>
+										<tr class="orderForm green">
+											<td>01/01/15</td>
+											<td>100.00</td>
+											<td>$10000.000000</td>
+											<td>10000000.00</td>
+											<td>
+												<!-- cancel 按下後有yes/no二次確認。按下yes後要確認使用者有卡片連線 -->
+												<a href="javascript:void(0);" class="orderMag" title="Cancel">Cancel</a>
+												<span class="orderMsg" style="display: none;">
+													<a href="javascript:void(0);" class="orderMsgY" title="Yes">Yes</a> / <a href="javascript:void(0);" class="orderMsgN" title="No">No</a>
+												</span>
+											</td>
+										</tr>
+										<tr class="orderForm bgGray green">
+											<td>01/01/15</td>
+											<td>100.00</td>
+											<td>$10000.000000</td>
+											<td>10000000.00</td>
+											<td>
+												<!-- cancel 按下後有yes/no二次確認。按下yes後要確認使用者有卡片連線 -->
+												<a href="javascript:void(0);" class="orderMag" title="Cancel">Cancel</a>
+												<span class="orderMsg" style="display: none;">
+													<a href="javascript:void(0);" class="orderMsgY" title="Yes">Yes</a> / <a href="javascript:void(0);" class="orderMsgN" title="No">No</a>
+												</span>
+											</td>
+										</tr>
+										<tr class="orderForm bgGray red">
+											<td>01/01/15</td>
+											<td>100.00</td>
+											<td>$10000.000000</td>
+											<td>10000000.00</td>
+											<td>
+												<!-- cancel 按下後有yes/no二次確認。按下yes後要確認使用者有卡片連線 -->
+												<a href="javascript:void(0);" class="orderMag" title="Cancel">Cancel</a>
+												<span class="orderMsg" style="display: none;">
+													<a href="javascript:void(0);" class="orderMsgY" title="Yes">Yes</a> / <a href="javascript:void(0);" class="orderMsgN" title="No">No</a>
+												</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</li>
+					<li class="assetsHistory clear" style="display:none;">
+						<div class="content">
+							<div class="assets_table tabsTable">
+								<!-- 無限欄位數 欄高：40 px font size: 16 px -->
+								<table class="">
+									<tbody>
+	                                    <tr>
+											<td colspan="6">Open Orders</td>
+										</tr>
+										<tr>
+											<td width="15%">Type</td>
+											<td>Date and Time</td>
+	                                        <td>Price($)</td>
+	                                        <td>Qty(BTC)</td>
+	                                        <td>Total</td>
+	                                        <td>status</td>
+										</tr>
+										<tr>
+											<td>Buy</td>
+											<td>01/01/15 16:32</td>
+											<td>1000.00</td>
+	                                        <td>10000.000000</td>
+	                                        <td>$10000000.00</td>
+	                                        <td>pending</td>
+										</tr>
+										<tr>
+											<td>Sell</td>
+											<td>01/01/15 16:32</td>
+											<td>1000.00</td>
+	                                        <td>10000.000000</td>
+	                                        <td>$10000000.00</td>
+	                                        <td>pending</td>
+										</tr>
+										<tr>
+											<td>Withdraw</td>
+											<td>01/01/15 16:32</td>
+											<td>1000.00</td>
+	                                        <td>10000.000000</td>
+	                                        <td>$10000000.00</td>
+	                                        <td>complete</td>
+										</tr>
+										<tr>
+											<td>Deposit</td>
+											<td>01/01/15 16:32</td>
+											<td>1000.00</td>
+	                                        <td>10000.000000</td>
+	                                        <td>$10000000.00</td>
+	                                        <td>pending</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</li>
+					<li class="assetsDep clear" style="display:none;">
+						<div class="main">
+							<div class="content">
+								<span>We need you to provide some basic information, so we can process your deposit as soon as possible.</span>
+								<form action="" id="form_Deposit">
+									<fieldset>
+										<ul class="assetsForm">
+											<li>
+												<label for="form_depCountry">Transfer from :</label>
+												<input type="text" class="hidden" name="form_depCountry" id="form_depCountry" required="required" title="Please choose a country">
+												<div class="drop_asse dropdown btn search">
+													<div class="dropWrap">
+														<input type="text" class="form_depCountry" placholder="">
+														<i class="fa fa-search"></i>
+													</div>
+													<!-- 國家選單 -->
+													<ul class="dropMenu country international">
+
+													</ul>
+												</div>
+											</li>
+											<li>
+												<label for="form_depCurrency">Currency :</label>
+												<input type="text" class="hidden" name="form_depCurrency" value="USD">
+												<div class="drop_asse dropdown btn currency">
+													<div class="dropWrap">
+														<a href="javascript:void(0);" class="dropToggle">USD</a>
+													</div>
+													<ul class="dropMenu currency">
+													</ul>
+												</div>
+											</li>
+											<li>
+												<label for="form_depFirstName">First Name :</label>
+												<input type="text" class="btn" name="form_depFirstName" required="required" title="Please enter your first name">
+											</li>
+											<li>
+												<label for="form_depLastName">Last Name :</label>
+												<input type="text" class="btn" name="form_depLastName" required="required" title="Please enter your last name">
+											</li>
+											<li>
+												<label for="form_depAmount">Amount :</label>
+												<!-- 小數前七位 小數後兩位 -->
+												<input type="text" class="btn" name="form_depAmount" required="required" title="Please enter a valid amount">
+											</li>
+											<li class="clear">
+												<label for="">Comment (optional) :</label>
+												<textarea class="btn" rows="10"></textarea>
+											</li>
+										</ul>
+									</fieldset>
+								</form>
+								<a class="btn blue" href="javascript:submit('form_Deposit')">Deposit</a>
+								<span>Minimum international deposit amount is $50. International bank transfer deposits carry 0.1% deposit fee on our side (minimum fee = $15) and take 2 - 5 business days to credit. All other currencies will be converted to USD, free of charge</span>
+							</div>
+						</div>
+					</li>
+					<li class="assetsWith clear" style="display:none;">
+						<div class="content">
+							<ul class="assets_tabs tabsMenu font_24 clear">
+								<li class="current"><a href="javascript:void(0);">EU Bank</a></li>
+								<li><a href="javascript:void(0);">International</a></li>
+							</ul>
+							<div class="main">
+								<ul class="assets_wrap tabsWrap">
+									<li>
+										<div class="content">
+											<span>Minimum withdrawal amount is $10. You have $0.00 available. Third party withdrawal requests will be rejected.THIRD PARTY WITHDRAWALS NOT ALLOWED!Third party withdrawals are deﬁned as those withdraws which are meant to be transferred to account or ﬁnancial institution that is titled in a name that is diﬀerent from registered Bitstamp account. Transfers to corporate bank accounts may require further KYC checking.</span>
+											<form action="" id="form_WithEu">
+												<fieldset>
+													<ul class="assetsForm">
+														<li>
+															<label for="form_withEuName">Your full name or company name:</label>
+															<input type="text" class="btn" name="form_withEuName" required="required" title="Please enter your name or company name">
+														</li>
+														<li>
+															<label for="form_withEuAmount">Amount:</label>
+															<input type="text" class="hidden" name="form_withEuAmount" value="USD" required="required" title="Please enter a valid amount">
+															<input type="text" class="hidden" name="form_withEuAmount_price" id="form_withEuAmount_price" required="required" title="Please enter a valid amount">
+															<div class="drop_asse dropdown btn currency">
+																<div class="dropWrap">
+																	<!-- 輸入金額不能超過帳戶餘額，不能低於50 -->
+																	<input type="text" class="dropInput Toggle amount" toID="form_withEuAmount_price">
+																	<a href="javascript:void(0);" class="dropToggle">USD</a>
+																</div>
+																<ul class="dropMenu currency">
+																</ul>
+															</div>
+														</li>
+														<li>
+															<label for="form_iban">IBAN:</label>
+															<input type="text" class="btn" name="form_iban" required="required" title="Please enter IBAN">
+														</li>
+														<li>
+															<label for="form_bic">BIC:</label>
+															<input type="text" class="btn" name="form_bic" required="required" title="Please enter BIC">
+														</li>
+														<li>
+															<label for="form_add">Your address:</label>
+															<input type="text" class="btn" name="form_add" required="required" title="Please enter your address">
+														</li>
+														<li>
+															<label for="form_postCode">Postal Code:</label>
+															<input type="text" class="btn" name="form_postCode" required="required" title="Please enter your postal code">
+														</li>
+														<li>
+															<label for="form_withCity">City:</label>
+															<input type="text" class="btn" name="form_withCity" required="required" title="Please your city">
+														</li>
+														<li>
+															<label for="form_withEuCountry">Country:</label>
+															<input type="text" class="hidden" name="form_withEuCountry" id="form_withEuCountry" required="required" title="Please choose a country">
+															<div class="drop_asse dropdown btn search">
+																<div class="dropWrap">
+																	<input type="text" class="form_withEuCountry"><i class="fa fa-search"></i>
+																</div>
+																<!-- 歐盟國家選單 -->
+																<ul class="dropMenu country europe">
+																</ul>
+															</div>
+														</li>
+														<li class="clear">
+															<label for="">Comment (optional) :</label>
+															<textarea class="btn" rows="10"></textarea>
+														</li>
+													</ul>
+												</fieldset>
+											</form>
+											<a class="btn blue" href="javascript:submit('form_WithEu')">Withdraw</a>
+										</div>
+									</li>
+									<li style="display: none;">
+										<div class="content">
+											<span>International withdrawals will be charged with 0.09% fee, minimum fee is $15.00 on Bitstamps end and may incur additional international bank fees. Minimum amount for international withdrawal is $50.00. You have $0.00 available. You always have to insert U.S. dollar amount you wish to withdraw. This amount will be converted to the selected currency, free of charge. Third party withdrawal requests will be rejected.THIRD PARTY WITHDRAWALS NOT ALLOWED!Third party withdrawals are deﬁned as those withdraws which are meant to be transferred to account or ﬁnancial institution that is titled in a name that is diﬀerent from registered Bitstamp account. Transfers to corporate bank accounts may require further KYC checking.</span>
+											<form action="" id="form_WithInter">
+												<fieldset>
+													<ul class="assetsForm">
+														<li>
+															<label for="">Beneﬁciary Account Name:</label>
+															<input type="text" class="btn" name="form_accName" required="required" title="Please enter neneﬁciary account name">
+														</li>
+														<li>
+															<label for="form_withInterAmount">Amount:</label>
+															<input type="text" class="hidden" name="form_withInterAmount" value="USD" required="required" title="Please enter a valid amount">
+															<input type="text" class="hidden" name="form_withInterAmount_price" id="form_withInterAmount_price"  required="required" title="Please enter a valid amount">
+															<div class="drop_asse dropdown btn currency">
+																<div class="dropWrap ">
+																	<!-- 輸入金額不能超過帳戶餘額，不能低於50 -->
+																	<input type="text" class="dropInput Toggle amount" toID="form_withInterAmount_price">
+																	<a href="javascript:void(0);" class="dropToggle">USD</a>
+																</div>
+																<ul class="dropMenu currency">
+
+																</ul>
+															</div>
+														</li>
+														<li>
+															<label for="form_withInterAdd">Beneﬁciary Account Address:</label>
+															<input type="text" class="btn" name="form_withInterAdd" required="required" title="Please enter beneﬁciary account address">
+														</li>
+														<li>
+															<label for="form_withInterPost">Beneﬁciary Account Postal Code:</label>
+															<input type="text" class="btn" name="form_withInterPost" required="required" title="Please enter beneﬁciary account postal code:">
+														</li>
+														<li>
+															<label for="form_withInterCity">Beneﬁciary Account City:</label>
+															<input type="text" class="btn" name="form_withInterCity" required="required" title="Please enter beneﬁciary account city">
+														</li>
+														<li>
+															<label for="form_depACountry">Beneﬁciary Account Country:</label>
+															<input type="text" class="hidden" name="form_depACountry" id="form_depACountry" required="required" title="Please choose a country">
+															<div class="drop_asse dropdown btn search">
+																<div class="dropWrap">
+																	<input type="text" class="form_depCountry" placholder="">
+																	<i class="fa fa-search"></i>
+																</div>
+																<!-- 國家選單 -->
+																<ul class="dropMenu country international"></ul>
+															</div>
+														</li>
+														<li>
+															<label for="form_withInterIban">IBAN/Account Number:</label>
+															<input type="text" class="btn" name="form_withInterIban" required="required" title="Please IBAN/Account number">
+														</li>
+														<li>
+															<label for="form_withInterBic">SWIFT/BIC:</label>
+															<input type="text" class="btn" name="form_withInterBic" required="required" title="Please enter SWIFT/BIC">
+														</li>
+														<li>
+															<label for="form_withInterBank">Beneﬁciary Bank Name:</label>
+															<input type="text" class="btn" name="form_withInterBank" required="required" title="Please enter beneﬁciary bank name">
+														</li>
+														<li>
+															<label for="form_withInterBankAdd">Beneﬁciary Bank Address:</label>
+															<input type="text" class="btn" name="form_withInterBankAdd" required="required" title="Please enter beneﬁciary bank address">
+														</li>
+														<li>
+															<label for="form_withInterBankPost">Beneﬁciary Bank Postal Code:</label>
+															<input type="text" class="btn" name="form_withInterBankPost" required="required" title="Please enter beneﬁciary bank postal code">
+														</li>
+														<li>
+															<label for="form_withInterBankCity">Beneﬁciary Bank City:</label>
+															<input type="text" class="btn" name="form_withInterBankCity" required="required" title="Please choose beneﬁciary bank city">
+														</li>
+														<li>
+															<label for="form_depBCountry">Beneﬁciary Bank Country:</label>
+															<input type="text" class="hidden" name="form_depBCountry" id="form_depBCountry" required="required" title="Please choose a country">
+															<div class="drop_asse dropdown btn search">
+																<div class="dropWrap">
+																	<input type="text" class="form_depCountry" placholder="">
+																	<i class="fa fa-search"></i>
+																</div>
+																<!-- 國家選單 -->
+																<ul class="dropMenu country international">
+																</ul>
+															</div>
+														</li>
+														<li class="clear">
+															<label for="">Comment (optional) :</label>
+															<textarea class="btn" rows="10"></textarea>
+														</li>
+													</ul>
+												</fieldset>
+											</form>
+											<a class="btn blue" href="javascript:submit('form_WithInter')">Withdraw</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- wrapper End -->
+	<!-- footer -->
+	<div class="footer clear">
+		<ul class="content">
+			<li class="nav_co">
+				<ul class="clear">
+					<li class="nav_logo">
+						<a href="index.html" title="CoolBitX" class="logo"><img src="img/logo.png" alt="CoolBitX"></a>
+					</li>
+					<li class="nav_share">
+						<ul class="shareIcon">
+							<li><a href="javascript:void(0);" title="" class="icon share_01"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_02"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_03"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_04"></a></li>
+						</ul>
+					</li>
+				</ul>
+				<span class="copyright">Owned by JETSTREAM HOLDING LTD.</span>
+			</li>
+			<li class="nav_sub">
+				<ul class="subnav_menu">
+					<li>
+						<span class="font_bold">About</span>
+						<ul>
+							<li><a href="aboutUs.html" title="About us">About us</a></li>
+							<li><a href="newsList.html" title="News">News</a></li>
+							<li><a href="feeTable.html" title="Fee table">Fee table</a></li>
+							<li><a href="javascript:void(0);" title="Contact us">Contact us</a></li>
+						</ul>
+					</li>
+					<li>
+						<span class="font_bold">Help</span>
+						<ul>
+							<li><a href="javascript:void(0);" title="FAQ">FAQ</a></li>
+							<li><a href="javascript:void(0);" title="What is Bitcoin">What is Bitcoin</a></li>
+						</ul>
+					</li>
+					<li>
+						<span class="font_bold">Legal</span>
+						<ul>
+							<li><a href="javascript:void(0);" title="Privacy">Privacy</a></li>
+							<li><a href="javascript:void(0);" title="Terms of use">Terms of use</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- footer End -->
+	<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+	<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+	<script src="js/coolbitx.js" type="text/javascript"></script>
+</body>
+</html>

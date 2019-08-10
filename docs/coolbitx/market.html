@@ -1,0 +1,391 @@
+<!-- 基本說明資訊
+**** 案件名稱: CoolBitX 網站切版 ***********************
+**** 客戶名稱: CoolBitX Technology *********************
+	 連絡資料: Michael Ou, michaelo@coolbitx.com *******
+**** 開 發 者: Tzuchien Kao, oyan114@gmail.com *********
+**** 案件描述: 含電腦版與手機版，兩種版型開發。含RWD ***
+**** 程式語言: html, css3, css, javascript, jQuery  ****
+基本說明資訊 End -->
+<!-- 增修說明資訊
+[2015/02/02]
+header: 已登入按鈕增加Acct1~5, 超連結文字修改Trade, Market, Assets, Account, Support, 增加hover樣式
+
+
+[2015/02/10]
+market: Market overview加入Data規則
+index: 修改Market overview html結構
+[2015/02/11]
+sign, trade, market: 增加顏色制定及按鈕變化
+[2015/03/03]
+market: 表格的更新, 欄位有格線
+增修說明資訊 End -->
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CoolBitX Technology</title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/style_pc.css" media="only screen and (min-width:581px)" rel="stylesheet" type="text/css">
+	<link href="css/style_m.css" media="only screen and (max-width:580px)" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:600,400,300" rel="stylesheet" type="text/css">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!-- header -->
+	<div class="header clear">
+		<div class="content">
+			<ul class="nav">
+				<li class="m_nav_menu font_24">
+					<a href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+				</li>
+				<li class="nav_logo">
+					<a href="index.html" title="CoolBitX" class="logo"><img src="img/logo.png" alt="CoolBitX"></a>
+				</li>
+				<li class="nav_top">
+					<ul class="nav_setting">
+						<li class="nav_last">
+							<!-- Last price: 小數點前六位 點後兩位 -->
+							<p>Last price: <span>123456.12</span> USD</p>
+						</li>
+						<li class="nav_bala">
+							<!-- Balance: 小數點前八位 點後兩位 -->
+							<label>Balance: </label><span>12345678.12</span> <span>USD</span>
+						</li>
+						<!-- 已登入 -->
+						<li class="nav_acct">
+							<a href="javascript:void(0);" title="" class="main_acct">Acct1: 1000.222 BTC</a>
+							<ul class="sub_acct">
+								<li><a href="javascript:void(0);" title="">Acct1: 1000.222 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct2: 1000.2322 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct3: 1000.23422 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct4: 1000.223452 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct5: 1000.2345622 BTC</a></li>
+							</ul>
+						</li>
+						<!-- 已登入 End -->
+						<li class="nav_lang">
+							<a href="javascript:void(0);" title="Language" class="main_lang">Language</a>
+							<ul class="sub_lang">
+								<li><a href="javascript:void(0);" title="繁體中文">繁體中文</a></li>
+								<li><a href="javascript:void(0);" title="English">English</a></li>
+								<li><a href="javascript:void(0);" title="簡體中文">簡體中文</a></li>
+							</ul>
+						</li>
+						<!-- 已登入 -->
+						<li class="nav_login"><!-- User name: 16位英文數字 -->
+							<a href="javascript:void(0);" title="User name"><span>onetwothree45678</span></a>
+						</li>
+						<li class="nav_signout"><a href="index.html" title="Sign out">Sign out</a></li>
+						<!-- 已登入 End -->
+						<!-- 未登入 -->
+						<li class="nav_signin"><a href="sign_in.html" title="Sign in">Sign in</a></li>
+						<li class="nav_signup"><a href="sign_up.html" title="Sign up">Sign up</a></li>
+						<!-- 未登入 End -->
+					</ul>
+				</li>
+				<li class="nav_bottom">
+					<ul class="nav_menu">
+						<li><a href="trade.html" title="Trade" class="">Trade</a></li>
+						<li><a href="market.html" title="Market" class="current">Market</a></li>
+						<li><a href="assets.html" title="Assets" class="">Assets</a></li>
+						<li><a href="account.html" title="Account" class="">Account</a></li>
+						<li><a href="support.html" title="Support" class="">Support</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header End -->
+	<!-- wrapper -->
+	<div class="wrapper clear">
+		<div class="content main">
+			<div class="market">
+				<!-- 手機版顯示 -->
+				<div class="wrap_nav_acct clear">
+					<ul class="nav_top clear">
+						<li class="nav_bala">
+							<!-- Balance: 小數點前八位 點後兩位 -->
+							<label>Balance: </label><span>12345678.12</span> <span>USD</span>
+						</li>
+						<!-- 已登入 -->
+						<li class="nav_acct">
+							<a href="javascript:void(0);" title="" class="main_acct">Acct1: 1000.222 BTC</a>
+							<ul class="sub_acct">
+								<li><a href="javascript:void(0);" title="">Acct1: 1000.222 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct2: 1000.2322 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct3: 1000.23422 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct4: 1000.223452 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct5: 1000.2345622 BTC</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- 手機版顯示 End -->
+				<div class="marketView clear">
+					<div class="main">
+						<h1 class="font_24">Market overview</h1>
+						<!-- 最新一筆成交訂單的價格 -->
+						<dl class="market data">
+							<dt class="font_12">
+								<h2>Last price</h2>
+							</dt>
+							<dd class="font_32">
+								<h3>$226.04</h3>
+							</dd>
+						</dl>
+						<!-- 每天早上八點整的last price價格 -->
+						<dl class="market data">
+							<dt class="font_12">
+								<h2>Today’s open</h2>
+							</dt>
+							<dd class="font_32">
+								<h3>$227.94</h3>
+							</dd>
+						</dl>
+						<!-- 早上八點後的最低成交價 -->
+						<dl class="market data">
+							<dt class="font_12">
+								<h2>Today’s low</h2>
+							</dt>
+							<dd class="font_32">
+								<h3>$220.02</h3>
+							</dd>
+						</dl>
+						<!-- 早上八點後的最高成交價 -->
+						<dl class="market data">
+							<dt class="font_12">
+								<h2>Todays’  high</h2>
+							</dt>
+							<dd class="font_32">
+								<h3>$230.00</h3>
+							</dd>
+						</dl>
+						<!-- 算法是 last price 扣掉 today’s  open 再除以 today open -->
+						<dl class="market data">
+							<dt class="font_12">
+								<h2>Daily changes</h2>
+							</dt>
+							<dd class="font_32">
+								<!-- 小數前兩位小數後兩位 百分比小數前兩位小數後兩位 -->
+								<h3>$0.90 
+									<span class="font_12">0.39%</span>
+									<!-- 是正成長的時候就是往上的綠色三角反之則往下紅三角 -->
+									<span class="triangle red">
+										<!-- 正成長 class="triangle green", 反之 class="triangle red" -->
+									</span>
+								</h3>
+							</dd>
+						</dl>
+						<!-- 算法是過去24小時內所有成交訂單總比特幣量 -->
+						<dl class="market data">
+							<dt class="font_12">
+								<h2>24H volume</h2>
+							</dt>
+							<dd class="font_32">
+								<!-- 小數前五位 小數後一位 -->
+								<h3>15901 BTC</h3>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="charting clear">
+					<ul class="chart data">
+						<li class="chart_menu">
+							<a href="javascript:void(0);" title="1D" class="current">1D</a>
+							<a href="javascript:void(0);" title="1W">1W</a>
+							<a href="javascript:void(0);" title="1M">1M</a>
+							<a href="javascript:void(0);" title="3M">3M</a>
+							<a href="javascript:void(0);" title="1Y">1Y</a>
+							<a href="javascript:void(0);" title="All time">All time</a>
+						</li>
+						<li class="chart_dots">
+							圖表曲線圖
+						</li>
+					</ul>
+				</div>
+				<div class="liveTable clear">
+					<ul class="live data">
+						<li>
+							<h1>Live Trades</h1>
+						</li>
+						<li>
+							<!-- 無限欄位數 欄高：40 px font size: 16 px -->
+							<table class="liveTrades">
+								<tbody>
+									<tr>
+										<td width="35%">Time</td>
+										<td width="30%">Price ($)</td>
+										<td>Qty(BTC)</td>
+									</tr>
+									<tr>
+										<td>5m</td>
+										<td>$225.35</td>
+										<td>4.74700000</td>
+									</tr>
+									<tr>
+										<td>5m</td>
+										<td>$225.34</td>
+										<td>9.30000000</td>
+									</tr>
+									<tr>
+										<td>5m</td>
+										<td>$225.32</td>
+										<td>1.02077000</td>
+									</tr>
+									<tr>
+										<td>5m</td>
+										<td>$225.30</td>
+										<td>2.45000000</td>
+									</tr>
+									<tr>
+										<td>5m</td>
+										<td>$225.18</td>
+										<td>2.00000000</td>
+									</tr>
+								</tbody>
+							</table>
+						</li>
+					</ul>
+					<ul class="live data">
+						<li>
+							<h1>Live order book</h1><span class="font_bold">Bid</span>
+						</li>
+						<li>
+							<table class="liveOrderbook">
+								<tbody>
+									<tr>
+										<td width="30%">Price ($)</td>
+										<td width="30%">Qty(BTC)</td>
+										<td>value (貨幣)</td>
+									</tr>
+									<tr>
+										<td>$225.35</td>
+										<td>4.74700000</td>
+										<td>$1,069.74</td>
+									</tr>
+									<tr>
+										<td>$225.34</td>
+										<td>9.30000000</td>
+										<td>$2,095.66</td>
+									</tr>
+									<tr>
+										<td>$225.32</td>
+										<td>1.02077000</td>
+										<td>$230.00</td>
+									</tr>
+									<tr>
+										<td>$225.30</td>
+										<td>2.45000000</td>
+										<td>$551.99</td>
+									</tr>
+									<tr>
+										<td>$225.18</td>
+										<td>2.00000000</td>
+										<td>$450.36</td>
+									</tr>
+								</tbody>
+							</table>
+						</li>
+					</ul>
+					<ul class="live data">
+						<li>
+							<h1>Live order book</h1><span class="font_bold">Ask</span>
+						</li>
+						<li>
+							<table class="liveOrderbook">
+								<tbody>
+									<tr>
+										<td width="30%">Price ($)</td>
+										<td width="30%">Qty(BTC)</td>
+										<td>value (貨幣)</td>
+									</tr>
+									<tr>
+										<td>$226.13</td>
+										<td>1.00000000</td>
+										<td>$226.13</td>
+									</tr>
+									<tr>
+										<td>$226.44</td>
+										<td>2.30000000</td>
+										<td>$520.81</td>
+									</tr>
+									<tr>
+										<td>$226.87</td>
+										<td>2.01077000</td>
+										<td>$456.18</td>
+									</tr>
+									<tr>
+										<td>$227.10</td>
+										<td>7.25000000</td>
+										<td>$1,646.48</td>
+									</tr>
+									<tr>
+										<td>$229.99</td>
+										<td>2.24000000</td>
+										<td>$515.18</td>
+									</tr>
+								</tbody>
+							</table>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- wrapper End -->
+	<!-- footer -->
+	<div class="footer clear">
+		<ul class="content">
+			<li class="nav_co">
+				<ul class="clear">
+					<li class="nav_logo">
+						<a href="index.html" title="CoolBitX" class="logo"><img src="img/logo.png" alt="CoolBitX"></a>
+					</li>
+					<li class="nav_share">
+						<ul class="shareIcon">
+							<li><a href="javascript:void(0);" title="" class="icon share_01"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_02"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_03"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_04"></a></li>
+						</ul>
+					</li>
+				</ul>
+				<span class="copyright">Owned by JETSTREAM HOLDING LTD.</span>
+			</li>
+			<li class="nav_sub">
+				<ul class="subnav_menu">
+					<li>
+						<span class="font_bold">About</span>
+						<ul>
+							<li><a href="aboutUs.html" title="About us">About us</a></li>
+							<li><a href="newsList.html" title="News">News</a></li>
+							<li><a href="feeTable.html" title="Fee table">Fee table</a></li>
+							<li><a href="javascript:void(0);" title="Contact us">Contact us</a></li>
+						</ul>
+					</li>
+					<li>
+						<span class="font_bold">Help</span>
+						<ul>
+							<li><a href="javascript:void(0);" title="FAQ">FAQ</a></li>
+							<li><a href="javascript:void(0);" title="What is Bitcoin">What is Bitcoin</a></li>
+						</ul>
+					</li>
+					<li>
+						<span class="font_bold">Legal</span>
+						<ul>
+							<li><a href="javascript:void(0);" title="Privacy">Privacy</a></li>
+							<li><a href="javascript:void(0);" title="Terms of use">Terms of use</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- footer End -->
+	<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+	<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+	<script src="js/coolbitx.js" type="text/javascript"></script>
+</body>
+</html>

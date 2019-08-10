@@ -1,0 +1,668 @@
+@charset "UTF-8";
+@import 'style_layout';
+/* 
+PC style
+Version: v1
+Last Updated: 2015/03/09
+Author: Tzuchien Kao, oyan114@gmail.com
+*/
+/* base-css */
+body {
+	@extend body;
+}
+/* 限制最大寬度 */
+.content {
+	@extend .content;
+	@include maxWidth($max_W);
+}
+/* acct */
+.dropdown { //下拉群
+	.dropdownSel { //下拉選項群
+		li { //下拉選項
+			a {
+				span {
+					&:first-child {
+						width: 85%;
+					}
+					&:last-child {
+						width: 15%;
+					}
+				}
+			}
+		}
+	}
+}
+/* acct End */
+/* base-css End */
+/* for mobile */
+//手機版顯示(電腦版隱藏)
+.m_nav_menu, .wrap_nav_acct {
+	@include _display(nth($display,3));
+}
+//未登入按鈕(登入時隱藏)
+.nav_signin, .nav_signup {
+	@include _display(nth($display,3));
+}
+/* for mobile End */
+/* header */
+.header {
+	padding: 0 15px;
+}
+.nav {
+	line-height: 1.2;
+	.nav_logo {
+		@include _display(nth($display,2));
+		.logo {
+			padding: 15px 15px 15px 0;
+		}
+	}	
+	.nav_top, .nav_bottom {
+		@include _display(nth($display,1));
+		@include boxSize();
+		position: nth($position, 2);
+		right: 0;
+	}
+	.nav_top {
+		top: 10px;
+	}
+	.nav_bottom {
+		bottom: 0;
+		.nav_menu {
+			li {
+	    		@include _float(nth($direction, 4));
+	    		a {
+	    			margin: 2px auto;
+		    		padding: 6px 10px;
+		    		&:hover, &.current {
+						@include _display(nth($display,1));
+						margin: 2px auto 0;
+						@include borderStyle(#fff);
+						border-bottom-width: 2px;
+						@extend .font_bold;
+		    		}
+	    		}
+	    	}
+		}
+	}
+}
+/* header End */
+/* footer */
+.footer {
+	padding: 15px;
+	.nav_co {
+		@include _display(nth($display,2));
+	}
+	.nav_logo {
+		padding-right: 35px;
+	}
+	.copyright {
+		padding: 15px 0;
+	}
+}
+/* footer End */
+/* warpper */
+/* index */
+.banner {
+	.hgroup {
+		margin: 0 50px;
+    	h1 {
+    		font-size: px2em(36px);
+    	}
+    	h2 {
+    		font-size: px2em(18px);
+    	}
+    }
+}
+.describe {
+	.des {
+		@include _float(nth($direction, 4));
+		margin-top: 15px;
+		width: 29.5%;
+		.des_img {
+			margin-right: 15px;
+		}
+		&:not(:nth-child(odd)) {
+			margin: 15px 30px;
+		}
+	}
+}
+.marketView {
+	@include borderStyle($borderColor);
+	border-width: 1px;
+	background-color: #ece7d7;
+	@include iCenter(center);
+	h1 {
+		@include _display(nth($display,3));
+	}
+	.market.data {
+		@include _float(nth($direction, 4));
+		@include iCenter(left);
+		width: 16.66%;
+		dt.font_12 {
+			color: #4d4d4d;
+		}
+	}
+}
+.charting {
+	padding-bottom: 25px;
+	.chart.data {
+		@include borderStyle($borderColor);
+		border-width: 1px;
+		border-top-width: 0;
+		.chart_menu {
+			@include _display(nth($display,2));
+			padding: 3px 15px;
+			background-color: #ae8f42;
+			a {
+				@include _float(nth($direction, 4));
+				padding-right: 15px;
+				color: #000;
+				&:hover {
+					@extend a;
+				}
+				&.current {
+					color: #fff;
+				}
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+		}
+		.chart_dots {
+			height: 210px;
+		}
+	}
+}
+.liveTable {
+	.live.data {
+		@include _float(nth($direction, 4));
+		text-align: left;
+		width: calc(33.3% - 17px);
+		&:nth-child(2) {
+			margin: 0 25px;
+		}
+		&:last-child {
+			h1 {
+				opacity: 0;
+			}
+		}
+		h1 {
+			margin: 0 10px 10px 0;
+		}
+		table {
+			@extend table;
+			width: 100%;
+		}
+	}
+}
+.newsList {
+	padding-bottom: 25px;
+	.news.data {
+		.news_list {
+			margin-bottom: 10px;
+			line-height: 1.5;
+			&:hover {
+				background-color: #fff;
+			}
+			.float_l {
+				margin-right: 15px;
+				width: 25%;
+			}
+		}
+	}
+}
+/* index End */
+/* trade */
+.trade {
+	.tradeCalc { //計算機
+		&.calc_three { //3格
+			.tradeUnit {
+				width: 32%;
+			}
+		}
+		&.calc_two { //2格
+			.tradeUnit {
+				width: 49%;
+			}
+		}
+	}
+	.tabsTable {
+		@include _float(nth($direction, 4));
+		width: 50%;
+		&:first-child {
+			padding-right: 15px;
+		}
+		&:last-child {
+			padding-left: 15px;
+		}
+	}
+}
+/* trade End */
+/* 各頁共用設定 */
+.account, .support {
+	.content { //電腦版內容寬度
+		width: 75%;
+	}
+}
+/* 各頁共用設定 End */
+/* assets */
+.assets {
+	.assetsForm {
+		> li:not(.clear) {
+			@include _float(nth($direction, 4));
+			width: 48%;
+			label:not(.error) {
+				width: 30%;
+			}
+			> * {
+				@include _float(nth($direction, 4));
+				width: 70%;
+			}
+		}
+		label.error {
+			top: 50px;
+		}
+	}
+	.assetsOverview {
+		.tabsTable {
+			@include _float(nth($direction, 4));
+			width: 50%;
+			&:first-child {
+				padding-right: 15px;
+			}
+			&:last-child {
+				padding-left: 15px;
+			}
+		}
+	}
+	.assetsHistory {
+		.content {
+			width: 75%;
+		}
+		.tabsTable {
+			td {
+				&:nth-child(3), &:nth-child(4), &:nth-child(5) {
+					width: 25%;
+				}
+			}
+		}
+	}
+	.assetsDep {
+		.assetsForm {
+			> li:not(.clear) {
+				label {
+					&:not(.error) {
+						@include iCenter(right);
+					}
+					&.error {
+						top: 25px;
+						margin-left: 30%;
+					}
+				}
+			}
+		}
+	}
+	.assetsWith {
+		.assetsForm {
+			> li {
+				min-height: 70px;
+				&:nth-child(even) {
+					@include _float(nth($direction, 2));
+				}
+				> * {
+					float: none;
+					width: 100% !important;
+				}
+			}
+		}
+	}
+}
+/* assets End */
+/* about */
+.about {
+	.newsList {
+		.news {
+			.news_list {
+				dl {
+					dt, dd {
+						padding: 15px 30px;
+						@include iCenter(left);
+					}
+					dt {
+						@include _float(nth($direction, 4));
+						width: 30%;
+						.news_via, .news_date {
+							@include _display(nth($display,1));
+						}
+						.news_via {
+							&:after {
+								@include _display(nth($display,1));
+								content: '\200b';
+								width: 100%;
+								height: 100%;
+							}
+						}
+					}
+					dd {
+						margin-left: 30%;
+						@include borderStyle($borderColor);
+						border-left-width: 1px;
+						
+					}
+				}
+			}
+		}
+	}
+}
+/* about End */
+/* warpper End*/
+@media screen and (min-width:581px) and (max-width:970px) {
+	/* base-css */
+	.triangle {
+		@include _display(nth($display,2));
+		position: nth($position, 1);
+		height: 24px;
+		&.green:after {
+			//正成長箭頭
+			border-top-width: 0;
+			border-bottom-color: #9dc13e;
+		}
+		&.red:after {
+			//負成長箭頭
+			border-bottom-width: 0;
+			border-top-color: #ea4f71;
+		}
+		&:after {
+			@include _display(nth($display,1));
+			position: nth($position, 2);
+			top: 0;
+			left: 0;
+			content: '';
+			border-style: solid;
+			border-top-width: 5px;
+			border-right-width: 5px;
+			border-bottom-width: 5px;
+			border-left-width: 5px;
+			border-top-color: transparent;
+			border-right-color: transparent;
+			border-bottom-color: transparent;
+			border-left-color: transparent;
+			height: 0;
+			width: 0;
+		}
+	}
+	//電腦版顯示(手機版隱藏)
+	.charting {
+		display: nth($display, 3);
+	}
+	/* base-css End */
+	.nav {
+		.nav_top {
+			position: nth($position, 1);
+			@include _float(nth($direction, 2));
+	  		font-size: px2em(12px);
+	    	.nav_setting {
+				> li {
+					padding: 0;
+					padding-left: 10px;
+					line-height: 1;
+				}
+				.nav_login, .nav_signout {
+				position: nth($position, 2);
+				top: 17px;
+				padding-left: 0;
+				}
+	    		.nav_f {
+	    			right: 65px;
+	    		}
+	    		.nav_signout, .nav_signup {
+	    			right: 0;
+	    		}
+	    		.nav_signin {
+	    			right: 60px;
+	    		}
+	    	}
+	    }
+	}
+	//未登入按鈕(登入時隱藏)
+	.nav {
+		.nav_bala, .nav_acct, .nav_signin, .nav_signup {
+			display: nth($display, 3);
+		}
+	}
+	/* header End */
+	/* warpper*/
+	/* index */
+	.banner {
+		height: 90vmin;
+		.content {
+			height: 90vmin;
+		}
+	}
+	.describe {
+		.des {
+			@include iCenter(center);
+			dd {
+				margin-left: 0;
+			}
+			.des_img {
+				@include blockCenter();
+				float: none;
+			}
+		}
+	}
+	.marketView {
+		margin-bottom: 15px;
+		@include iCenter(left);
+		background-color: #ece7d7;
+		.market.data {
+			float: none;
+			width: inherit;
+			dt.font_12 {
+				@include _float(nth($direction, 4));
+				width: 26%;
+				h2:after {
+					@include _display(nth($display,2));
+					content: ':';
+				}
+			}
+		}
+	}	
+	.liveTable {
+		margin-bottom: 25px;
+		.live.data {
+			float: none;
+			@include iCenter(left);
+			width: 100%;
+			&:nth-child(2) {
+				margin: 0;
+			}
+			&:last-child {
+				h1 {
+					opacity: 0;
+				}
+			}
+			h1 {
+				line-height: 1.5;
+				font-size: px2em(12px);
+			}
+			table {
+				margin-bottom: 15px
+			}
+		}
+	}
+	/* index End */
+	/* wrapper */
+	.wrap_nav_acct {
+		.nav_top {
+			float: none;
+		}
+	}
+	/* trade */
+	.trade {
+		.tradeCalc { //計算機
+			&.calc_three { //3格
+				.tradeUnit {
+					width: 31.3%;
+				}
+			}
+			&.calc_two { //2格
+				.tradeUnit {
+					width: 48.5%;
+				}
+			}
+		}
+		.tradeUnit {
+			&:after, &~span:after {
+				@include _display(nth($display,1));
+				content: '';
+				vertical-align: middle;
+				height: 0;
+				width: 0;
+			}
+			&~span:after {
+				padding-bottom: 15px;
+			}
+			&~span {
+				@include _display(nth($display,2));
+				margin: 10px auto;
+			}
+		}
+		.tabsTable {
+			@include _float(nth($direction, 4));
+			padding-bottom: 15px;
+			width: 100%;
+			&:first-child {
+				padding-right: 0;
+			}
+			&:last-child {
+				padding-left: 0;
+			}
+		}
+	}
+	/* trade End */
+	/* 各頁共用設定 */
+	.assets, .account, .support { //手機版內容寬度
+		.content {
+			width: 100%;
+		}
+	}
+	/* 各頁共用設定 End */
+	/* assets */
+	.assets {
+		.assetsForm {
+			> li:not(.clear) {
+				@include _display(nth($display,2));
+				float: none;
+				margin-top: 0;
+				min-height: 90px;
+				width: 100%;
+				label {
+					width: 100%;
+				}
+				> * {
+					float: none;
+					width: 100%;
+				}
+			}
+			> li.clear {
+				margin-top: 0;
+			}
+		}
+		.content {
+			> span {
+				margin-bottom: 30px;
+			}
+		}
+		.tabsWrap {
+			/* 必填樣式 */
+			label.error {
+				margin-top: 0;
+				width: 100%;
+				&~.error, &~.error * {
+					padding: 5px 20px;
+					@include borderRadius($fontSize);
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					background-color: #f8d6d6;
+				}
+			}
+		}
+		.assetsOverview {
+			.tabsTable {
+				float: none;
+				width: 100%;
+				&:first-child {
+					padding-right: 0;
+					padding-bottom: 30px;
+				}
+				&:last-child {
+					padding-left: 0;
+				}
+			}
+		}
+		.assetsHistory {
+			.tabsTable {
+				td {
+					&:nth-child(3), &:nth-child(4) { //電腦版顯示(手機版隱藏)
+						@include _display(nth($display,3));
+						width: inherit;
+					}
+					&:nth-child(2), &:nth-child(5) {
+						width: 27%;
+					}
+				}
+			}
+		}
+		.assetsDep {
+			.assetsForm {
+				> li:not(.clear) {
+					label {
+						&:not(.error) {
+							@include iCenter(left);
+						}
+						&.error {
+							top: 50px;
+							margin-left: 0;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+	/* assets End */
+	/* warpper End*/
+	.footer {
+		.nav_co {
+			@include _display(nth($display,1));
+		}
+		.nav_logo {
+			margin-bottom: 15px;
+			width: 50%;
+		}
+		.nav_share {
+			overflow: hidden;
+			@include _float(nth($direction, 2));
+		}
+		.nav_sub {
+			@include _float(nth($direction, 4));
+			width: 100%;
+			.subnav_menu {
+				> li {
+					clear: both;
+					float: none;
+					padding: 5px 0;
+				}
+			}
+		}
+		.copyright {
+			padding: 0;
+			padding-bottom: 15px;
+		}
+	}
+	//newsList
+	.newsList {
+		padding: 0 15px 25px;
+	}
+}

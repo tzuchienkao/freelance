@@ -1,0 +1,302 @@
+<!-- 基本說明資訊
+**** 案件名稱: CoolBitX 網站切版 ***********************
+**** 客戶名稱: CoolBitX Technology *********************
+	 連絡資料: Michael Ou, michaelo@coolbitx.com *******
+**** 開 發 者: Tzuchien Kao, oyan114@gmail.com *********
+**** 案件描述: 含電腦版與手機版，兩種版型開發。含RWD ***
+**** 程式語言: html, css3, css, javascript, jQuery  ***
+基本說明資訊 End -->
+<!-- 增修說明資訊
+[2015/02/02]
+全站-header: 已登入按鈕增加Acct1~5, 超連結文字修改Trade, Market, Assets, Account, Support, 增加hover樣式
+[2015/02/10]
+market: Market overview加入Data規則
+index: 修改Market overview html結構
+[2015/02/11]
+sign, trade, market: 增加顏色制定及按鈕變化
+增修說明資訊 End -->
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CoolBitX Technology</title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/style_pc.css" media="only screen and (min-width:581px)" rel="stylesheet" type="text/css">
+	<link href="css/style_m.css" media="only screen and (max-width:580px)" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:600,400,300" rel="stylesheet" type="text/css">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!-- header -->
+	<div class="header clear">
+		<div class="content">
+			<ul class="nav">
+				<li class="m_nav_menu font_24">
+					<a href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+				</li>
+				<li class="nav_logo">
+					<a href="index.html" title="CoolBitX" class="logo"><img src="img/logo.png" alt="CoolBitX"></a>
+				</li>
+				<li class="nav_top">
+					<ul class="nav_setting">
+						<li class="nav_last">
+							<!-- Last price: 小數點前六位 點後兩位 -->
+							<p>Last price: <span>123456.12</span> USD</p>
+						</li>
+						<li class="nav_bala">
+							<!-- Balance: 小數點前八位 點後兩位 -->
+							<label>Balance: </label><span>12345678.12</span> <span>USD</span>
+						</li>
+						<!-- 已登入 -->
+						<li class="nav_acct">
+							<a href="javascript:void(0);" title="" class="main_acct">Acct1: 1000.222 BTC</a>
+							<ul class="sub_acct">
+								<li><a href="javascript:void(0);" title="">Acct1: 1000.222 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct2: 1000.2322 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct3: 1000.23422 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct4: 1000.223452 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct5: 1000.2345622 BTC</a></li>
+							</ul>
+						</li>
+						<!-- 已登入 End -->
+						<li class="nav_lang">
+							<a href="javascript:void(0);" title="Language" class="main_lang">Language</a>
+							<ul class="sub_lang">
+								<li><a href="javascript:void(0);" title="繁體中文">繁體中文</a></li>
+								<li><a href="javascript:void(0);" title="English">English</a></li>
+								<li><a href="javascript:void(0);" title="簡體中文">簡體中文</a></li>
+							</ul>
+						</li>
+						<!-- 已登入 -->
+						<li class="nav_login"><!-- User name: 16位英文數字 -->
+							<a href="javascript:void(0);" title="User name"><span>onetwothree45678</span></a>
+						</li>
+						<li class="nav_signout"><a href="index.html" title="Sign out">Sign out</a></li>
+						<!-- 已登入 End -->
+						<!-- 未登入 -->
+						<li class="nav_signin"><a href="sign_in.html" title="Sign in">Sign in</a></li>
+						<li class="nav_signup"><a href="sign_up.html" title="Sign up">Sign up</a></li>
+						<!-- 未登入 End -->
+					</ul>
+				</li>
+				<li class="nav_bottom">
+					<ul class="nav_menu">
+						<li><a href="trade.html" title="Trade" class="">Trade</a></li>
+						<li><a href="market.html" title="Market" class="">Market</a></li>
+						<li><a href="assets.html" title="Assets" class="">Assets</a></li>
+						<li><a href="account.html" title="Account" class="">Account</a></li>
+						<li><a href="support.html" title="Support" class="current">Support</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header End -->
+	<!-- wrapper -->
+	<div class="wrapper clear">
+		<div class="content main">
+			<div class="support">
+				<!-- 手機版顯示 -->
+				<div class="wrap_nav_acct clear">
+					<ul class="nav_top clear">
+						<li class="nav_bala">
+							<!-- Balance: 小數點前八位 點後兩位 -->
+							<label>Balance: </label><span>12345678.12</span> <span>USD</span>
+						</li>
+						<!-- 已登入 -->
+						<li class="nav_acct">
+							<a href="javascript:void(0);" title="" class="main_acct">Acct1: 1000.222 BTC</a>
+							<ul class="sub_acct">
+								<li><a href="javascript:void(0);" title="">Acct1: 1000.222 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct2: 1000.2322 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct3: 1000.23422 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct4: 1000.223452 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct5: 1000.2345622 BTC</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- 手機版顯示 End -->
+				<ul class="support_tabs tabsMenu clear">
+					<li class="supportLost current">
+						<a href="javascript:void(0);" title="Lost card" class="">Lost card</a>
+					</li>
+					<li class="supportForgot">
+						<a href="javascript:void(0);" title="Forgot password" class="">Forgot password</a>
+					</li>
+					<li class="supportOther">
+						<a href="javascript:void(0);" title="Other" class="">Other</a>
+					</li>
+				</ul>
+				<!-- 預留訊息框，按下按鈕之後會跳出來對話用 不按不會出來 -->
+				<div class="content">
+					<!-- 由後端產生需顯示的文字內容 -->
+					<span class="confirmAlert clear" style="display: none;">
+						<!-- Lost card -->
+						An email with reset link has been sent to you
+					</span>
+					<span class="confirmAlert clear" style="display: none;">
+						<!-- Forgot password -->
+						An email with reset link has been sent to you
+					</span>
+					<span class="confirmAlert clear" style="display: none;">
+						<!-- Other -->
+						Your ticket has been sent. We will get in touch with you shortly.
+					</span>
+				</div>
+				<ul class="support_wrap tabsWrap font_12 clear">
+					<li class="supportLost clear">
+						<div class="content">
+							<ul class="support_table tabsTable">
+								<li class="lostCard title">Lost CoolWallet Card?</li>
+								<li class="lostCard table">
+									<div class="main">
+										<p>There is no need to panic when you lost your CoolWallet card. Your account is still safe and accessible.<br>Please enter your email, password, and connect your new CoolWallet that is restored with the same seed then press sync. Your account will be paired with your new CoolWallet and its OTP.</p>
+										<div class="content">
+											<form id="form_supportLost" action="">
+												<fieldset>
+													<div class="acct">
+														<input class="btn" type="email" name="support_lostMail" required="required" placeholder="Email" title="Please enter a valid email address" />
+													</div>
+													<div class="acct">
+														<input class="btn" id="password" type="password" name="support_lostPwd" required="required" placeholder="Password" title="Invalid password" />
+													</div>
+													<div class="acct">
+														<input class="btn" id="OTP" type="text" name="support_lostNewID" required="required" placeholder="New CoolWallet ID" title="Invalid password" />
+													</div>
+												</fieldset>
+											</form>
+											<a href="javascript:submit('form_supportLost')" class="btn blue gray" id="submit">Sync</a>
+											<p class="error">This CoolWallet info does not match with your previous one</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="supportForgot clear" style="display:none;">
+						<div class="content">
+							<ul class="support_table tabsTable">
+								<li class="lostCard title">Reset your password</li>
+								<li class="lostCard table">
+									<div class="main">
+										<p>Forgot your password? Don’t worry. Just type in your email address and OTP, we will email you the reset link for the password.</p>
+										<div class="content">
+											<form id="form_supportForgot" action="">
+												<fieldset>
+													<div class="acct">
+														<input class="btn" type="email" name="support_forgotMail" required="required" placeholder="Email" title="Please enter a valid email address" />
+													</div>
+													<div class="acct">
+														<input class="btn" id="OTP" type="text" name="support_forgotOtp" required="required" placeholder="OTP" title="Please enter a valid OTP" />
+													</div>
+												</fieldset>
+											</form>
+											<a href="javascript:submit('form_supportForgot')" class="btn blue" id="submit">Confirm</a>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="supportOther clear" style="display:none;">
+						<div class="content">
+							<ul class="support_table tabsTable">
+								<li class="lostCard title">Submit New Ticket</li>
+								<li class="lostCard table">
+									<div class="main">
+										<p>There is no need to panic when you lost your CoolWallet card. Your account is still safe and accessible.<br>Please enter your email, password, and connect your new CoolWallet that is restored with the same seed then press sync. Your account will be paired with your new CoolWallet and its OTP.</p>
+										<div class="content">
+											<form id="form_supportOther" action="">
+												<fieldset>
+													<div class="acct">
+					                                    <input type="text" class="hidden" name="form_other_cata" required="required" title="Please choose a category">
+														<div class="drop_acct dropdown clear">
+															<a href="javascript:void(0);" class="dropdownTog btn">choose a category...</a>
+															<ul class="dropdownSel btn">
+																<li class="option_val">
+																	<a href="javascript:void(0);" title="Bank withdrawal">Bank withdrawal</a>
+																</li>
+																<li class="option_val">
+																	<a href="javascript:void(0);" title="Bank deposit">Bank deposit</a>
+																</li>
+																<li class="option_val">
+																	<a href="javascript:void(0);" title="Verification">Verification</a>
+																</li>
+																<li class="option_val">
+																	<a href="javascript:void(0);" title="Other">Other</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+													<textarea class="btn" rows="10"></textarea>
+												</fieldset>
+											</form>
+											<a href="javascript:submit('form_supportOther')" class="btn blue" id="submit">Confirm</a>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- wrapper End -->
+	<!-- footer -->
+	<div class="footer clear">
+		<ul class="content">
+			<li class="nav_co">
+				<ul class="clear">
+					<li class="nav_logo">
+						<a href="index.html" title="CoolBitX" class="logo"><img src="img/logo.png" alt="CoolBitX"></a>
+					</li>
+					<li class="nav_share">
+						<ul class="shareIcon">
+							<li><a href="javascript:void(0);" title="" class="icon share_01"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_02"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_03"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_04"></a></li>
+						</ul>
+					</li>
+				</ul>
+				<span class="copyright">Owned by JETSTREAM HOLDING LTD.</span>
+			</li>
+			<li class="nav_sub">
+				<ul class="subnav_menu">
+					<li>
+						<span class="font_bold">About</span>
+						<ul>
+							<li><a href="aboutUs.html" title="About us">About us</a></li>
+							<li><a href="newsList.html" title="News">News</a></li>
+							<li><a href="feeTable.html" title="Fee table">Fee table</a></li>
+							<li><a href="javascript:void(0);" title="Contact us">Contact us</a></li>
+						</ul>
+					</li>
+					<li>
+						<span class="font_bold">Help</span>
+						<ul>
+							<li><a href="javascript:void(0);" title="FAQ">FAQ</a></li>
+							<li><a href="javascript:void(0);" title="What is Bitcoin">What is Bitcoin</a></li>
+						</ul>
+					</li>
+					<li>
+						<span class="font_bold">Legal</span>
+						<ul>
+							<li><a href="javascript:void(0);" title="Privacy">Privacy</a></li>
+							<li><a href="javascript:void(0);" title="Terms of use">Terms of use</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- footer End -->
+	<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+	<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+	<script src="js/coolbitx.js" type="text/javascript"></script>
+</body>
+</html>
