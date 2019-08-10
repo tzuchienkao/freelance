@@ -1,0 +1,1054 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>918買賣租屋網</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/global.css" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <!-- <link rel="stylesheet/less" type="text/css" href="./css/global.less" />
+    <link rel="stylesheet/less" type="text/css" href="./css/index.less" /> -->
+    <script src="./js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="./js/less.min.js" type="text/javascript"></script>
+    <script src="./js/main.js" type="text/javascript"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar display_flex">
+                <li data-nav="member"><a href="javascript:void(0)">會員中心</a></li>
+                <li data-nav="viewlog"><a href="javascript:void(0)">瀏覽紀錄</a></li>
+                <li data-nav="post"><a href="javascript:void(0)">我要刊登</a></li>
+                <li data-nav="news"><a href="javascript:void(0)">動態消息</a></li>
+            </ul>
+        </nav>
+        <div class="main_header">
+            <div class="wrap display_flex">
+                <div class="logo img_box display_flex flex_align_c">
+                    <img src="images/logo.png" alt="918logo">
+                </div>
+                <ul class="main_menu display_flex">
+                    <li><a href="javascript:void(0)">買屋</a></li>
+                    <li><a href="javascript:void(0)">租屋</a></li>
+                    <li><a href="javascript:void(0)">新建案</a></li>
+                    <li><a href="javascript:void(0)">法拍屋</a></li>
+                    <li><a href="javascript:void(0)">透天</a></li>
+                    <li><a href="javascript:void(0)">實價登錄</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- 首頁 -->
+    <section>
+        <div class="kv_block">
+            <!-- 主視覺橫幅 -->
+            <div class="banner img_box">
+                <img src="images/bg_header.jpg" alt="kv">
+            </div>
+            <!-- 搜尋 -->
+            <div class="search_block display_flex flex_align_c">
+                <div class="search_navbar">
+                    <!-- 搜尋選單 -->
+                    <input id="search_sell" name="search_box" type="radio" checked="checked">
+                    <label for="search_sell">買屋</label>
+                    <input id="search_rent" name="search_box" type="radio">
+                    <label for="search_rent">租屋</label>
+                    <input id="search_newcase" name="search_box" type="radio">
+                    <label for="search_newcase">新建案</label>
+                    <input id="search_townhouse" name="search_box" type="radio">
+                    <label for="search_townhouse">透天</label>
+                    <!-- //搜尋選單 -->
+                    <!-- 搜尋內容 -->
+                    <!-- 買屋 -->
+                    <div id="search_sell_box" class="content_box clear">
+                        <input type="text" placeholder="請輸入關鍵字">
+                        <ul class="search_tool_box display_flex">
+                            <li>
+                                <input id="search_tool_area" name="search_tool" type="checkbox">
+                                <label for="search_tool_area">地區</label>
+                                <!-- 地區下拉 -->
+                                <div id="search_area" class="search_tool_content">
+                                    <ul class="dropdown">
+                                        <li>
+                                            <p class="title area_catalog">北部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_1_1" name="search_area" type="radio">
+                                                <label for="search_area_1_1">台北市</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">中部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_2_1" name="search_area" type="radio">
+                                                <label for="search_area_2_1">台中市</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">東部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_3_1" name="search_area" type="radio">
+                                                <label for="search_area_3_1">台東縣</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">南部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_4_1" name="search_area" type="radio">
+                                                <label for="search_area_4_1">高雄市</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">離島</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_5_1" name="search_area" type="radio">
+                                                <label for="search_area_5_1">澎湖縣</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <input id="search_tool_type" name="search_tool" type="checkbox">
+                                <label for="search_tool_type">型式</label>
+                                <!-- 型式下拉 -->
+                                <div id="search_type" class="search_tool_content">
+                                    <ul class="dropdown display_flex">
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_1_1" name="search_type" type="radio">
+                                                <label for="search_type_1_1">住宅</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_2_1" name="search_type" type="radio">
+                                                <label for="search_type_2_1">商用</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_3_1" name="search_type" type="radio">
+                                                <label for="search_type_3_1">住辦</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_4_1" name="search_type" type="radio">
+                                                <label for="search_type_4_1">土地</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_5_1" name="search_type" type="radio">
+                                                <label for="search_type_5_1">車位</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_6_1" name="search_type" type="radio">
+                                                <label for="search_type_6_1">廠房</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <input id="search_tool_price" name="search_tool" type="checkbox">
+                                <label for="search_tool_price">售價</label>
+                                <!-- 搜尋下拉 -->
+                                <div id="search_price" class="search_tool_content">
+                                    <ul class="dropdown display_flex">
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_1_1" name="search_price" type="radio">
+                                                <label for="search_price_1_1">1000萬以下</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_2_1" name="search_price" type="radio">
+                                                <label for="search_price_2_1">1000~1500萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_3_1" name="search_price" type="radio">
+                                                <label for="search_price_3_1">1500~2000萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_4_1" name="search_price" type="radio">
+                                                <label for="search_price_4_1">2000~3000萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_5_1" name="search_price" type="radio">
+                                                <label for="search_price_5_1">3000~4000萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_6_1" name="search_price" type="radio">
+                                                <label for="search_price_6_1">4000萬以上</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="search_tool_by">
+                            <a href="javascript:void(0)">捷運搜尋</a>
+                            <a href="javascript:void(0)">學校搜尋</a>
+                            <a href="javascript:void(0)">社區搜尋</a>
+                            <a href="javascript:void(0)">商圈搜尋</a>
+                            <a href="javascript:void(0)">法拍搜尋</a>
+                        </div>
+                        <button>搜尋</button>
+                    </div>
+                    <!-- 租屋 -->
+                    <div id="search_rent_box" class="content_box clear">
+                        <input type="text" placeholder="請輸入關鍵字">
+                        <ul class="search_tool_box display_flex">
+                            <li>
+                                <input id="search_tool_area" name="search_tool" type="checkbox">
+                                <label for="search_tool_area">地區</label>
+                                <!-- 地區下拉 -->
+                                <div id="search_area" class="search_tool_content">
+                                    <ul class="dropdown">
+                                        <li>
+                                            <p class="title area_catalog">北部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_1_1" name="search_area" type="radio">
+                                                <label for="search_area_1_1">台北市</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">中部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_2_1" name="search_area" type="radio">
+                                                <label for="search_area_2_1">台中市</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">東部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_3_1" name="search_area" type="radio">
+                                                <label for="search_area_3_1">台東縣</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">南部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_4_1" name="search_area" type="radio">
+                                                <label for="search_area_4_1">高雄市</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">離島</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_5_1" name="search_area" type="radio">
+                                                <label for="search_area_5_1">澎湖縣</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <input id="search_tool_type" name="search_tool" type="checkbox">
+                                <label for="search_tool_type">型式</label>
+                                <!-- 型式下拉 -->
+                                <div id="search_type" class="search_tool_content">
+                                    <ul class="dropdown display_flex">
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_1_1" name="search_type" type="radio">
+                                                <label for="search_type_1_1">住宅</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_2_1" name="search_type" type="radio">
+                                                <label for="search_type_2_1">商用</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_3_1" name="search_type" type="radio">
+                                                <label for="search_type_3_1">住辦</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_4_1" name="search_type" type="radio">
+                                                <label for="search_type_4_1">土地</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_5_1" name="search_type" type="radio">
+                                                <label for="search_type_5_1">車位</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_6_1" name="search_type" type="radio">
+                                                <label for="search_type_6_1">廠房</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <input id="search_tool_price" name="search_tool" type="checkbox">
+                                <label for="search_tool_price">租金</label>
+                                <!-- 搜尋下拉 -->
+                                <div id="search_price" class="search_tool_content">
+                                    <ul class="dropdown display_flex">
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_1_1" name="search_price" type="radio">
+                                                <label for="search_price_1_1">1000萬以下</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_2_1" name="search_price" type="radio">
+                                                <label for="search_price_2_1">1000~1500萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_3_1" name="search_price" type="radio">
+                                                <label for="search_price_3_1">1500~2000萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_4_1" name="search_price" type="radio">
+                                                <label for="search_price_4_1">2000~3000萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_5_1" name="search_price" type="radio">
+                                                <label for="search_price_5_1">3000~4000萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_6_1" name="search_price" type="radio">
+                                                <label for="search_price_6_1">4000萬以上</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="search_tool_by">
+                            <a href="javascript:void(0)">捷運搜尋</a>
+                            <a href="javascript:void(0)">學校搜尋</a>
+                            <a href="javascript:void(0)">社區搜尋</a>
+                            <a href="javascript:void(0)">商圈搜尋</a>
+                            <a href="javascript:void(0)">法拍搜尋</a>
+                        </div>
+                        <button>搜尋</button>
+                    </div>
+                    <!-- 新建案 -->
+                    <div id="search_newcase_box" class="content_box clear">
+                        <input type="text" placeholder="請輸入關鍵字">
+                        <ul class="search_tool_box display_flex">
+                            <li>
+                                <input id="search_tool_area" name="search_tool" type="checkbox">
+                                <label for="search_tool_area">地區</label>
+                                <!-- 地區下拉 -->
+                                <div id="search_area" class="search_tool_content">
+                                    <ul class="dropdown">
+                                        <li>
+                                            <p class="title area_catalog">北部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_1_1" name="search_area" type="radio">
+                                                <label for="search_area_1_1">台北市</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">中部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_2_1" name="search_area" type="radio">
+                                                <label for="search_area_2_1">台中市</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">東部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_3_1" name="search_area" type="radio">
+                                                <label for="search_area_3_1">台東縣</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">南部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_4_1" name="search_area" type="radio">
+                                                <label for="search_area_4_1">高雄市</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">離島</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_5_1" name="search_area" type="radio">
+                                                <label for="search_area_5_1">澎湖縣</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <input id="search_tool_type" name="search_tool" type="checkbox">
+                                <label for="search_tool_type">型式</label>
+                                <!-- 型式下拉 -->
+                                <div id="search_type" class="search_tool_content">
+                                    <ul class="dropdown display_flex">
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_1_1" name="search_type" type="radio">
+                                                <label for="search_type_1_1">住宅</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_2_1" name="search_type" type="radio">
+                                                <label for="search_type_2_1">商用</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_3_1" name="search_type" type="radio">
+                                                <label for="search_type_3_1">住辦</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_4_1" name="search_type" type="radio">
+                                                <label for="search_type_4_1">土地</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_5_1" name="search_type" type="radio">
+                                                <label for="search_type_5_1">車位</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_6_1" name="search_type" type="radio">
+                                                <label for="search_type_6_1">廠房</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <input id="search_tool_price" name="search_tool" type="checkbox">
+                                <label for="search_tool_price">每坪單價</label>
+                                <!-- 搜尋下拉 -->
+                                <div id="search_price" class="search_tool_content">
+                                    <ul class="dropdown display_flex">
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_1_1" name="search_price" type="radio">
+                                                <label for="search_price_1_1">1000萬以下</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_2_1" name="search_price" type="radio">
+                                                <label for="search_price_2_1">1000~1500萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_3_1" name="search_price" type="radio">
+                                                <label for="search_price_3_1">1500~2000萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_4_1" name="search_price" type="radio">
+                                                <label for="search_price_4_1">2000~3000萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_5_1" name="search_price" type="radio">
+                                                <label for="search_price_5_1">3000~4000萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_6_1" name="search_price" type="radio">
+                                                <label for="search_price_6_1">4000萬以上</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="search_tool_by">
+                            <a href="javascript:void(0)">捷運搜尋</a>
+                            <a href="javascript:void(0)">學校搜尋</a>
+                            <a href="javascript:void(0)">社區搜尋</a>
+                            <a href="javascript:void(0)">商圈搜尋</a>
+                            <a href="javascript:void(0)">法拍搜尋</a>
+                        </div>
+                        <button>搜尋</button>
+                    </div>
+                    <!-- 透天 -->
+                    <div id="search_townhouse_box" class="content_box clear">
+                        <input type="text" placeholder="請輸入關鍵字">
+                        <ul class="search_tool_box display_flex">
+                            <li>
+                                <input id="search_tool_area" name="search_tool" type="checkbox">
+                                <label for="search_tool_area">地區</label>
+                                <!-- 地區下拉 -->
+                                <div id="search_area" class="search_tool_content">
+                                    <ul class="dropdown">
+                                        <li>
+                                            <p class="title area_catalog">北部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_1_1" name="search_area" type="radio">
+                                                <label for="search_area_1_1">台北市</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">中部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_2_1" name="search_area" type="radio">
+                                                <label for="search_area_2_1">台中市</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">東部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_3_1" name="search_area" type="radio">
+                                                <label for="search_area_3_1">台東縣</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">南部</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_4_1" name="search_area" type="radio">
+                                                <label for="search_area_4_1">高雄市</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p class="title area_catalog">離島</p>
+                                            <div class="option area_city">
+                                                <input id="search_area_5_1" name="search_area" type="radio">
+                                                <label for="search_area_5_1">澎湖縣</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <input id="search_tool_type" name="search_tool" type="checkbox">
+                                <label for="search_tool_type">型式</label>
+                                <!-- 型式下拉 -->
+                                <div id="search_type" class="search_tool_content">
+                                    <ul class="dropdown display_flex">
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_1_1" name="search_type" type="radio">
+                                                <label for="search_type_1_1">住宅</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_2_1" name="search_type" type="radio">
+                                                <label for="search_type_2_1">商用</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_3_1" name="search_type" type="radio">
+                                                <label for="search_type_3_1">住辦</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_4_1" name="search_type" type="radio">
+                                                <label for="search_type_4_1">土地</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_5_1" name="search_type" type="radio">
+                                                <label for="search_type_5_1">車位</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_type_6_1" name="search_type" type="radio">
+                                                <label for="search_type_6_1">廠房</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <input id="search_tool_price" name="search_tool" type="checkbox">
+                                <label for="search_tool_price">售價</label>
+                                <!-- 搜尋下拉 -->
+                                <div id="search_price" class="search_tool_content">
+                                    <ul class="dropdown display_flex">
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_1_1" name="search_price" type="radio">
+                                                <label for="search_price_1_1">1000萬以下</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_2_1" name="search_price" type="radio">
+                                                <label for="search_price_2_1">1000~1500萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_3_1" name="search_price" type="radio">
+                                                <label for="search_price_3_1">1500~2000萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_4_1" name="search_price" type="radio">
+                                                <label for="search_price_4_1">2000~3000萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_5_1" name="search_price" type="radio">
+                                                <label for="search_price_5_1">3000~4000萬</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option">
+                                                <input id="search_price_6_1" name="search_price" type="radio">
+                                                <label for="search_price_6_1">4000萬以上</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="search_tool_by">
+                            <a href="javascript:void(0)">捷運搜尋</a>
+                            <a href="javascript:void(0)">學校搜尋</a>
+                            <a href="javascript:void(0)">社區搜尋</a>
+                            <a href="javascript:void(0)">商圈搜尋</a>
+                            <a href="javascript:void(0)">法拍搜尋</a>
+                        </div>
+                        <button>搜尋</button>
+                    </div>
+                    <!-- //搜尋內容 -->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- 廣告 800*275 -->
+            <div class="ad_block wrap img_box">
+                <img src="http://carlsbadlifeinaction.com/wp-content/uploads/2014/03/78-Corridor-Logo-800x275." alt="ad">
+            </div>
+            <div id="lastest_case" class="case_block main">
+                <div class="wrap">
+                    <h2 class="section_title text_align_c">最新熱門建案</h2>
+                    <!-- 輪播 -->
+                    <div class="case_box carousel_box">
+                        <div class="carousel_main">
+                            <!-- 輪播內容 -->
+                            <div class="card_block display_flex flex_align_c">
+                                <a class="card_info" href="javascript:void(0)">
+                                    <dl class="card_info_box for_case">
+                                        <dt class="info_header">
+                                            <span class="card_type" data-type="new">NEW</span>
+                                            <div class="cover img_box display_flex flex_align_c">
+                                                <img src="https://thumb1.shutterstock.com/display_pic_with_logo/70890/1024552633/stock-photo-modern-living-room-design-d-rendering-1024552633.jpg" alt="">
+                                            </div>
+                                        </dt>
+                                        <dd class="info_wrap">
+                                            <div class="info_main">
+                                                <h3 class="title">台南退休生活</h3>
+                                                <span class="style">五樓透天</span>
+                                                <p class="description">距中彰快速道路、台灣大道只需三分鐘車程，前環中路接台灣大道，後臨青海南街，生活機能極佳。，建築業龍頭興富發，經典巨作赫里翁系列</p>
+                                            </div>
+                                            <div class="info_footer display_flex flex_align_c">
+                                                <p class="amount_size">總坪數81.9坪</p>
+                                                <p class="amount_price">9,360萬</p>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </a>
+                                <a class="card_info" href="javascript:void(0)">
+                                    <dl class="card_info_box for_case">
+                                        <dt class="info_header">
+                                            <span class="card_type" data-type="sale">FOR SALE</span>
+                                            <div class="cover img_box display_flex flex_align_c">
+                                                <img src="https://thumb1.shutterstock.com/display_pic_with_logo/1762892/1012605070/stock-photo-asymmetrical-symmetry-popular-architecture-townhouses-in-a-humble-neighborhood-of-the-city-1012605070.jpg" alt="">
+                                            </div>
+                                        </dt>
+                                        <dd class="info_wrap">
+                                            <div class="info_main">
+                                                <h3 class="title">台南退休生活</h3>
+                                                <span class="style">五樓透天</span>
+                                                <p class="description">距中彰快速道路、台灣大道只需三分鐘車程，前環中路接台灣大道，後臨青海南街，生活機能極佳。，建築業龍頭興富發，經典巨作赫里翁系列</p>
+                                            </div>
+                                            <div class="info_footer display_flex flex_align_c">
+                                                <p class="amount_size">總坪數81.9坪</p>
+                                                <p class="amount_price">9,360萬</p>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </a>
+                                <a class="card_info" href="javascript:void(0)">
+                                    <dl class="card_info_box for_case">
+                                        <dt class="info_header">
+                                            <span class="card_type" data-type="sale">FOR SALE</span>
+                                            <div class="cover img_box display_flex flex_align_c">
+                                                <img src="https://thumb7.shutterstock.com/display_pic_with_logo/671443/277802177/stock-photo-a-perfect-neighborhood-on-a-sunny-day-with-blue-sky-houses-and-townhouses-in-suburbs-at-spring-in-277802177.jpg" alt="">
+                                            </div>
+                                        </dt>
+                                        <dd class="info_wrap">
+                                            <div class="info_main">
+                                                <h3 class="title">台南退休生活</h3>
+                                                <span class="style">五樓透天</span>
+                                                <p class="description">距中彰快速道路、台灣大道只需三分鐘車程，前環中路接台灣大道，後臨青海南街，生活機能極佳。，建築業龍頭興富發，經典巨作赫里翁系列</p>
+                                            </div>
+                                            <div class="info_footer display_flex flex_align_c">
+                                                <p class="amount_size">總坪數81.9坪</p>
+                                                <p class="amount_price">9,360萬</p>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </a>
+                                <a class="card_info" href="javascript:void(0)">
+                                    <dl class="card_info_box for_case">
+                                        <dt class="info_header">
+                                            <span class="card_type" data-type="new">NEW</span>
+                                            <div class="cover img_box display_flex flex_align_c">
+                                                <img src="https://thumb1.shutterstock.com/display_pic_with_logo/70890/1024552633/stock-photo-modern-living-room-design-d-rendering-1024552633.jpg" alt="">
+                                            </div>
+                                        </dt>
+                                        <dd class="info_wrap">
+                                            <div class="info_main">
+                                                <h3 class="title">台南退休生活</h3>
+                                                <span class="style">五樓透天</span>
+                                                <p class="description">距中彰快速道路、台灣大道只需三分鐘車程，前環中路接台灣大道，後臨青海南街，生活機能極佳。，建築業龍頭興富發，經典巨作赫里翁系列</p>
+                                            </div>
+                                            <div class="info_footer display_flex flex_align_c">
+                                                <p class="amount_size">總坪數81.9坪</p>
+                                                <p class="amount_price">9,360萬</p>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </a>
+                                <a class="card_info" href="javascript:void(0)">
+                                    <dl class="card_info_box for_case">
+                                        <dt class="info_header">
+                                            <span class="card_type" data-type="sale">FOR SALE</span>
+                                            <div class="cover img_box display_flex flex_align_c">
+                                                <img src="https://thumb1.shutterstock.com/display_pic_with_logo/1762892/1012605070/stock-photo-asymmetrical-symmetry-popular-architecture-townhouses-in-a-humble-neighborhood-of-the-city-1012605070.jpg" alt="">
+                                            </div>
+                                        </dt>
+                                        <dd class="info_wrap">
+                                            <div class="info_main">
+                                                <h3 class="title">台南退休生活</h3>
+                                                <span class="style">五樓透天</span>
+                                                <p class="description">距中彰快速道路、台灣大道只需三分鐘車程，前環中路接台灣大道，後臨青海南街，生活機能極佳。，建築業龍頭興富發，經典巨作赫里翁系列</p>
+                                            </div>
+                                            <div class="info_footer display_flex flex_align_c">
+                                                <p class="amount_size">總坪數81.9坪</p>
+                                                <p class="amount_price">9,360萬</p>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </a>
+                            </div>
+                            <!-- 控制按鈕 -->
+                            <a class="carousel_btn" data-go="go_prev" href="javascript:void(0)"></a>
+                            <a class="carousel_btn" data-go="go_next" href="javascript:void(0)"></a>
+                        </div>
+                        <!-- 輪播按鈕 -->
+                        <div class="carousel_nav">
+                            <!-- 停留按鈕，classname=active -->
+                            <a class="active" href="javascript:void(0)"></a>
+                            <a href="javascript:void(0)"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="recommend_case" class="case_block sub">
+                <div class="wrap">
+                    <h2 class="section_title text_align_c">推薦建案</h2>
+                    <p class="section_description text_align_c">918揪團GO</p>
+                    <!-- 推薦建案顯示6筆 -->
+                    <div class="card_block display_flex flex_align_c">
+                        <a class="card_info" href="javascript:void(0)">
+                            <dl class="card_info_box for_case">
+                                <dt class="info_header">
+                                    <span class="card_type" data-type="new">NEW</span>
+                                    <div class="cover img_box display_flex flex_align_c">
+                                        <img src="https://thumb1.shutterstock.com/display_pic_with_logo/70890/1024552633/stock-photo-modern-living-room-design-d-rendering-1024552633.jpg" alt="">
+                                    </div>
+                                </dt>
+                                <dd class="info_wrap">
+                                    <div class="info_main">
+                                        <h3 class="title">台南退休生活</h3>
+                                        <span class="style">五樓透天</span>
+                                        <p class="description">距中彰快速道路、台灣大道只需三分鐘車程，前環中路接台灣大道，後臨青海南街，生活機能極佳。，建築業龍頭興富發，經典巨作赫里翁系列</p>
+                                    </div>
+                                    <div class="info_footer display_flex flex_align_c">
+                                        <p class="amount_size">總坪數81.9坪</p>
+                                        <p class="amount_price">9,360萬</p>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                        <a class="card_info" href="javascript:void(0)">
+                            <dl class="card_info_box for_case">
+                                <dt class="info_header">
+                                    <span class="card_type" data-type="sale">FOR SALE</span>
+                                    <div class="cover img_box display_flex flex_align_c">
+                                        <img src="https://thumb1.shutterstock.com/display_pic_with_logo/1762892/1012605070/stock-photo-asymmetrical-symmetry-popular-architecture-townhouses-in-a-humble-neighborhood-of-the-city-1012605070.jpg" alt="">
+                                    </div>
+                                </dt>
+                                <dd class="info_wrap">
+                                    <div class="info_main">
+                                        <h3 class="title">台南退休生活</h3>
+                                        <span class="style">五樓透天</span>
+                                        <p class="description">距中彰快速道路、台灣大道只需三分鐘車程，前環中路接台灣大道，後臨青海南街，生活機能極佳。，建築業龍頭興富發，經典巨作赫里翁系列</p>
+                                    </div>
+                                    <div class="info_footer display_flex flex_align_c">
+                                        <p class="amount_size">總坪數81.9坪</p>
+                                        <p class="amount_price">9,360萬</p>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                        <a class="card_info" href="javascript:void(0)">
+                            <dl class="card_info_box for_case">
+                                <dt class="info_header">
+                                    <span class="card_type" data-type="sale">FOR SALE</span>
+                                    <div class="cover img_box display_flex flex_align_c">
+                                        <img src="https://thumb7.shutterstock.com/display_pic_with_logo/671443/277802177/stock-photo-a-perfect-neighborhood-on-a-sunny-day-with-blue-sky-houses-and-townhouses-in-suburbs-at-spring-in-277802177.jpg" alt="">
+                                    </div>
+                                </dt>
+                                <dd class="info_wrap">
+                                    <div class="info_main">
+                                        <h3 class="title">台南退休生活</h3>
+                                        <span class="style">五樓透天</span>
+                                        <p class="description">距中彰快速道路、台灣大道只需三分鐘車程，前環中路接台灣大道，後臨青海南街，生活機能極佳。，建築業龍頭興富發，經典巨作赫里翁系列</p>
+                                    </div>
+                                    <div class="info_footer display_flex flex_align_c">
+                                        <p class="amount_size">總坪數81.9坪</p>
+                                        <p class="amount_price">9,360萬</p>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                        <a class="card_info" href="javascript:void(0)">
+                            <dl class="card_info_box for_case">
+                                <dt class="info_header">
+                                    <span class="card_type" data-type="new">NEW</span>
+                                    <div class="cover img_box display_flex flex_align_c">
+                                        <img src="https://thumb1.shutterstock.com/display_pic_with_logo/70890/1024552633/stock-photo-modern-living-room-design-d-rendering-1024552633.jpg" alt="">
+                                    </div>
+                                </dt>
+                                <dd class="info_wrap">
+                                    <div class="info_main">
+                                        <h3 class="title">台南退休生活</h3>
+                                        <span class="style">五樓透天</span>
+                                        <p class="description">距中彰快速道路、台灣大道只需三分鐘車程，前環中路接台灣大道，後臨青海南街，生活機能極佳。，建築業龍頭興富發，經典巨作赫里翁系列</p>
+                                    </div>
+                                    <div class="info_footer display_flex flex_align_c">
+                                        <p class="amount_size">總坪數81.9坪</p>
+                                        <p class="amount_price">9,360萬</p>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                        <a class="card_info" href="javascript:void(0)">
+                            <dl class="card_info_box for_case">
+                                <dt class="info_header">
+                                    <span class="card_type" data-type="sale">FOR SALE</span>
+                                    <div class="cover img_box display_flex flex_align_c">
+                                        <img src="https://thumb1.shutterstock.com/display_pic_with_logo/1762892/1012605070/stock-photo-asymmetrical-symmetry-popular-architecture-townhouses-in-a-humble-neighborhood-of-the-city-1012605070.jpg" alt="">
+                                    </div>
+                                </dt>
+                                <dd class="info_wrap">
+                                    <div class="info_main">
+                                        <h3 class="title">台南退休生活</h3>
+                                        <span class="style">五樓透天</span>
+                                        <p class="description">距中彰快速道路、台灣大道只需三分鐘車程，前環中路接台灣大道，後臨青海南街，生活機能極佳。，建築業龍頭興富發，經典巨作赫里翁系列</p>
+                                    </div>
+                                    <div class="info_footer display_flex flex_align_c">
+                                        <p class="amount_size">總坪數81.9坪</p>
+                                        <p class="amount_price">9,360萬</p>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                        <a class="card_info" href="javascript:void(0)">
+                            <dl class="card_info_box for_case">
+                                <dt class="info_header">
+                                    <span class="card_type" data-type="sale">FOR SALE</span>
+                                    <div class="cover img_box display_flex flex_align_c">
+                                        <img src="https://thumb7.shutterstock.com/display_pic_with_logo/671443/277802177/stock-photo-a-perfect-neighborhood-on-a-sunny-day-with-blue-sky-houses-and-townhouses-in-suburbs-at-spring-in-277802177.jpg" alt="">
+                                    </div>
+                                </dt>
+                                <dd class="info_wrap">
+                                    <div class="info_main">
+                                        <h3 class="title">台南退休生活</h3>
+                                        <span class="style">五樓透天</span>
+                                        <p class="description">距中彰快速道路、台灣大道只需三分鐘車程，前環中路接台灣大道，後臨青海南街，生活機能極佳。，建築業龍頭興富發，經典巨作赫里翁系列</p>
+                                    </div>
+                                    <div class="info_footer display_flex flex_align_c">
+                                        <p class="amount_size">總坪數81.9坪</p>
+                                        <p class="amount_price">9,360萬</p>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                    </div>
+                    <!-- 跳到列表頁 -->
+                    <div class="display_flex flex_align_c">
+                        <a id="btn_loadmore" class="btn_blue" href="list.html">MORE(<span>190</span>)</a>
+                    </div>
+                </div>
+            </div>
+            <div id="hotest_case" class="case_block sub">
+                <div class="wrap">
+                    <h2 class="section_title text_align_c">熱門建案</h2>
+                    <p class="section_description text_align_c">918揪團GO</p>
+                    <div class="card_block display_flex flex_align_c">
+                        <a class="card_info" href="javascript:void(0)">
+                            <dl class="card_info_box for_case">
+                                <dt class="info_header">
+                                    <span class="card_type" data-type="new">NEW</span>
+                                    <div class="cover img_box display_flex flex_align_c">
+                                        <img src="https://thumb1.shutterstock.com/display_pic_with_logo/70890/1024552633/stock-photo-modern-living-room-design-d-rendering-1024552633.jpg" alt="">
+                                    </div>
+                                </dt>
+                                <dd class="info_wrap">
+                                    <div class="info_main">
+                                        <h3 class="title">台南退休生活</h3>
+                                        <span class="style">五樓透天</span>
+                                        <p class="description">距中彰快速道路、台灣大道只需三分鐘車程，前環中路接台灣大道，後臨青海南街，生活機能極佳。，建築業龍頭興富發，經典巨作赫里翁系列</p>
+                                    </div>
+                                    <div class="info_footer display_flex flex_align_c">
+                                        <p class="amount_size">總坪數81.9坪</p>
+                                        <p class="amount_price">9,360萬</p>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                        <a class="card_info" href="javascript:void(0)">
+                            <dl class="card_info_box for_case">
+                                <dt class="info_header">
+                                    <span class="card_type" data-type="sale">FOR SALE</span>
+                                    <div class="cover img_box display_flex flex_align_c">
+                                        <img src="https://thumb1.shutterstock.com/display_pic_with_logo/1762892/1012605070/stock-photo-asymmetrical-symmetry-popular-architecture-townhouses-in-a-humble-neighborhood-of-the-city-1012605070.jpg" alt="">
+                                    </div>
+                                </dt>
+                                <dd class="info_wrap">
+                                    <div class="info_main">
+                                        <h3 class="title">台南退休生活</h3>
+                                        <span class="style">五樓透天</span>
+                                        <p class="description">距中彰快速道路、台灣大道只需三分鐘車程，前環中路接台灣大道，後臨青海南街，生活機能極佳。，建築業龍頭興富發，經典巨作赫里翁系列</p>
+                                    </div>
+                                    <div class="info_footer display_flex flex_align_c">
+                                        <p class="amount_size">總坪數81.9坪</p>
+                                        <p class="amount_price">9,360萬</p>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                        <a class="card_info" href="javascript:void(0)">
+                            <dl class="card_info_box for_case">
+                                <dt class="info_header">
+                                    <span class="card_type" data-type="sale">FOR SALE</span>
+                                    <div class="cover img_box display_flex flex_align_c">
+                                        <img src="https://thumb7.shutterstock.com/display_pic_with_logo/671443/277802177/stock-photo-a-perfect-neighborhood-on-a-sunny-day-with-blue-sky-houses-and-townhouses-in-suburbs-at-spring-in-277802177.jpg" alt="">
+                                    </div>
+                                </dt>
+                                <dd class="info_wrap">
+                                    <div class="info_main">
+                                        <h3 class="title">台南退休生活</h3>
+                                        <span class="style">五樓透天</span>
+                                        <p class="description">距中彰快速道路、台灣大道只需三分鐘車程，前環中路接台灣大道，後臨青海南街，生活機能極佳。，建築業龍頭興富發，經典巨作赫里翁系列</p>
+                                    </div>
+                                    <div class="info_footer display_flex flex_align_c">
+                                        <p class="amount_size">總坪數81.9坪</p>
+                                        <p class="amount_price">9,360萬</p>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </a>
+                    </div>
+                    <!-- 跳到列表頁 -->
+                    <div class="display_flex flex_align_c">
+                        <a id="btn_loadmore" class="btn_blue" href="list.html">MORE(<span>190</span>)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="main_footer">
+            <div class="img_box">
+                <img src="images/bg_footer.jpg" alt="footer_bg">
+            </div>
+            <ul class="wrap display_flex flex_align_c">
+                <li class="sitemap display_flex">
+                    <dl class="map_nav">
+                        <dt data-maptitle="relate">918揪團GO</dt>
+                        <dd><a href="javascript:void(0)"></a>網站地圖</a></dd>
+                        <dd><a href="javascript:void(0)"></a>手機版網站</a></dd>
+                        <dd><a href="javascript:void(0)"></a>IOS APP</a></dd>
+                        <dd><a href="javascript:void(0)"></a>Android APP</a></dd>
+                    </dl>
+                    <dl class="map_nav">
+                        <dt data-maptitle="explain">說明</dt>
+                        <dd><a href="javascript:void(0);">幫助問與答</a></dd>
+                        <dd><a href="javascript:void(0);">服務說明</a></dd>
+                        <dd><a href="javascript:void(0);">隱私權聲明</a></dd>
+                        <dd><a href="javascript:void(0);">消費者保護</a></dd>
+                    </dl>
+                    <dl class="map_nav">
+                        <dt data-maptitle="postad">廣告刊登</dt>
+                        <dd><a href="javascript:void(0);">售屋刊登</a></dd>
+                        <dd><a href="javascript:void(0);">租屋刊登</a></dd>
+                        <dd><a href="javascript:void(0);">新建案合作</a></dd>
+                        <dd><a href="javascript:void(0);">廣告合作</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl class="map_nav">
+                        <dt data-maptitle="contact">聯絡我們</dt>
+                        <dd>
+                            <p>918揪團GO</p>
+                            <p>若對平台使用上有任何建議與疑問請洽：</p>
+                            <p>客服專線：02-55526565</p>
+                            <p>客服信箱：contact@rakuya.com.tw</p>
+                            <p>週一至週五 上午09:00~12:00 下午13:00~18:00</p>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <p class="copyright text_align_c">918揪團GO 股份有限公司 918 International Info. CO. Ltd<br />Copyright © 2018 版權所有｜轉載必究</p>
+    </footer>
+</body>
+</html>

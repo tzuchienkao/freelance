@@ -1,0 +1,741 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>918買賣租屋網</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/global.css" />
+    <link rel="stylesheet" type="text/css" href="./css/list.css" />
+    <!-- <link rel="stylesheet/less" type="text/css" href="./css/global.less" />
+    <link rel="stylesheet/less" type="text/css" href="./css/list.less" /> -->
+    <script src="./js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="./js/less.min.js" type="text/javascript"></script>
+    <script src="./js/main.js" type="text/javascript"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar display_flex">
+                <li data-nav="member"><a href="javascript:void(0)">會員中心</a></li>
+                <li data-nav="viewlog"><a href="javascript:void(0)">瀏覽紀錄</a></li>
+                <li data-nav="post"><a href="javascript:void(0)">我要刊登</a></li>
+                <li data-nav="news"><a href="javascript:void(0)">動態消息</a></li>
+            </ul>
+        </nav>
+        <div class="main_header">
+            <div class="wrap display_flex">
+                <div class="logo img_box display_flex flex_align_c">
+                    <img src="images/logo.png" alt="918logo">
+                </div>
+                <ul class="main_menu display_flex">
+                    <li><a href="javascript:void(0)">買屋</a></li>
+                    <li><a href="javascript:void(0)">租屋</a></li>
+                    <li><a href="javascript:void(0)">新建案</a></li>
+                    <li><a href="javascript:void(0)">法拍屋</a></li>
+                    <li><a href="javascript:void(0)">透天</a></li>
+                    <li><a href="javascript:void(0)">實價登錄</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- 列表頁 -->
+    <section>
+        <div class="container">
+            <!-- 條件設定 -->
+            <div class="filter_header">
+                <input type="text" placeholder="請輸入社區、捷運、路街..地標或採光佳..關鍵字">
+                <!-- 條件過濾 -->
+                <div class="filter_option">
+                    <dl class="filter_option_select display_flex">
+                        <dt class="opt_catalog">地區：</dt>
+                        <dd class="opt_catalog">台北市</dd>
+                        <dd class="opt_choice">
+                            <span>全區</span>
+                            <span>中正區</span>
+                            <span>中山區</span>
+                        </dd>
+                    </dl>
+                    <dl class="filter_option_select display_flex">
+                        <dt class="opt_catalog">售價：</dt>
+                        <dd class="opt_catalog">不限</dd>
+                        <dd class="opt_choice">
+                            <span>500萬以下</span>
+                            <span>500~1000萬</span>
+                            <span>1000~1500萬</span>
+                            <span>1500~2000萬</span>
+                            <span>2000~3000萬</span>
+                            <span>3000萬以上</span>
+                            <div class="more_choice">
+                                <input type="number" min=1>~<input type="number" min=1>萬
+                                <button>確定</button>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="filter_option_select display_flex">
+                        <dt class="opt_catalog">坪數：</dt>
+                        <dd class="opt_catalog">不限</dd>
+                        <dd class="opt_choice">
+                            <span class="active">20坪以下</span>
+                            <span>20~30坪</span>
+                            <span>30~40坪</span>
+                            <span>40~50坪</span>
+                            <span>50坪以上</span>
+                            <div class="more_choice">
+                                <input type="number" min=1>~<input type="number" min=1>坪
+                                <button>確定</button>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="filter_option_select display_flex">
+                        <dt class="opt_catalog">型式：</dt>
+                        <dd class="opt_catalog">不限</dd>
+                        <dd class="opt_choice">
+                            <span>住宅</span>
+                            <span>商用</span>
+                            <span>住辦</span>
+                            <span>土地</span>
+                            <span>車位</span>
+                            <span>廠房</span>
+                        </dd>
+                    </dl>
+                    <dl class="filter_option_select display_flex">
+                        <dt class="opt_catalog">類型：</dt>
+                        <dd class="opt_catalog">不限</dd>
+                        <dd class="opt_choice">
+                            <span>辦公</span>
+                            <span>店面</span>
+                            <span>倉庫</span>
+                            <span>公寓</span>
+                            <span>電梯大廈</span>
+                            <span>套房</span>
+                            <span>別墅</span>
+                            <span>透天厝</span>
+                            <span>樓中樓</span>
+                            <span>華廈</span>
+                            <span>農舍</span>
+                        </dd>
+                    </dl>
+                </div>
+                <!-- 條件搜尋 -->
+                <div class="select_option_block display_flex">
+                    <ul class="select_drop_option display_flex">
+                        <li class="content_box">
+                            <input id="opt_style" name="opt_tool" type="checkbox">
+                            <label for="opt_style">格局</label>
+                            <!-- 搜尋下拉 -->
+                            <div class="opt_choice">
+                                <ul class="dropdown">
+                                    <li>
+                                        <input id="opt_style_1" name="opt_tool" type="checkbox">
+                                        <label for="opt_style_1">1房</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_style_2" name="opt_tool" type="checkbox">
+                                        <label for="opt_style_2">2房</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_style_3" name="opt_tool" type="checkbox">
+                                        <label for="opt_style_3">3房</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_style_4" name="opt_tool" type="checkbox">
+                                        <label for="opt_style_4">4房</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_style_5" name="opt_tool" type="checkbox">
+                                        <label for="opt_style_5">5房+</label>
+                                    </li>
+                                    <li>
+                                        <div class="more_choice">
+                                            <input type="number" min=1>~<input type="number" min=1>房
+                                            <button>確定</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="content_box">
+                            <input id="opt_houseage" name="opt_tool" type="checkbox">
+                            <label for="opt_houseage">屋齡</label>
+                            <!-- 搜尋下拉 -->
+                            <div class="opt_choice">
+                                <ul class="dropdown">
+                                    <li>
+                                        <input id="opt_houseage_1" name="opt_tool" type="checkbox">
+                                        <label for="opt_houseage_1">0~5年</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_houseage_2" name="opt_tool" type="checkbox">
+                                        <label for="opt_houseage_2">5~10年</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_houseage_3" name="opt_tool" type="checkbox">
+                                        <label for="opt_houseage_3">10~20年</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_houseage_4" name="opt_tool" type="checkbox">
+                                        <label for="opt_houseage_4">20~30年</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_houseage_5" name="opt_tool" type="checkbox">
+                                        <label for="opt_houseage_5">30年+</label>
+                                    </li>
+                                    <li>
+                                        <div class="more_choice">
+                                            <input type="number" min=1>~<input type="number" min=1>坪
+                                            <button>確定</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="content_box">
+                            <input id="opt_floor" name="opt_tool" type="checkbox">
+                            <label for="opt_floor">樓層</label>
+                            <!-- 搜尋下拉 -->
+                            <div class="opt_choice">
+                                <ul class="dropdown">
+                                    <li>
+                                        <input id="opt_floor_1" name="opt_tool" type="checkbox">
+                                        <label for="opt_floor_1">1樓</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_floor_2" name="opt_tool" type="checkbox">
+                                        <label for="opt_floor_2">2~6樓</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_floor_3" name="opt_tool" type="checkbox">
+                                        <label for="opt_floor_3">7~11樓</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_floor_4" name="opt_tool" type="checkbox">
+                                        <label for="opt_floor_4">12樓+</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_floor_5" name="opt_tool" type="checkbox">
+                                        <label for="opt_floor_5">地下室</label>
+                                    </li>
+                                    <li>
+                                        <div class="more_choice">
+                                            <input type="number" min=1>~<input type="number" min=1>樓
+                                            <button>確定</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="content_box">
+                            <input id="opt_catalog" name="opt_tool" type="checkbox">
+                            <label for="opt_catalog">分類</label>
+                            <!-- 搜尋下拉 -->
+                            <div class="opt_choice">
+                                <ul class="dropdown">
+                                    <li>
+                                        <input id="opt_catalog_1" name="opt_tool" type="checkbox">
+                                        <label for="opt_catalog_1">中古屋</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_catalog_2" name="opt_tool" type="checkbox">
+                                        <label for="opt_catalog_2">新屋</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_catalog_3" name="opt_tool" type="checkbox">
+                                        <label for="opt_catalog_3">預售屋</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_catalog_4" name="opt_tool" type="checkbox">
+                                        <label for="opt_catalog_4">法拍屋</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="content_box">
+                            <input id="opt_position" name="opt_tool" type="checkbox">
+                            <label for="opt_position">朝向</label>
+                            <!-- 搜尋下拉 -->
+                            <div class="opt_choice">
+                                <ul class="dropdown">
+                                    <li>
+                                        <input id="opt_position_1" name="opt_tool" type="checkbox">
+                                        <label for="opt_position_1">朝東</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_position_2" name="opt_tool" type="checkbox">
+                                        <label for="opt_position_2">朝西</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_position_3" name="opt_tool" type="checkbox">
+                                        <label for="opt_position_3">朝南</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_position_4" name="opt_tool" type="checkbox">
+                                        <label for="opt_position_4">朝北</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_position_5" name="opt_tool" type="checkbox">
+                                        <label for="opt_position_5">朝西北</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_position_6" name="opt_tool" type="checkbox">
+                                        <label for="opt_position_6">朝東北</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_position_7" name="opt_tool" type="checkbox">
+                                        <label for="opt_position_7">朝西南</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_position_8" name="opt_tool" type="checkbox">
+                                        <label for="opt_position_8">朝東南</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="content_box">
+                            <input id="opt_source" name="opt_tool" type="checkbox">
+                            <label for="opt_source">來源</label>
+                            <!-- 搜尋下拉 -->
+                            <div class="opt_choice">
+                                <ul class="dropdown">
+                                    <li>
+                                        <input id="opt_source_1" name="opt_tool" type="checkbox">
+                                        <label for="opt_source_1">屋主</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_source_2" name="opt_tool" type="checkbox">
+                                        <label for="opt_source_2">21世紀不動產</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_source_3" name="opt_tool" type="checkbox">
+                                        <label for="opt_source_3">太平洋房屋</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_source_4" name="opt_tool" type="checkbox">
+                                        <label for="opt_source_4">中信房屋</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_source_5" name="opt_tool" type="checkbox">
+                                        <label for="opt_source_5">住商不動產</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_source_6" name="opt_tool" type="checkbox">
+                                        <label for="opt_source_6">信義房屋</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_source_7" name="opt_tool" type="checkbox">
+                                        <label for="opt_source_7">大家房屋</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_source_8" name="opt_tool" type="checkbox">
+                                        <label for="opt_source_8">全國不動產</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_source_9" name="opt_tool" type="checkbox">
+                                        <label for="opt_source_9">東森房屋</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="content_box">
+                            <input id="opt_special" name="opt_tool" type="checkbox">
+                            <label for="opt_special">特色</label>
+                            <!-- 搜尋下拉 -->
+                            <div class="opt_choice">
+                                <ul class="dropdown">
+                                    <li>
+                                        <input id="opt_special_1" name="opt_tool" type="checkbox">
+                                        <label for="opt_special_1">熱銷</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_special_2" name="opt_tool" type="checkbox">
+                                        <label for="opt_special_2">最新下殺</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="content_box">
+                            <input id="opt_other" name="opt_tool" type="checkbox">                            <!-- 搜尋下拉 -->
+                            <label for="opt_other">其他</label>
+                            <!-- 搜尋下拉 -->
+                            <div class="opt_choice">
+                                <ul class="dropdown">
+                                    <li>
+                                        <input id="opt_other_1" name="opt_tool" type="checkbox">
+                                        <label for="opt_other_1">有車位</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_other_2" name="opt_tool" type="checkbox">
+                                        <label for="opt_other_2">有陽台</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_other_3" name="opt_tool" type="checkbox">
+                                        <label for="opt_other_3">有電梯</label>
+                                    </li>
+                                    <li>
+                                        <input id="opt_other_4" name="opt_tool" type="checkbox">
+                                        <label for="opt_other_4">有管理</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <a id="btn_clear" href="javascript:void(0)">清空條件</a>
+                </div>
+            </div>
+            <!-- //條件設定 -->
+            <div class="filter_body display_flex">
+                <!-- 搜尋結果 -->
+                <div class="filter_result">
+                    <p class="result_amout">共<span>21</span>件</p>
+                    <!-- 條件排序 -->
+                    <ul class="filter_by_sort display_flex">
+                        <li><a class="active" href="javascript:void(0)">智慧排序</a></li>
+                        <li><a href="javascript:void(0)">更新時間</a></li>
+                        <li><a href="javascript:void(0)">總價</a></li>
+                        <li><a href="javascript:void(0)">單價</a></li>
+                        <li><a href="javascript:void(0)">坪數</a></li>
+                    </ul>
+                    <div id="choose_store" class="case_block case_wrap">
+                        <h2 class="section_title">嚴選店家</h2>
+                        <div class="case_wrap display_flex flex_align_c">
+                            <a class="card_info" href="javascript:void(0)">
+                                <dl class="card_info_box for_store">
+                                    <dt class="info_header">
+                                        <h6 class="card_type text_align_c">中信房屋文心河南加盟店</h6>
+                                        <div class="cover img_box display_flex flex_align_c">
+                                            <img src="https://thumb9.shutterstock.com/display_pic_with_logo/818215/307999805/stock-photo-young-female-entrepreneur-working-sitting-at-a-desk-typing-on-her-laptop-computer-in-a-home-office-307999805.jpg" alt="">
+                                        </div>
+                                    </dt>
+                                    <dd class="info_wrap">
+                                        <div class="info_footer display_flex flex_align_c">
+                                            <p class="amount_type">電梯大廈</p>
+                                            <p class="amount_size">81.9坪</p>
+                                            <p class="amount_price" data-price="main"><span>598</span>萬</p>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </a>
+                            <a class="card_info" href="javascript:void(0)">
+                                <dl class="card_info_box for_store">
+                                    <dt class="info_header">
+                                        <h6 class="card_type text_align_c">中信房屋文心河南加盟店</h6>
+                                        <div class="cover img_box display_flex flex_align_c">
+                                            <img src="https://thumb9.shutterstock.com/display_pic_with_logo/818215/307999805/stock-photo-young-female-entrepreneur-working-sitting-at-a-desk-typing-on-her-laptop-computer-in-a-home-office-307999805.jpg" alt="">
+                                        </div>
+                                    </dt>
+                                    <dd class="info_wrap">
+                                        <div class="info_footer display_flex flex_align_c">
+                                            <p class="amount_type">電梯大廈</p>
+                                            <p class="amount_size">81.9坪</p>
+                                            <p class="amount_price" data-price="main"><span>598</span>萬</p>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </a>
+                            <a class="card_info" href="javascript:void(0)">
+                                <dl class="card_info_box for_store">
+                                    <dt class="info_header">
+                                        <h6 class="card_type text_align_c">中信房屋文心河南加盟店</h6>
+                                        <div class="cover img_box display_flex flex_align_c">
+                                            <img src="https://thumb9.shutterstock.com/display_pic_with_logo/818215/307999805/stock-photo-young-female-entrepreneur-working-sitting-at-a-desk-typing-on-her-laptop-computer-in-a-home-office-307999805.jpg" alt="">
+                                        </div>
+                                    </dt>
+                                    <dd class="info_wrap">
+                                        <div class="info_footer display_flex flex_align_c">
+                                            <p class="amount_type">電梯大廈</p>
+                                            <p class="amount_size">81.9坪</p>
+                                            <p class="amount_price" data-price="main"><span>598</span>萬</p>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="priority_case" class="case_block case_wrap">
+                        <h2 class="section_title">優先曝光</h2>
+                        <div class="case_wrap display_flex flex_align_c">
+                            <a class="card_info" href="javascript:void(0)">
+                                <dl class="card_info_box for_first_case display_flex flex_align_c">
+                                    <dt class="info_header">
+                                        <span class="tag" data-type="good">優質</span>
+                                        <div class="cover img_box display_flex flex_align_c">
+                                            <img src="https://thumb7.shutterstock.com/display_pic_with_logo/1206686/1045057141/stock-photo-london-march-the-end-home-in-a-terrace-of-very-early-twentieth-century-town-houses-1045057141.jpg" alt="">
+                                        </div>
+                                    </dt>
+                                    <dd class="info_wrap">
+                                        <div class="info_main">
+                                            <h3 class="title"><span class="tag" data-type="new">新上架</span>㊣獨賣!指名社區,建49坪,三大房+平面車位,朝南</h3>
+                                            <p class="where text">清水區鎮政路</p>
+                                            <p class="filter text">
+                                                <span>電梯大廈</span>
+                                                <span>49.62坪</span>
+                                                <span>3房2廳2衛</span>
+                                                <span>10年</span>
+                                                <span>6樓/12樓</span>
+                                            </p>
+                                            <p>
+                                                <span class="tag">近公園</span>
+                                            </p>
+                                        </div>
+                                        <div class="info_body">
+                                            <p class="original_price" data-price="sub"><span>628</span>萬</p>
+                                            <p class="amount_price" data-price="main"><span>598</span>萬</p>
+                                            <p class="pre_price" data-price="sub"><span>12.05</span>萬/坪</p>
+                                        </div>
+                                        <div class="info_footer">
+                                            <span>搜尋熱度99%</span>
+                                            <span>15小時前更新</span>
+                                            <span>瀏覽數:新上架</span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <button id="btn_fav"></button>
+                                <button id="btn_booking">立即預約</button>
+                            </a>
+                            <a class="card_info" href="javascript:void(0)">
+                                <dl class="card_info_box for_first_case display_flex flex_align_c">
+                                    <dt class="info_header">
+                                        <span class="tag" data-type="good">優質</span>
+                                        <div class="cover img_box display_flex flex_align_c">
+                                            <img src="https://thumb1.shutterstock.com/display_pic_with_logo/70890/1024552633/stock-photo-modern-living-room-design-d-rendering-1024552633.jpg" alt="">
+                                        </div>
+                                    </dt>
+                                    <dd class="info_wrap">
+                                        <div class="info_main">
+                                            <h3 class="title"><span class="tag" data-type="new">新上架</span>㊣獨賣!指名社區,建49坪,三大房+平面車位,朝南</h3>
+                                            <p class="where text">清水區鎮政路</p>
+                                            <p class="filter text">
+                                                <span>電梯大廈</span>
+                                                <span>49.62坪</span>
+                                                <span>3房2廳2衛</span>
+                                                <span>10年</span>
+                                                <span>6樓/12樓</span>
+                                            </p>
+                                            <p>
+                                                <span class="tag">近公園</span>
+                                            </p>
+                                        </div>
+                                        <div class="info_body">
+                                            <p class="original_price" data-price="sub"><span>628</span>萬</p>
+                                            <p class="amount_price" data-price="main"><span>598</span>萬</p>
+                                            <p class="pre_price" data-price="sub"><span>12.05</span>萬/坪</p>
+                                        </div>
+                                        <div class="info_footer">
+                                            <span>搜尋熱度99%</span>
+                                            <span>15小時前更新</span>
+                                            <span>瀏覽數:新上架</span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <button id="btn_fav"></button>
+                                <button id="btn_booking">立即預約</button>
+                            </a>
+                            <a class="card_info" href="javascript:void(0)">
+                                <dl class="card_info_box for_first_case display_flex flex_align_c">
+                                    <dt class="info_header">
+                                        <span class="tag" data-type="good">優質</span>
+                                        <div class="cover img_box display_flex flex_align_c">
+                                            <img src="https://thumb1.shutterstock.com/display_pic_with_logo/70890/1024552633/stock-photo-modern-living-room-design-d-rendering-1024552633.jpg" alt="">
+                                        </div>
+                                    </dt>
+                                    <dd class="info_wrap">
+                                        <div class="info_main">
+                                            <h3 class="title"><span class="tag" data-type="new">新上架</span>㊣獨賣!指名社區,建49坪,三大房+平面車位,朝南</h3>
+                                            <p class="where text">清水區鎮政路</p>
+                                            <p class="filter text">
+                                                <span>電梯大廈</span>
+                                                <span>49.62坪</span>
+                                                <span>3房2廳2衛</span>
+                                                <span>10年</span>
+                                                <span>6樓/12樓</span>
+                                            </p>
+                                            <p>
+                                                <span class="tag">近公園</span>
+                                            </p>
+                                        </div>
+                                        <div class="info_body">
+                                            <p class="original_price" data-price="sub"><span>628</span>萬</p>
+                                            <p class="amount_price" data-price="main"><span>598</span>萬</p>
+                                            <p class="pre_price" data-price="sub"><span>12.05</span>萬/坪</p>
+                                        </div>
+                                        <div class="info_footer">
+                                            <span>搜尋熱度99%</span>
+                                            <span>15小時前更新</span>
+                                            <span>瀏覽數:新上架</span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <button id="btn_fav"></button>
+                                <button id="btn_booking">立即預約</button>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 頁碼 -->
+                    <div class="pagination text_align_c">
+                        <ul class="page_btn_group display_flex flex_align_c">
+                            <li>
+                                <a href="javascript:void(0)">《</a>
+                            </li>
+                            <li>
+                                <a class="active" href="javascript:void(0)">1</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">2</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">3</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">》</a>
+                            </li>
+                        </ul>
+                        <p class="section_description">第<span> 1 / 1245 </span>頁</p>
+                    </div>
+                    <!-- //頁碼 -->
+                </div>
+                <!-- //搜尋結果 -->
+                <!-- 右欄跟隨 -->
+                <div class="fix_block">
+                    <div class="case_wrap">
+                        <h3 class="section_title text_align_c">房仲名片</h3>
+                        <a href="javascript:void(0)">
+                            <div class="name_card case_wrap img_box">
+                                <img src="https://thumb1.shutterstock.com/display_pic_with_logo/614404/409305979/stock-photo-beautiful-young-freelancer-woman-using-laptop-computer-sitting-at-cafe-table-happy-smiling-girl-409305979.jpg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div id="recommand_case" class="more_case case_wrap">
+                        <h3 class="section_title text_align_c">黃金發燒區</h3>
+                        <!-- 輪播 -->
+                        <div class="carousel_box case_box case_wrap">
+                            <div class="carousel_main">
+                                <!-- 輪播內容 -->
+                                <div class="card_block display_flex flex_align_c">
+                                    <a class="card_info" href="javascript:void(0)">
+                                        <div class="cover img_box display_flex flex_align_c">
+                                            <img src="https://thumb1.shutterstock.com/display_pic_with_logo/70890/1024552633/stock-photo-modern-living-room-design-d-rendering-1024552633.jpg" alt="">
+                                        </div>
+                                        <div class="case_detail_box">
+                                            <ul class="case_detail_info display_flex flex_align_c">
+                                                <li><span>公寓</span><span class="text">335.44</span>坪</li>
+                                                <li class="price"><p class="amount_price" data-price="main"><span>598</span>萬</p></li>
+                                            </ul>
+                                            <p class="section_description">台中市西屯區長安路二段</p>
+                                        </div>
+                                    </a>
+                                    <a class="card_info" href="javascript:void(0)">
+                                        <div class="cover img_box display_flex flex_align_c">
+                                            <img src="https://thumb1.shutterstock.com/display_pic_with_logo/70890/1024552633/stock-photo-modern-living-room-design-d-rendering-1024552633.jpg" alt="">
+                                        </div>
+                                        <div class="case_detail_box">
+                                            <ul class="case_detail_info display_flex flex_align_c">
+                                                <li><span>公寓</span><span class="text">335.44</span>坪</li>
+                                                <li class="price"><span class="text">568</span>萬</li>
+                                            </ul>
+                                            <p class="section_description">台中市西屯區長安路二段</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- 控制按鈕 -->
+                                <a class="carousel_btn" data-go="go_prev" href="javascript:void(0)"></a>
+                                <a class="carousel_btn" data-go="go_next" href="javascript:void(0)"></a>
+                            </div>
+                        </div>
+                        <!-- //輪播 -->
+                    </div>
+                    <div id="limit_case" class="more_case case_wrap">
+                        <h3 class="section_title text_align_c">限時下殺</h3>
+                        <div class="case_box case_wrap">
+                            <a class="card_info" href="javascript:void(0)">
+                                <dl class="card_info_box for_first_case display_flex flex_align_c">
+                                    <dt class="info_header">
+                                        <div class="cover img_box display_flex flex_align_c">
+                                            <img src="https://thumb1.shutterstock.com/display_pic_with_logo/70890/1024552633/stock-photo-modern-living-room-design-d-rendering-1024552633.jpg" alt="">
+                                        </div>
+                                    </dt>
+                                    <dd class="info_wrap">
+                                        <div class="info_main">
+                                            <h3 class="title">㊣獨賣!指名社區,建49坪,三大房+平面車位,朝南</h3>
+                                        </div>
+                                        <div class="info_body">
+                                            <span>49.62坪</span>
+                                            <p class="original_price" data-price="sub"><span>628</span>萬</p>
+                                            <p class="amount_price" data-price="main"><span>598</span>萬</p>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </a>
+                            <a class="card_info" href="javascript:void(0)">
+                                <dl class="card_info_box for_first_case display_flex flex_align_c">
+                                    <dt class="info_header">
+                                        <div class="cover img_box display_flex flex_align_c">
+                                            <img src="https://thumb1.shutterstock.com/display_pic_with_logo/70890/1024552633/stock-photo-modern-living-room-design-d-rendering-1024552633.jpg" alt="">
+                                        </div>
+                                    </dt>
+                                    <dd class="info_wrap">
+                                        <div class="info_main">
+                                            <h3 class="title">㊣獨賣!指名社區,建49坪,三大房+平面車位,朝南</h3>
+                                        </div>
+                                        <div class="info_body">
+                                            <span>49.62坪</span>
+                                            <p class="original_price" data-price="sub"><span>628</span>萬</p>
+                                            <p class="amount_price" data-price="main"><span>598</span>萬</p>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- //右欄跟隨 -->
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="main_footer">
+            <div class="img_box">
+                <img src="images/bg_footer.jpg" alt="">
+            </div>
+            <ul class="wrap display_flex flex_align_c">
+                <li class="sitemap display_flex">
+                    <dl class="map_nav">
+                        <dt data-maptitle="relate">918揪團GO</dt>
+                        <dd><a href="javascript:void(0)"></a>網站地圖</a></dd>
+                        <dd><a href="javascript:void(0)"></a>手機版網站</a></dd>
+                        <dd><a href="javascript:void(0)"></a>IOS APP</a></dd>
+                        <dd><a href="javascript:void(0)"></a>Android APP</a></dd>
+                    </dl>
+                    <dl class="map_nav">
+                        <dt data-maptitle="explain">說明</dt>
+                        <dd><a href="javascript:void(0);">幫助問與答</a></dd>
+                        <dd><a href="javascript:void(0);">服務說明</a></dd>
+                        <dd><a href="javascript:void(0);">隱私權聲明</a></dd>
+                        <dd><a href="javascript:void(0);">消費者保護</a></dd>
+                    </dl>
+                    <dl class="map_nav">
+                        <dt data-maptitle="postad">廣告刊登</dt>
+                        <dd><a href="javascript:void(0);">售屋刊登</a></dd>
+                        <dd><a href="javascript:void(0);">租屋刊登</a></dd>
+                        <dd><a href="javascript:void(0);">新建案合作</a></dd>
+                        <dd><a href="javascript:void(0);">廣告合作</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl class="map_nav">
+                        <dt data-maptitle="contact">聯絡我們</dt>
+                        <dd>
+                            <p>918揪團GO</p>
+                            <p>若對平台使用上有任何建議與疑問請洽：</p>
+                            <p>客服專線：02-55526565</p>
+                            <p>客服信箱：contact@rakuya.com.tw</p>
+                            <p>週一至週五 上午09:00~12:00 下午13:00~18:00</p>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <p class="copyright text_align_c">918揪團GO 股份有限公司 918 International Info. CO. Ltd<br />Copyright © 2018 版權所有｜轉載必究</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,685 @@
+@import "less_set.less";
+/*
+* list
+*/
+/* 共用css */
+.container {
+    max-width: 1000px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.img_box:not(.logo) {
+    height: 100%;
+    img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+input {
+    &[type="text"], &[type="number"] {
+        width: 100%;
+        font-size: extract(@font_size, 4);
+        background: @white_color;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+}
+.case_wrap {
+    padding: 15px 0;
+}
+/* filter */
+    /* 條件設定 */
+    .filter_header {
+        color: @subtitle_color;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        margin: 30px 20px;
+    }
+    /* 條件過濾 */
+    .more_choice {
+        display: inline-block;
+        input[type="number"] {
+            max-width: 80px;
+            padding: 5px 8px;
+            margin: -5px 8px;
+        }
+        button {
+            color: @white_color;
+            background: extract(@btn_bg_color, 1);
+            vertical-align: middle;
+            padding: 5px;
+            margin: 0 5px;
+            border: 0;
+            .border-radius();
+            display: none;
+        }
+    }
+    .filter_option {
+        .opt_choice {
+            span {
+                margin: 0 5px;
+                &:hover, &.active {
+                    color: extract(@bg_color, 3);
+                }
+                &.active {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .filter_option_select {
+        line-height: 30px;
+        dt, dd {
+            flex: none;
+        }
+        .opt_catalog {
+            font-weight: bold;
+        }
+        dd {
+            &.opt_catalog {
+                color: extract(@bg_color, 3);
+                margin-right: 5px;
+            }
+        }
+        .opt_choice {
+            width: inherit;
+            flex: inherit;
+            flex-wrap: wrap;
+            display: flex;
+        }
+    }
+    /* 條件搜尋 */
+    .select_drop_option {
+        align-items: center;
+        & ~ a {
+            font-size: extract(@font_size, 2);
+            color: extract(@btn_bg_color, 1);
+        }
+        > li {
+            position: relative;
+            > input[type="checkbox"] {
+                display: none;
+                &[id^=opt_]:checked ~ .opt_choice {
+                    display: block;
+                }
+            }
+            > label {
+                margin-right: 10px;
+                &:after {
+                    width: 16px;
+                    height: 8px;;
+                    background: url(../images/icon_sprite.png) 0 -32px no-repeat;
+                    vertical-align: middle;
+                    margin: 0 5px;
+                    content: '';
+                    display: inline-block;
+                    overflow: hidden;
+                }
+            }
+        }
+        /* 搜尋下拉 */
+        .opt_choice {
+            width: 300px;
+            background: @white_color;
+            padding: 10px 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            left: 0;
+            z-index: 5;
+            display: none;
+            li {
+                margin: 10px;
+            }
+            input[type=checkbox] {
+                vertical-align: middle;
+                position: relative;
+                &:before {
+                    width: 14px;
+                    height: 14px;
+                    background: @white_color;
+                    border: 1px solid extract(@btn_bg_color, 3);
+                    .pos_align_c();
+                    box-sizing: border-box;
+                    z-index: 1;
+                    content: '';
+                    display: inline-block;
+                }
+                &:checked {
+                    overflow: hidden;
+                    &:before {
+                        width: 6px;
+                        height: 10px;
+                        margin: 1px 3px;
+                        border: solid extract(@btn_bg_color, 1);
+                        border-width: 0 3px 3px 0;
+                        transform: rotate(45deg);
+                    }
+                    &:after {
+                        width: 13px;
+                        height: 13px;
+                        background: @white_color;
+                        box-shadow: 0 0 0 1px extract(@btn_bg_color, 3);
+                        content: '';
+                        display: inline-block;
+                    }
+                    ~ label {
+                        color: extract(@btn_bg_color, 1);
+                    }
+                }
+                ~ label {
+                    &:hover {
+                        color: extract(@btn_bg_color, 1);
+                    }
+                }
+            }
+            .more_choice {
+                margin: 10px -8px;
+            }
+        }
+    }
+    .filter_option_select, .filter_by_sort {
+        margin: 20px auto;
+    }
+    /* 搜尋結果 */
+    .filter_body {
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    .filter_result {
+        width: calc(75% - 20px);
+        // flex: 0 0 calc(75% - 20px);
+        /* 條件排序 */
+        .result_amout {
+            letter-spacing: 2px;
+            span {
+                font-size: extract(@font_size, 5);
+                font-weight: bold;
+                color: extract(@bg_color, 3);
+            }
+        }
+        .filter_by_sort {
+            border-bottom: 1px solid @border;
+            a {
+                font-weight: bold;
+                color: @subtitle_color;
+                padding: 5px;
+                margin-right: 10px;
+                display: block;
+                &:hover, &.active {
+                    color: @title_color;
+                }
+                &.active {
+                    border-bottom: 1px solid extract(@bg_color, 3);
+                    margin-bottom: -1px;
+                }
+            }
+        }
+    }
+    /* case block */
+    .case_block {
+        &#choose_store {
+            .card_info {
+                width: calc(33% - 10px);
+                margin-bottom: 0;
+                flex: 0 0 calc(100% / 3 - 10px);
+                -ms-flex: 0 0 calc(33% - 10px);
+            }
+            .info_wrap {
+                padding: 0 10px;
+            }
+        }
+        &#priority_case {
+            .case_wrap {
+                flex-wrap: wrap;
+            }
+            .card_info {
+                width: 100%;
+                flex: 0 0 100%;
+                -ms-flex: 0 0 100%;
+                display: block;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                .info_header {
+                    height: auto;
+                    .cover {
+                        height: 100%;
+                    }
+                }
+                .info_wrap {
+                    box-sizing: border-box;
+                }
+                button {
+                    line-height: 20px;
+                    position: absolute;
+                    right: 15px;
+                    &#btn_fav {
+                        background: transparent;
+                        border: 0;
+                        top: 15px;
+                        &:before {
+                            width: 5px;
+                            height: 5px;
+                            border: solid #ff4d24;
+                            border-width: 0 5px 5px 0;
+                            transform: rotate(45deg);
+                            content: '';
+                            display: inline-block;
+                        }
+                    }
+                    &#btn_booking {
+                        color: @white_color;
+                        background: extract(@btn_bg_color, 1);
+                        padding: 5px 10px;
+                        bottom: 15px;
+                    }
+                }
+            }
+            p {
+                &[data-price=main] {
+                    span {
+                        font-size: extract(@font_size, 5);
+                    }
+                }
+            }
+        }
+    }
+    /* 右欄跟隨 */
+    .fix_block {
+        width: 25%;
+        // flex: 0 0 25%;
+        -ms-flex: 0 0 25%;
+        .name_card {
+            flex: 0 0 100%;
+            -ms-flex: 0 0 100%;
+        }
+        .more_case {
+            font-size: extract(@font_size, 2);
+            &#recommand_case {
+                .card_block {
+                    overflow: hidden;
+                }
+                .card_info {
+                    color: inherit;
+                    margin-bottom: 0;
+                    flex: 0 0 100%;
+                    -ms-flex: 0 0 100%;
+                }
+                .case_detail_box {
+                    padding: 10px;
+                    .case_detail_info {
+                        font-size: extract(@font_size, 1);
+                        line-height: 30px;
+                        span {
+                            font-size: extract(@font_size, 3);
+                            & ~ span {
+                                margin-left: 5px;
+                            }
+                        }
+                        .text {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            &#limit_case {
+                .card_info_box {
+                    &.for_first_case {
+                        .info_header {
+                            width: 35%;
+                            height: auto;
+                            flex: 0 0 35%;
+                            -ms-flex: 0 0 35%;
+                            .cover {
+                                height: 100%;
+                                overflow: hidden;
+                            }
+                        }
+                        .info_wrap {
+                            width: 65%;
+                            // flex: 0 0 65%;
+                            -ms-flex: 0 0 calc(65% - 20px);
+                            padding: 10px;
+                            .info_main {
+                                line-height: 20px;
+                            }
+                            .title {
+                                padding-right: 0;
+                                box-sizing: border-box;
+                            }
+                        }
+                        .info_body {
+                            text-align: left;
+                            p {
+                                &[data-price=main] {
+                                    span {
+                                        font-size: extract(@font_size, 3);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .card_info {
+        height: 100%; 
+        position: relative;
+    }
+    .card_info_box {
+        &.for_store {
+            .info_header {
+                .card_type {
+                    font-size: extract(@font_size, 2);
+                    font-weight: bold;
+                    background: extract(@bg_color, 3);
+                }
+            }
+        }
+        &.for_first_case {
+            align-items: stretch;
+            .info_header {
+                width: 40%;
+                height: 180px;
+                // flex: 0 0 40%;
+                -ms-flex: 0 0 40%;
+                position: relative;
+                .cover {
+                    .pos_align_c();
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .tag {
+                    margin: 5px;
+                    position: relative;
+                    z-index: 2;
+                }
+            }
+            .info_wrap {
+                width: 60%;
+                // flex: 0 0 calc(60% - 20px);
+                -ms-flex: 0 0 calc(60% - 20px);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                box-sizing: border-box;
+                .title {
+                    color: @subtitle_color;
+                    padding-right: 30px;
+                    box-sizing: border-box;
+                    &:hover {
+                        color: @title_color;
+                    }
+                }
+                .text {
+                    font-size: extract(@font_size, 3);
+                }
+            }
+            .info_body {
+                line-height: 20px;
+                text-align: right;
+            }
+            .info_main, .info_footer {
+                span {
+                    margin-right: 10px;
+                }
+            }
+            .tag {
+                font-size: extract(@font_size, 2);
+                color: extract(@btn_bg_color, 1);
+                padding: 3px 5px;
+                border: 1px solid extract(@btn_bg_color, 1);
+                &[data-type] {
+                    font-weight: normal;
+                    color: @white_color;
+                    border: 0;
+                }
+                &[data-type=new] {
+                    background: #ff4d24;
+                }
+                &[data-type=sale] {
+                    background: #d89360;
+                }
+                &[data-type=good] {
+                    background: #38cafc;
+                }
+            }
+        }
+        .info_wrap {
+            .info_footer {
+                padding-top: 0;
+                margin-top: 0;
+            }
+        }
+    }
+    /* //list */
+@media (max-width: 1024px) and (min-width: 800px) {
+    .container {
+        padding: 0;
+    }
+    .select_option_block {
+        margin: auto -5px;
+        flex-wrap: wrap;
+        a {
+            width: 100%;
+            flex: 0 0 100%;
+            -ms-flex: 0 0 100%;
+            padding: 5px;
+            margin-top: 10px;
+            // box-sizing: border-box;
+        }
+    }
+    .more_case {
+        &#limit_case {
+            font-size: extract(@font_size, 2);
+            .card_info_box {
+                &.for_first_case {
+                    .info_wrap {
+                        width: 65%;
+                        flex: 0 0 65%;
+                        -ms-flex: 0 0 65%;
+                        padding: 10px;
+                        box-sizing: border-box;
+                        .info_main {
+                            line-height: 20px;
+                        }
+                        .title {
+                            padding-right: 0;
+                            box-sizing: border-box;
+                        }
+                    }
+                    .info_body {
+                        text-align: left;
+                        p {
+                            &[data-price=main] {
+                                span {
+                                    font-size: extract(@font_size, 3);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .case_block {
+        &#priority_case {
+            .card_info {
+                button {
+                    right: 5px;
+                    &#btn_fav {
+                        top: 10px;
+                    }
+                    &#btn_booking {
+                        bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 799px) and (min-width: 320px) {
+    .container {
+        padding: 0;
+    }
+    /* 搜尋結果 */
+    .filter_option_select {
+        line-height: 30px;
+        flex-wrap: wrap;
+        .opt_choice {
+            margin: 0 -5px;
+        }
+    }
+    .select_option_block {
+        margin: auto -5px;
+        flex-wrap: wrap;
+        a {
+            text-align: center;
+            padding: 5px;
+            margin: 10px auto 0;
+        }
+    }
+    .select_drop_option {
+        width: 100%;
+        flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+        flex-wrap: wrap;
+        position: relative;
+        > li {
+            width: calc(25% - 10px);
+            margin: 5px;
+            flex: 0 0 calc(100% / 4 - 10px);
+            -ms-flex: 0 0 calc(25% - 10px);
+            box-sizing: border-box;
+            position: static;
+            > label {
+                margin-right: 0;
+            }
+        }
+        .opt_choice {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+    /* 搜尋下拉 */
+    .filter_body {
+        .filter_result {
+            width: 100%;
+            flex: 0 0 100%;
+            -ms-flex: 0 0 100%;
+        }
+    }
+    .filter_by_sort {
+        display: none;
+    }
+    .case_block {
+        &#priority_case {
+            .card_info {
+                .info_header {
+                    min-height: 180px;
+                }
+                button {
+                    right: 5px;
+                    &#btn_fav {
+                        top: 10px;
+                    }
+                    &#btn_booking {
+                        bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+    /* 右側跟隨 */
+    .fix_block {
+        display: none
+    }
+}
+@media (max-width: 577px) and (min-width: 320px) {
+    .card_info_box {
+        &.for_first_case {
+            flex-wrap: wrap;
+            .info_header {
+                width: 100%;
+                flex: 0 0 100%;
+                -ms-flex: 0 0 100%;
+            }
+            .info_wrap {
+                width: 100%;
+                flex: 0 0 100%;
+                -ms-flex: none;
+                display: block;
+                .title {
+                    padding-right: 0;
+                }
+            }
+            .info_footer {
+                display: none;
+            }
+            [data-price=sub] {
+                display: none;
+            }
+        }
+        ~ #btn_booking {
+            display: none;
+        }
+        .info_wrap {
+            .info_main {
+                .text.filter {
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+    .case_block {
+        &#choose_store {
+            display: none;
+        }
+    }
+}
+@media (max-width: 799px) and (min-width: 578px) {
+    .card_info_box {
+        &.for_first_case {
+            .info_header {
+                width: 30%;
+                flex: 0 0 30%;
+                -ms-flex: 0 0 30%;
+            }
+            .info_wrap {
+                width: 70%;
+                // flex: 0 0 calc(70% - 20px);
+                -ms-flex: 0 0 calc(70% - 20px);
+            }
+        }
+    }
+    .case_block {
+        &#choose_store {
+            .card_info {
+                width: calc(50% - 10px);
+                flex: 0 0 calc(50% - 10px);
+                -ms-flex: 0 0 calc(50% - 10px);
+            }
+        }
+        &#priority_case {
+            .card_info {
+                &:nth-child(3n) {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+@media (max-width:577px) and (min-width: 360px) {
+}
+@media (max-width: 359px) and (min-width: 320px) {
+    .select_drop_option {
+        > li {
+            width: calc(50% - 10px);
+            flex: 0 0 calc(100% / 2 - 10px);
+            -ms-flex: 0 0 calc(50% - 10px);
+        }
+    }
+}

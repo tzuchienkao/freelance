@@ -1,0 +1,532 @@
+@import "less_set.less";
+/*
+* content
+*/
+/* 共用css */
+    .container {
+        max-width: 1000px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+    /* 麵包屑 */
+    .breadcrumb {
+        font-size: extract(@font_size, 2);
+        color: extract(@text_color, 2);
+        line-height: 30px;
+        margin: 10px 0;
+        border-bottom: 1px solid @border;
+        li {
+            &:not(:last-child):after {
+                margin: 0 5px;
+                content: '>';
+                display: inline-block;
+            }
+            &:last-child {
+                a {
+                    color: extract(@bg_color, 3);
+                }
+            }
+            a {
+                color: @subtitle_color;
+                &:hover {
+                    color: extract(@bg_color, 3);
+                }
+            }
+        }
+    }
+    .case_wrap {
+        padding: 15px 0;
+    }
+    button {
+        width: 100%;
+        color: @white_color;
+        background: extract(@btn_bg_color, 1);
+        padding: 5px 0;
+        border: 0;
+        .border-radius();
+    }
+    .case_store {
+        dl {
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        dt {
+            width:40%;
+            font-size: extract(@font_size, 2);
+            text-align: center;
+            line-height: 20px;
+            flex: 0 0 40%;
+            .tag {
+                color: @white_color;
+                display: block;
+                &[data-type=store] {
+                    background: extract(@bg_color, 3);
+                }
+                &[data-type=pro] {
+                    background: extract(@btn_bg_color, 3);
+                }
+            }
+            a {
+                line-height: 30px;
+                display: block;
+            }
+        }
+        dd {
+            flex: 0 0 calc(60% - 30px);
+            &:last-child {
+                text-align: right;
+                flex: none;
+            }
+            [data-price=main] {
+                font-size: extract(@font_size, 5);
+                padding: 5px 0;
+            }
+        }
+    }
+    .carousel_box {
+        .img_box {
+            height: 100%;
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+/* //共用css */
+    // .main_case_detail_wrap {
+    /* 左右側欄 */
+    .main_case {
+        &:not(:first-child) {
+            width: calc(70% - 20px);
+            float: left;
+            box-sizing: border-box;
+        }
+        a {
+            color: @title_color;
+        }
+    }
+    .sub_case {
+        width: 30%;
+        margin-left: 70%;
+        a {
+            color: @subtitle_color;
+        }
+    }
+    /* 物件標題 */
+    .main_case_title {
+        line-height: 30px;
+        .section_title {
+            color: @subtitle_color;
+            letter-spacing: 2px;
+        }
+        .text {
+            font-size: extract(@font_size, 3);
+        }
+        .tag_group {
+            .tag {
+                margin-right: 5px;
+            }
+        }
+    }
+    /* 物件照片 */
+    .main_case_pic_group {
+        .carousel_box {
+            .carousel_main {
+                height: 360px;
+                margin-bottom: 10px;
+                overflow: hidden;
+                .card_block {
+                    height: 100%;
+                }
+                .card_info {
+                    height: 100%;
+                    text-align: center;
+                    margin-bottom: 0;
+                    flex: 0 0 100%;
+                    .cover {
+                        height: 100%;
+                    }
+                    img {
+                        width: inherit;
+                        height: 100%;
+                    }
+                }
+            }
+            .carousel_nav {
+                justify-content: space-around;
+                .card_info {
+                    flex: 0 0 calc(100% / 6 - 10px);
+                }
+            }
+        }
+    }
+    /* 物件主副資訊 */
+    .main_case_subinfo {
+        [data-price="main"] {
+            span {
+                font-size: extract(@font_size, 5);
+            }
+        }
+    }
+    .case_detail {
+        .case_detail_box {
+            flex-wrap: wrap;
+            margin: 10px 0;
+            dt, dd {
+                margin: 5px 0;
+                display: inline-block;
+            }
+            dt {
+                width: 20%;
+                height: 100%;
+            }
+            dd {
+                width: 80%;
+            }
+            &[data-col="double"] {
+                dd {
+                    width: 40%;
+                    &:nth-child(3n+1) {
+                        margin-left: 20%;
+                    }
+                }
+            }
+        }
+        .case_detail_title {
+            color: extract(@text_color, 2);
+        }
+        .text {
+            font-size: extract(@font_size, 2);
+            color: extract(@text_color, 2);
+        }
+    }
+    /* 互動區塊 */
+    .fix_block {
+        .btn_form {
+            font-size: extract(@font_size, 2);
+            line-height: 30px;
+            background: @white_color;
+            margin: 10px 0;
+            border: 1px solid extract(@btn_bg_color, 2);
+            .border-radius();
+            a {
+                color: extract(@btn_bg_color, 2);
+            }
+        }
+        /* 功能選單 */
+        .function_tab_navbar {
+            font-size: extract(@font_size, 2);
+            color: @white_color;
+            margin: 15px 0;
+            display: inline-block;
+            a {
+                color: @subtitle_color;
+            }
+            input {
+                &[type="text"], &[type="number"] {
+                    width: 100%;
+                    font-size: extract(@font_size, 4);
+                    background: @white_color;
+                    padding: 10px 20px;
+                    .border-radius();
+                    box-shadow: 0 0 0 1px extract(@btn_bg_color, 3);
+                    box-sizing: border-box;
+                    &:hover, &:focus {
+                        box-shadow: 0 0 0 1px extract(@btn_bg_color, 1);
+                    }
+                }
+            }
+            > input[type="radio"] ~ label {
+                width: 50%;
+                text-align: center;
+                background: extract(@btn_bg_color, 3);
+                padding: 10px 0;
+                float: left;
+                transition: background linear 0.3s;
+            }
+            > input[type="radio"]:checked + label, > input[type="radio"] + label:hover {
+                background: extract(@btn_bg_color, 1);
+            }
+            /* 選單切換 */
+            #function_booking:checked ~ #function_tab_booking, 
+            #function_telphone:checked ~ #function_tab_telphone
+            {
+                display: block;
+            }
+            .content_box {
+                color: @subtitle_color;
+                background: rgba(255, 255, 255, 0.8);
+                padding: 50px 20px 20px;
+                display: none;
+                li {
+                    margin-bottom: 15px;
+                }
+                a {
+                    color: @title_color;
+                }
+                .text {
+                    margin-bottom: 10px;
+                }
+                .form_data {
+                    &#sex {
+                        position: relative;
+                        .sex_opt {
+                            position: absolute;
+                            top: 10px;
+                            right: 10px;
+                            input[type=radio] {
+                                vertical-align: middle;
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .function_btn_group {
+            a {
+                font-weight: bold;
+                color: extract(@bg_color, 3);
+                display: block;
+            }
+        }
+        #recommand_case.more_case {
+            font-size: extract(@font_size, 2);
+            .card_block {
+                overflow: hidden;
+            }
+            .card_info {
+                color: inherit;
+                margin-bottom: 0;
+                flex: 0 0 100%;
+            }
+            .case_detail_box {
+                padding: 10px;
+                .case_detail_info {
+                    font-size: extract(@font_size, 1);
+                    line-height: 30px;
+                    span {
+                        font-size: extract(@font_size, 3);
+                        & ~ span {
+                            margin-left: 5px;
+                        }
+                    }
+                    .text {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    // }
+    /* //content */
+@media (max-width: 1024px) and (min-width: 800px) {
+    .case_table {
+        .case_tbody {
+            .carousel_box {
+                .carousel_nav {
+                    justify-content: space-around;
+                    .card_info {
+                        flex: 0 0 calc(100% / 4 - 10px);
+                    }
+                }
+            }
+        }
+    }
+    /* 互動區塊 */
+    .fix_block {
+        .case_store {
+            dt {
+                text-align: left;
+                flex: 0 0 100%;
+                .cover {
+                    display: none;
+                    ~ * {
+                        display: inline-block;
+                    }
+                }
+            }
+            dd {
+                flex: 0 0 90%;
+                &:last-child {
+                    flex: 0 0 10%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 799px) and (min-width: 320px) {
+    .breadcrumb {
+        display: none;
+    }
+    // .main_case_detail_wrap {
+        .main_case {
+            &:not(:first-child) {
+                width: 100%;
+                float: none;
+            }
+        }
+        .sub_case {
+            width: 100%;
+            margin-left: 0;
+        }
+        .carousel_box {
+            .carousel_nav {
+                display: none;
+            }
+        }
+        .main_case_subinfo {
+            background: @white_color;
+            padding: 10px 15px;
+            margin: 20px 0;
+            box-sizing: border-box;
+            .case_detail {
+                padding-top: 20px;
+                border-top: 1px solid @border;
+            }
+        }
+        .main_case_maininfo {
+            > .case_wrap {
+                padding-top: 30px;
+                border-top: 1px solid @border;
+            }
+        }
+        /* 互動區塊 */
+        .fix_block {
+            .btn_form {
+                display: none;
+            }
+            /* 功能選單 */
+            .function_tab_navbar {
+                display: block;
+            }
+            .case_store {
+                dl {
+                    justify-content: space-around;
+                }
+                dt {
+                    width: 100px;
+                    flex: 0 0 100px;
+                    .cover {
+                        width: 100px;
+                        height: 100px;
+                        overflow: hidden;
+                    }
+                }
+                dd {
+                    flex: 0 0 calc(90% - 140px);
+                    &:last-child {
+                        flex: 0 0 10%;
+                    }
+                }
+                button {
+                    display: none;
+                }
+            }
+            .function_btn_group {
+                background: @white_color;
+                justify-content: space-around;
+                [data-function=print] {
+                    display: none;
+                }
+            }
+        }
+    // }
+}
+@media (max-width: 577px) and (min-width: 320px) {
+}
+@media (max-width: 799px) and (min-width: 578px) {
+    /* 互動區塊 */
+    .fix_block {
+        .more_case {
+            &#recommand_case {
+                background: transparent;
+                .carousel_box {
+                    .carousel_main {
+                        background: inherit;
+                        border: 0;
+                    }
+                }
+                .card_info {
+                    width: 33%;
+                    flex: 0 0 calc(100% / 3 - 20px);
+                    -ms-flex: 0 0 calc(33% - 20px);
+                    &:nth-child(3n) {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width:577px) and (min-width: 360px) {
+    /* 互動區塊 */
+    .fix_block {
+        #recommand_case.more_case {
+            font-size: extract(@font_size, 2);
+            .carousel_box {
+                .carousel_btn {
+                    display: block;
+                }
+            }
+            .card_block {
+                flex-wrap: nowrap;
+                overflow: hidden;
+            }
+            .card_info {
+                color: inherit;
+                margin-bottom: 0;
+                flex: 0 0 100%;
+            }
+            .case_detail_box {
+                padding: 10px;
+                .case_detail_info {
+                    font-size: extract(@font_size, 1);
+                    line-height: 30px;
+                    span {
+                        font-size: extract(@font_size, 3);
+                        & ~ span {
+                            margin-left: 5px;
+                        }
+                    }
+                    .text {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 359px) and (min-width: 320px) {
+    /* 互動區塊 */
+    .fix_block {
+        #recommand_case.more_case {
+            font-size: extract(@font_size, 2);
+            .card_block {
+                flex-wrap: nowrap;
+                overflow: hidden;
+            }
+            .card_info {
+                color: inherit;
+                margin-bottom: 0;
+                flex: 0 0 100%;
+            }
+            .case_detail_box {
+                padding: 10px;
+                .case_detail_info {
+                    font-size: extract(@font_size, 1);
+                    line-height: 30px;
+                    span {
+                        font-size: extract(@font_size, 3);
+                        & ~ span {
+                            margin-left: 5px;
+                        }
+                    }
+                    .text {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
