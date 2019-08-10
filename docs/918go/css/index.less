@@ -1,0 +1,385 @@
+@import "less_set.less";
+/*
+* index
+*/
+    /* key visual */
+    .kv_block {
+        width: 100%;
+        height: 100%;
+        max-height: 600px;
+        position: relative;
+        top: -60px;
+        overflow: hidden;
+        .banner {
+            img {
+                height: 100%;
+            }
+        }
+    }
+    .search_block {
+        max-width: 800px;
+        margin: 60px auto 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        .pos_align_c();
+        /* 搜尋選單 */
+        .search_navbar {
+            font-size: extract(@font_size, 2);
+            color: @white_color;
+            line-height: 1;
+            padding: 0 20px;
+            a {
+                color: @subtitle_color;
+            }
+            input[type="text"] {
+                width: 100%;
+                font-size: extract(@font_size, 4);
+                background: @white_color;
+                padding: 10px 20px;
+                .border-radius();
+                box-sizing: border-box;
+            }
+            > input[type="radio"] + label {
+                width: 25%;
+                background: extract(@btn_bg_color, 3);
+                padding: 10px 20px;
+                margin-left: -5px;
+                transition: background linear 0.3s;
+            }
+            > input[type="radio"]:checked + label, > input[type="radio"] + label:hover {
+                background: extract(@btn_bg_color, 1);
+            }
+            /* 搜尋內容 */
+            #search_sell:checked ~ #search_sell_box, 
+            #search_rent:checked ~ #search_rent_box, 
+            #search_newcase:checked ~ #search_newcase_box, 
+            #search_townhouse:checked ~ #search_townhouse_box
+            {
+                display: block;
+            }
+            .content_box {
+                color: @subtitle_color;
+                background: rgba(255, 255, 255, 0.8);
+                padding: 20px;
+                margin: 10px -20px;
+                display: none;
+            }
+            // each(@search_box, {
+            //     [id="@{key}"]:checked ~ [id="@value"] {
+            //         display: block;
+            //     }
+            // })
+            /* 搜尋條件 */
+            .search_tool_box {
+                font-size: extract(@font_size, 4);
+                background: @white_color;
+                padding: 10px 20px;
+                margin: 15px 0;
+                .border-radius();
+                position: relative;
+                > li {
+                    margin-right: 5px;
+                    > label {
+                        &:after {
+                            width: 16px;
+                            height: 8px;;
+                            background: url(../images/icon_sprite.png) 0 -32px no-repeat;
+                            vertical-align: middle;
+                            margin: 0 5px;
+                            content: '';
+                            display: inline-block;
+                            overflow: hidden;
+                        }
+                    }
+                    input[type="checkbox"] {
+                        display: none;
+                    }
+                }
+                // #search_tool_area:checked ~ #search_area,
+                // #search_tool_type:checked ~ #search_type,
+                // #search_tool_price:checked ~ #search_price {
+                //     display: block;
+                // }
+                /* 搜尋下拉 */
+                .search_tool_content {
+                    width: 100%;
+                    font-size: extract(@font_size, 2);
+                    background: extract(@bg_color, 2);
+                    padding: 10px 20px;
+                    margin-top: 10px;
+                    position: absolute;
+                    left: 0;
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                    box-sizing: border-box;
+                    transition: all linear 0.2s;
+                    display: none;
+                    li {
+                        margin-bottom: 10px;
+                    }
+                    .dropdown {
+                        flex-wrap: wrap;
+                        li {
+                            margin: 10px;
+                        }
+                    }
+                    .title {
+                        color: extract(@bg_color, 3);
+                    }
+                    .title, .option, input[type=radio] {
+                        display: inline-block;
+                    }
+                    input[type=radio] {
+                        vertical-align: middle;
+                        margin: 2px 0;
+                        // &:before {
+                        //     width: 13px;
+                        //     height: 13px;
+                        //     background: @white_color;
+                        //     border: 1px solid extract(@btn_bg_color, 3);
+                        //     .border-radius(100%);
+                        //     box-shadow: 0 0 0 2px @white_color;
+                        //     position: absolute;
+                        //     z-index: 1;
+                        //     content: '';
+                        //     display: inline-block;
+                        //     box-sizing: border-box;
+                        // }
+                        // &:checked:before, &:checked:hover:before, {
+                        //     background: extract(@btn_bg_color, 1);
+                        //     border: 2px solid extract(@bg_color, 2);
+                        //     box-shadow: 0 0 0 1px extract(@btn_bg_color, 1);
+                        //     z-index: 2;
+                        // }
+                        &:checked ~ label {
+                            color: @title_color;
+                        }
+                        &:hover {
+                            // &:before {
+                            //     border: 1px solid extract(@btn_bg_color, 1);
+                            //     box-shadow: 0 0 0 2px @white_color;
+                            // }
+                            & ~ label {
+                                color: @title_color;
+                            }
+                        }
+                    }
+                }
+            }
+            .search_tool_by {
+                margin: 15px 0;
+                a {
+                    padding: 0 10px;
+                    display: inline-block;
+                }
+                ~ button {
+                    width: 100%;
+                    color: @white_color;
+                    background: extract(@btn_bg_color, 1);
+                    padding: 5px 0;
+                    border: 0;
+                    .border-radius();
+                }
+            }
+        }
+    }
+    /* 下拉選單 */
+    .dropdown {
+        .title {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    }
+    .container {
+        margin-top: -30px;
+    }
+    /* case block */
+    .case_block {
+        .wrap {
+            padding: 30px 0;
+        }
+        &.main {
+            .card_info {
+                margin-right: 30px;
+                -ms-flex: 0 0 244px;
+            }
+            .section_title {
+                color: extract(@bg_color, 3);
+                position: relative;
+                overflow: hidden;
+                &:before, &:after {
+                    max-width: calc(100% / 3);
+                    width: 100%;
+                    height: 7px;
+                    background: extract(@bg_color, 3);
+                    position: absolute;
+                    top: calc(50% - 7px / 2);
+                    bottom: calc(50% - 7px / 2);
+                    transform: skewX(-45deg);
+                    content: '';
+                    display: inline-block;
+                }
+                &:before {
+                    left: -5px;
+                    background: rgb(34,159,132);
+                    background: -moz-linear-gradient(45deg, rgba(34,159,132,1) 0%, rgba(34,159,132,1) 20%, rgba(242,242,242,1) 20%, rgba(242,242,242,1) 25%, rgba(34,159,132,1) 25%, rgba(34,159,132,1) 30%, rgba(242,242,242,1) 30%, rgba(242,242,242,1) 35%, rgba(34,159,132,1) 35%, rgba(34,159,132,1) 100%);
+                    background: -webkit-linear-gradient(45deg, rgba(34,159,132,1) 0%, rgba(34,159,132,1) 20%, rgba(242,242,242,1) 20%, rgba(242,242,242,1) 25%, rgba(34,159,132,1) 25%, rgba(34,159,132,1) 30%, rgba(242,242,242,1) 30%, rgba(242,242,242,1) 35%, rgba(34,159,132,1) 35%, rgba(34,159,132,1) 100%);
+                    background: linear-gradient(45deg, rgba(34,159,132,1) 0%, rgba(34,159,132,1) 20%, rgba(242,242,242,1) 20%, rgba(242,242,242,1) 25%, rgba(34,159,132,1) 25%, rgba(34,159,132,1) 30%, rgba(242,242,242,1) 30%, rgba(242,242,242,1) 35%, rgba(34,159,132,1) 35%, rgba(34,159,132,1) 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#229f84",endColorstr="#229f84",GradientType=1);
+                }
+                &:after {
+                    right: -5px;
+                    background: rgb(34,159,132);
+                    background: -moz-linear-gradient(225deg, rgba(34,159,132,1) 0%, rgba(34,159,132,1) 20%, rgba(242,242,242,1) 20%, rgba(242,242,242,1) 25%, rgba(34,159,132,1) 25%, rgba(34,159,132,1) 30%, rgba(242,242,242,1) 30%, rgba(242,242,242,1) 35%, rgba(34,159,132,1) 35%, rgba(34,159,132,1) 100%);
+                    background: -webkit-linear-gradient(225deg, rgba(34,159,132,1) 0%, rgba(34,159,132,1) 20%, rgba(242,242,242,1) 20%, rgba(242,242,242,1) 25%, rgba(34,159,132,1) 25%, rgba(34,159,132,1) 30%, rgba(242,242,242,1) 30%, rgba(242,242,242,1) 35%, rgba(34,159,132,1) 35%, rgba(34,159,132,1) 100%);
+                    background: linear-gradient(225deg, rgba(34,159,132,1) 0%, rgba(34,159,132,1) 20%, rgba(242,242,242,1) 20%, rgba(242,242,242,1) 25%, rgba(34,159,132,1) 25%, rgba(34,159,132,1) 30%, rgba(242,242,242,1) 30%, rgba(242,242,242,1) 35%, rgba(34,159,132,1) 35%, rgba(34,159,132,1) 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#229f84",endColorstr="#229f84",GradientType=1);
+                }
+            }
+        }
+        &.sub {
+            background: extract(@bg_color, 2);
+            &:last-child {
+                .wrap {
+                    border-top: 1px solid @border;
+                }
+            }
+            .card_block {
+                flex-wrap: wrap;
+            }
+        }
+    }
+    /* //index */
+@media (max-width: 577px) and (min-width: 320px) {
+    .container {
+        margin-top: -30px;
+    }
+    .kv_block {
+        height: 240px;
+        top: -40px;
+        overflow: hidden;
+        .banner {
+            margin-top: 0;
+            img {
+                width: inherit;
+                height: 100%;
+                .pos_align_c();
+            }
+        }
+    }
+    .search_block {
+        justify-content: flex-end;
+        .search_navbar {
+            input[type="text"] {
+                padding: 8px 10px;
+            }
+            > input[type="radio"] + label {
+                width: 25%;
+                line-height: 20px;
+                text-align: center;
+                padding: 5px 0;
+                display: inline-block;
+            }
+            .content_box {
+                padding: 10px;
+                margin: 0 -10px 10px;
+                .search_tool_by {
+                    line-height: 20px;
+                    margin: 10px 0;
+                    a {
+                        padding: 0 10px 0 0;
+                    }
+                }
+            }
+        }
+    }
+    /* case block */
+    .case_block {
+        &.main {
+            .card_info {
+                margin-right: 0;
+            }
+        }
+    }
+}
+@media (max-width: 1024px) and (min-width: 800px) {
+    .kv_block {
+        max-height: 100%;
+        overflow: visible;
+    }
+}
+@media (max-width: 799px) and (min-width: 578px) {
+    /* key visual */
+    .kv_block {
+        .banner {
+            margin-top: 0;
+        }
+    }
+    .search_block {
+        max-width: inherit;
+        padding-top: 10px;
+        .search_navbar {
+            input[type="text"] {
+                padding: 10px;
+            }
+            > input[type="radio"] + label {
+                text-align: center;
+                line-height: 30px;
+                padding: 0;
+                display: inline-block;
+            }
+            .content_box {
+                padding: 10px;
+                margin: 0 -10px;
+                .search_tool_by {
+                    margin: 10px 0;
+                    a {
+                        padding: 0 10px 0 0;
+                    }
+                }
+            }
+        }
+    }
+    /* case block */
+    .case_block {
+        &.main {
+            .card_info {
+                margin-right: 20px;
+            }
+        }
+    }
+    #recommend_case, #priority_case {
+        .card_info:nth-child(3n) {
+            display: block;
+        }
+    }
+}
+@media (max-width:577px) and (min-width: 360px) {
+    /* case block */
+    .case_block {
+        &.main {
+            .section_title {
+                &:before, &:after {
+                    max-width: calc(100% / 4);
+                }
+            }
+        }
+    }
+}
+@media (max-width: 359px) and (min-width: 320px) {
+    /* key visual */
+    .kv_block {
+        top: -30px;
+    }
+    /* case block */
+    .case_block {
+        &.main {
+            .section_title {
+                &:before, &:after {
+                    max-width: calc(100% / 5);
+                }
+            }
+        }
+    }
+}

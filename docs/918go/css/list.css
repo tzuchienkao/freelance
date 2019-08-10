@@ -1,0 +1,603 @@
+/*
+* list
+*/
+/* 共用css */
+.container {
+  max-width: 1000px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.img_box:not(.logo) {
+  height: 100%;
+}
+.img_box:not(.logo) img {
+  height: 100%;
+  object-fit: cover;
+}
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  font-size: 16px;
+  background: #fff;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+.case_wrap {
+  padding: 15px 0;
+}
+/* filter */
+/* 條件設定 */
+.filter_header {
+  color: #4d4d4d;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  margin: 30px 20px;
+}
+/* 條件過濾 */
+.more_choice {
+  display: inline-block;
+}
+.more_choice input[type="number"] {
+  max-width: 80px;
+  padding: 5px 8px;
+  margin: -5px 8px;
+}
+.more_choice button {
+  color: #fff;
+  background: #00d1b3;
+  vertical-align: middle;
+  padding: 5px;
+  margin: 0 5px;
+  border: 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  display: none;
+}
+.filter_option .opt_choice span {
+  margin: 0 5px;
+}
+.filter_option .opt_choice span:hover,
+.filter_option .opt_choice span.active {
+  color: #00a689;
+}
+.filter_option .opt_choice span.active {
+  font-weight: bold;
+}
+.filter_option_select {
+  line-height: 30px;
+}
+.filter_option_select dt,
+.filter_option_select dd {
+  flex: none;
+}
+.filter_option_select .opt_catalog {
+  font-weight: bold;
+}
+.filter_option_select dd.opt_catalog {
+  color: #00a689;
+  margin-right: 5px;
+}
+.filter_option_select .opt_choice {
+  width: inherit;
+  flex: inherit;
+  flex-wrap: wrap;
+  display: flex;
+}
+/* 條件搜尋 */
+.select_drop_option {
+  align-items: center;
+  /* 搜尋下拉 */
+}
+.select_drop_option ~ a {
+  font-size: 13px;
+  color: #00d1b3;
+}
+.select_drop_option > li {
+  position: relative;
+}
+.select_drop_option > li > input[type="checkbox"] {
+  display: none;
+}
+.select_drop_option > li > input[type="checkbox"][id^=opt_]:checked ~ .opt_choice {
+  display: block;
+}
+.select_drop_option > li > label {
+  margin-right: 10px;
+}
+.select_drop_option > li > label:after {
+  width: 16px;
+  height: 8px;
+  background: url(../images/icon_sprite.png) 0 -32px no-repeat;
+  vertical-align: middle;
+  margin: 0 5px;
+  content: '';
+  display: inline-block;
+  overflow: hidden;
+}
+.select_drop_option .opt_choice {
+  width: 300px;
+  background: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0;
+  z-index: 5;
+  display: none;
+}
+.select_drop_option .opt_choice li {
+  margin: 10px;
+}
+.select_drop_option .opt_choice input[type=checkbox] {
+  vertical-align: middle;
+  position: relative;
+}
+.select_drop_option .opt_choice input[type=checkbox]:before {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border: 1px solid #b3b3b3;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 1;
+  content: '';
+  display: inline-block;
+}
+.select_drop_option .opt_choice input[type=checkbox]:checked {
+  overflow: hidden;
+}
+.select_drop_option .opt_choice input[type=checkbox]:checked:before {
+  width: 6px;
+  height: 10px;
+  margin: 1px 3px;
+  border: solid #00d1b3;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.select_drop_option .opt_choice input[type=checkbox]:checked:after {
+  width: 13px;
+  height: 13px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #b3b3b3;
+  content: '';
+  display: inline-block;
+}
+.select_drop_option .opt_choice input[type=checkbox]:checked ~ label {
+  color: #00d1b3;
+}
+.select_drop_option .opt_choice input[type=checkbox] ~ label:hover {
+  color: #00d1b3;
+}
+.select_drop_option .opt_choice .more_choice {
+  margin: 10px -8px;
+}
+.filter_option_select,
+.filter_by_sort {
+  margin: 20px auto;
+}
+/* 搜尋結果 */
+.filter_body {
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.filter_result {
+  width: calc(75% - 20px);
+  /* 條件排序 */
+}
+.filter_result .result_amout {
+  letter-spacing: 2px;
+}
+.filter_result .result_amout span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00a689;
+}
+.filter_result .filter_by_sort {
+  border-bottom: 1px solid #e6e6e6;
+}
+.filter_result .filter_by_sort a {
+  font-weight: bold;
+  color: #4d4d4d;
+  padding: 5px;
+  margin-right: 10px;
+  display: block;
+}
+.filter_result .filter_by_sort a:hover,
+.filter_result .filter_by_sort a.active {
+  color: #0dd1ab;
+}
+.filter_result .filter_by_sort a.active {
+  border-bottom: 1px solid #00a689;
+  margin-bottom: -1px;
+}
+/* case block */
+.case_block#choose_store .card_info {
+  width: calc(33% - 10px);
+  margin-bottom: 0;
+  flex: 0 0 calc(100% / 3 - 10px);
+  -ms-flex: 0 0 calc(33% - 10px);
+}
+.case_block#choose_store .info_wrap {
+  padding: 0 10px;
+}
+.case_block#priority_case .case_wrap {
+  flex-wrap: wrap;
+}
+.case_block#priority_case .card_info {
+  width: 100%;
+  flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+  display: block;
+}
+.case_block#priority_case .card_info:last-child {
+  margin-bottom: 0;
+}
+.case_block#priority_case .card_info .info_header {
+  height: auto;
+}
+.case_block#priority_case .card_info .info_header .cover {
+  height: 100%;
+}
+.case_block#priority_case .card_info .info_wrap {
+  box-sizing: border-box;
+}
+.case_block#priority_case .card_info button {
+  line-height: 20px;
+  position: absolute;
+  right: 15px;
+}
+.case_block#priority_case .card_info button#btn_fav {
+  background: transparent;
+  border: 0;
+  top: 15px;
+}
+.case_block#priority_case .card_info button#btn_fav:before {
+  width: 5px;
+  height: 5px;
+  border: solid #ff4d24;
+  border-width: 0 5px 5px 0;
+  transform: rotate(45deg);
+  content: '';
+  display: inline-block;
+}
+.case_block#priority_case .card_info button#btn_booking {
+  color: #fff;
+  background: #00d1b3;
+  padding: 5px 10px;
+  bottom: 15px;
+}
+.case_block#priority_case p[data-price=main] span {
+  font-size: 24px;
+}
+/* 右欄跟隨 */
+.fix_block {
+  width: 25%;
+  -ms-flex: 0 0 25%;
+}
+.fix_block .name_card {
+  flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+}
+.fix_block .more_case {
+  font-size: 13px;
+}
+.fix_block .more_case#recommand_case .card_block {
+  overflow: hidden;
+}
+.fix_block .more_case#recommand_case .card_info {
+  color: inherit;
+  margin-bottom: 0;
+  flex: 0 0 100%;
+  -ms-flex: 0 0 100%;
+}
+.fix_block .more_case#recommand_case .case_detail_box {
+  padding: 10px;
+}
+.fix_block .more_case#recommand_case .case_detail_box .case_detail_info {
+  font-size: 12px;
+  line-height: 30px;
+}
+.fix_block .more_case#recommand_case .case_detail_box .case_detail_info span {
+  font-size: 15px;
+}
+.fix_block .more_case#recommand_case .case_detail_box .case_detail_info span ~ span {
+  margin-left: 5px;
+}
+.fix_block .more_case#recommand_case .case_detail_box .case_detail_info .text {
+  font-weight: bold;
+}
+.fix_block .more_case#limit_case .card_info_box.for_first_case .info_header {
+  width: 35%;
+  height: auto;
+  flex: 0 0 35%;
+  -ms-flex: 0 0 35%;
+}
+.fix_block .more_case#limit_case .card_info_box.for_first_case .info_header .cover {
+  height: 100%;
+  overflow: hidden;
+}
+.fix_block .more_case#limit_case .card_info_box.for_first_case .info_wrap {
+  width: 65%;
+  -ms-flex: 0 0 calc(65% - 20px);
+  padding: 10px;
+}
+.fix_block .more_case#limit_case .card_info_box.for_first_case .info_wrap .info_main {
+  line-height: 20px;
+}
+.fix_block .more_case#limit_case .card_info_box.for_first_case .info_wrap .title {
+  padding-right: 0;
+  box-sizing: border-box;
+}
+.fix_block .more_case#limit_case .card_info_box.for_first_case .info_body {
+  text-align: left;
+}
+.fix_block .more_case#limit_case .card_info_box.for_first_case .info_body p[data-price=main] span {
+  font-size: 15px;
+}
+.card_info {
+  height: 100%;
+  position: relative;
+}
+.card_info_box.for_store .info_header .card_type {
+  font-size: 13px;
+  font-weight: bold;
+  background: #00a689;
+}
+.card_info_box.for_first_case {
+  align-items: stretch;
+}
+.card_info_box.for_first_case .info_header {
+  width: 40%;
+  height: 180px;
+  -ms-flex: 0 0 40%;
+  position: relative;
+}
+.card_info_box.for_first_case .info_header .cover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.card_info_box.for_first_case .info_header .cover img {
+  height: 100%;
+  object-fit: cover;
+}
+.card_info_box.for_first_case .info_header .tag {
+  margin: 5px;
+  position: relative;
+  z-index: 2;
+}
+.card_info_box.for_first_case .info_wrap {
+  width: 60%;
+  -ms-flex: 0 0 calc(60% - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.card_info_box.for_first_case .info_wrap .title {
+  color: #4d4d4d;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+.card_info_box.for_first_case .info_wrap .title:hover {
+  color: #0dd1ab;
+}
+.card_info_box.for_first_case .info_wrap .text {
+  font-size: 15px;
+}
+.card_info_box.for_first_case .info_body {
+  line-height: 20px;
+  text-align: right;
+}
+.card_info_box.for_first_case .info_main span,
+.card_info_box.for_first_case .info_footer span {
+  margin-right: 10px;
+}
+.card_info_box.for_first_case .tag {
+  font-size: 13px;
+  color: #00d1b3;
+  padding: 3px 5px;
+  border: 1px solid #00d1b3;
+}
+.card_info_box.for_first_case .tag[data-type] {
+  font-weight: normal;
+  color: #fff;
+  border: 0;
+}
+.card_info_box.for_first_case .tag[data-type=new] {
+  background: #ff4d24;
+}
+.card_info_box.for_first_case .tag[data-type=sale] {
+  background: #d89360;
+}
+.card_info_box.for_first_case .tag[data-type=good] {
+  background: #38cafc;
+}
+.card_info_box .info_wrap .info_footer {
+  padding-top: 0;
+  margin-top: 0;
+}
+/* //list */
+@media (max-width: 1024px) and (min-width: 800px) {
+  .container {
+    padding: 0;
+  }
+  .select_option_block {
+    margin: auto -5px;
+    flex-wrap: wrap;
+  }
+  .select_option_block a {
+    width: 100%;
+    flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    padding: 5px;
+    margin-top: 10px;
+  }
+  .more_case#limit_case {
+    font-size: 13px;
+  }
+  .more_case#limit_case .card_info_box.for_first_case .info_wrap {
+    width: 65%;
+    flex: 0 0 65%;
+    -ms-flex: 0 0 65%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .more_case#limit_case .card_info_box.for_first_case .info_wrap .info_main {
+    line-height: 20px;
+  }
+  .more_case#limit_case .card_info_box.for_first_case .info_wrap .title {
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+  .more_case#limit_case .card_info_box.for_first_case .info_body {
+    text-align: left;
+  }
+  .more_case#limit_case .card_info_box.for_first_case .info_body p[data-price=main] span {
+    font-size: 15px;
+  }
+  .case_block#priority_case .card_info button {
+    right: 5px;
+  }
+  .case_block#priority_case .card_info button#btn_fav {
+    top: 10px;
+  }
+  .case_block#priority_case .card_info button#btn_booking {
+    bottom: 10px;
+  }
+}
+@media (max-width: 799px) and (min-width: 320px) {
+  .container {
+    padding: 0;
+  }
+  /* 搜尋結果 */
+  .filter_option_select {
+    line-height: 30px;
+    flex-wrap: wrap;
+  }
+  .filter_option_select .opt_choice {
+    margin: 0 -5px;
+  }
+  .select_option_block {
+    margin: auto -5px;
+    flex-wrap: wrap;
+  }
+  .select_option_block a {
+    text-align: center;
+    padding: 5px;
+    margin: 10px auto 0;
+  }
+  .select_drop_option {
+    width: 100%;
+    flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .select_drop_option > li {
+    width: calc(25% - 10px);
+    margin: 5px;
+    flex: 0 0 calc(100% / 4 - 10px);
+    -ms-flex: 0 0 calc(25% - 10px);
+    box-sizing: border-box;
+    position: static;
+  }
+  .select_drop_option > li > label {
+    margin-right: 0;
+  }
+  .select_drop_option .opt_choice {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  /* 搜尋下拉 */
+  .filter_body .filter_result {
+    width: 100%;
+    flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+  }
+  .filter_by_sort {
+    display: none;
+  }
+  .case_block#priority_case .card_info .info_header {
+    min-height: 180px;
+  }
+  .case_block#priority_case .card_info button {
+    right: 5px;
+  }
+  .case_block#priority_case .card_info button#btn_fav {
+    top: 10px;
+  }
+  .case_block#priority_case .card_info button#btn_booking {
+    bottom: 10px;
+  }
+  /* 右側跟隨 */
+  .fix_block {
+    display: none;
+  }
+}
+@media (max-width: 577px) and (min-width: 320px) {
+  .card_info_box.for_first_case {
+    flex-wrap: wrap;
+  }
+  .card_info_box.for_first_case .info_header {
+    width: 100%;
+    flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+  }
+  .card_info_box.for_first_case .info_wrap {
+    width: 100%;
+    flex: 0 0 100%;
+    -ms-flex: none;
+    display: block;
+  }
+  .card_info_box.for_first_case .info_wrap .title {
+    padding-right: 0;
+  }
+  .card_info_box.for_first_case .info_footer {
+    display: none;
+  }
+  .card_info_box.for_first_case [data-price=sub] {
+    display: none;
+  }
+  .card_info_box ~ #btn_booking {
+    display: none;
+  }
+  .card_info_box .info_wrap .info_main .text.filter {
+    line-height: 20px;
+  }
+  .case_block#choose_store {
+    display: none;
+  }
+}
+@media (max-width: 799px) and (min-width: 578px) {
+  .card_info_box.for_first_case .info_header {
+    width: 30%;
+    flex: 0 0 30%;
+    -ms-flex: 0 0 30%;
+  }
+  .card_info_box.for_first_case .info_wrap {
+    width: 70%;
+    -ms-flex: 0 0 calc(70% - 20px);
+  }
+  .case_block#choose_store .card_info {
+    width: calc(50% - 10px);
+    flex: 0 0 calc(50% - 10px);
+    -ms-flex: 0 0 calc(50% - 10px);
+  }
+  .case_block#priority_case .card_info:nth-child(3n) {
+    display: block;
+  }
+}
+@media (max-width: 359px) and (min-width: 320px) {
+  .select_drop_option > li {
+    width: calc(50% - 10px);
+    flex: 0 0 calc(100% / 2 - 10px);
+    -ms-flex: 0 0 calc(50% - 10px);
+  }
+}

@@ -1,0 +1,282 @@
+@media screen {
+    html, body, form, .wrap {
+        height: 100%;
+        overflow: hidden;
+    }
+    body {
+        color: #444;
+        font-size: 1em;
+        letter-spacing: 1px;
+        background: #fff;
+        position: relative;
+    }
+    .clear:before, .clear:after {
+        content: '';
+        display: table;
+    }
+    .clear:after {
+        clear: both;
+    }
+    a {
+        text-decoration: none;
+        outline: none;
+    }
+    i {
+        letter-spacing: 5px;
+    }
+    input, input:focus {
+        background: transparent;
+        border: 0;
+        outline: none;
+    }
+    input::-webkit-input-placeholder {
+        color: #a3a4a4;
+    }
+    input::-moz-placeholder {
+        color: #a3a4a4;
+    }
+    input:-ms-input-placeholder {
+        color: #a3a4a4;
+    }
+    input:-moz-placeholder {
+        color: #a3a4a4;
+    }
+    header, footer {
+        width: 100%;
+        background:#383b3b;
+        letter-spacing: 3px;
+        position: fixed;
+        z-index: 999;
+    }
+    header {
+        color: #fff;
+        top: 0;
+    }
+    footer {
+        font-size: 0.875em;
+        line-height: 1.5;
+        color: #a3a4a4;
+        bottom: 0;
+    }
+    .logo {
+        max-width: 180px;
+        min-width: 80px;
+        padding-right: 10px;
+        flex: 0 1 50%;
+    }
+    .copyright {
+        padding: 10px 0;
+    }
+    .nav_headbar {
+        padding: 10px;
+    }
+    .nav_headbar .btn_group a {
+        font-size: 1.25em;
+        color: #fff;
+        opacity: .8;
+        transition: opacity linear 0.3s;
+    }
+    .nav_headbar .btn_group a:hover {
+        opacity: 1;
+    }
+    section {
+        height: 100%;
+        position: relative;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .main_wrap {
+        height: 100%;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .chat_block {
+        height: 100%;
+        position: relative;
+    }
+    .dialog_block {
+        height: 100%;
+        padding: 30px 15px 0;
+        overflow-y: auto;
+        position: relative;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .dialog_box {
+        width: 75%;
+        line-height: 1.8;
+        margin-bottom: 10px;
+    }
+    .dialog_box[data-id="service"] {
+        margin-right: 25%
+    }
+    .dialog_box[data-id="client"] {
+        margin-left: 25%;
+        flex-direction: row-reverse;
+    }
+    .dialog_img, .person_img {
+        width: 60px;
+    }
+    .person_img {
+        height: 60px;
+        border-radius: 100%;
+        overflow: hidden;
+    }
+    .dialog_content {
+        padding: 0 15px;
+    }
+    .dailog_log {
+        padding: 12px 15px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        position: relative;
+        display: table;
+    }
+    .dailog_log a, .dailog_log a:hover, .dailog_log a:visited, .dailog_log a:active {
+        color: #fff;
+        text-decoration: underline;
+        position: relative;
+    }
+    .dailog_log:first-child:before {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        position: absolute;
+        content: '';
+        display: block;
+    }
+    .dailog_log:after {
+        width: 100%;
+        content: '';
+        display: block;
+    }
+    .dailog_log[data-id="service_log"] {
+        color:#fff;
+        background: #f68833;
+    }
+    .dailog_log[data-id="service_log"]:first-child:before {
+        border-width: 8px 6px 8px 0;
+        left: -6px;
+    }
+    .dailog_log[data-id="service_log"]:before {
+        border-color: transparent #f68833 transparent transparent;
+    }
+    .dailog_log[data-id="client_log"] {
+        background: #f6f7f2;
+    }
+    .dailog_log[data-id="client_log"]:first-child:before {
+        border-width: 8px 0 8px 6px;
+        right: -6px;
+    }
+    .dailog_log[data-id="client_log"]:before {
+        border-color: transparent transparent transparent #f6f7f2;
+    }
+    .chat_tool {
+        background: #f6f7f2;
+        padding: 15px 10px 0;
+        position: relative;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+    }
+    .chat_catalog li {
+        line-height: 1;
+        padding: 0 10px;
+    }
+    .chat_catalog li:not(:first-child) {
+        border-left: 1px solid #a3a4a4;
+    }
+    .chat_box {
+        padding: 15px 8px;
+    }
+    .chat_box input {
+        width: calc(100% - 40px);
+        font-size: 1em;
+        color: #383b3b;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 8px 10px;
+        border: 1px solid #a3a4a4;
+        border-radius: 4px;
+        box-sizing: border-box;
+        transition: all linear 0.3s;
+    }
+    .chat_box input:focus {
+        background: rgba(255, 255, 255, 1);
+        border-color: #f68833;
+    }
+    .chat_box button {
+        width: 30px;
+        font-size: 1.5em;
+        background: transparent;
+        padding: 0;
+        border: none;
+        outline: none;
+    }
+    a, [data-tool="tool"] {
+        color: #383b3b;
+        transition: color linear 0.3s;
+    }
+    a:hover, [data-tool="tool"]:hover {
+        color: #f68833;
+    }
+    .display_flex {
+        display: flex;
+        flex-direction: row;
+    }
+    .flex_align_c {
+        justify-content: space-between;
+        align-items: center;
+    }
+    .margin_align_c {
+        margin: 0 auto;
+    }
+    .text_align_c {
+        text-align: center;
+    }
+    .float_l {
+        float: left;
+    }
+    .float_r {
+        float: right;
+    }
+    .img_box {
+        line-height: 0;
+    }
+    .img_box img {
+        width: 100%;
+    }
+}
+@media (min-width: 320px) and (max-width: 413px){
+    .dialog_box {
+        width: 100%;
+    }
+    .dialog_box[data-id="service"] {
+        margin-right: 0;
+    }
+    .dialog_box[data-id="client"] {
+        margin-left: 0;
+        flex-direction: row-reverse;
+    }
+    .dialog_img, .person_img {
+        width: 50px;
+    }
+    .person_img {
+        height: 50px;
+    }
+    .chat_tool {
+        background: #f6f7f2;
+        padding: 10px 5px 0;
+        position: relative;
+    }
+    .chat_catalog li {
+        line-height: 1;
+        padding: 0 5px;
+    }
+    .chat_box {
+        padding: 15px 3px;
+    }
+    .copyright {
+        padding: 5px;
+    }
+}

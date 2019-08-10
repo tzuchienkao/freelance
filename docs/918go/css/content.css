@@ -1,0 +1,476 @@
+/*
+* content
+*/
+/* 共用css */
+.container {
+  max-width: 1000px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+/* 麵包屑 */
+.breadcrumb {
+  font-size: 13px;
+  color: #999;
+  line-height: 30px;
+  margin: 10px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+.breadcrumb li:not(:last-child):after {
+  margin: 0 5px;
+  content: '>';
+  display: inline-block;
+}
+.breadcrumb li:last-child a {
+  color: #00a689;
+}
+.breadcrumb li a {
+  color: #4d4d4d;
+}
+.breadcrumb li a:hover {
+  color: #00a689;
+}
+.case_wrap {
+  padding: 15px 0;
+}
+button {
+  width: 100%;
+  color: #fff;
+  background: #00d1b3;
+  padding: 5px 0;
+  border: 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.case_store dl {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.case_store dt {
+  width: 40%;
+  font-size: 13px;
+  text-align: center;
+  line-height: 20px;
+  flex: 0 0 40%;
+}
+.case_store dt .tag {
+  color: #fff;
+  display: block;
+}
+.case_store dt .tag[data-type=store] {
+  background: #00a689;
+}
+.case_store dt .tag[data-type=pro] {
+  background: #b3b3b3;
+}
+.case_store dt a {
+  line-height: 30px;
+  display: block;
+}
+.case_store dd {
+  flex: 0 0 calc(60% - 30px);
+}
+.case_store dd:last-child {
+  text-align: right;
+  flex: none;
+}
+.case_store dd [data-price=main] {
+  font-size: 24px;
+  padding: 5px 0;
+}
+.carousel_box .img_box {
+  height: 100%;
+}
+.carousel_box .img_box img {
+  height: 100%;
+  object-fit: cover;
+}
+/* //共用css */
+/* 左右側欄 */
+.main_case:not(:first-child) {
+  width: calc(70% - 20px);
+  float: left;
+  box-sizing: border-box;
+}
+.main_case a {
+  color: #0dd1ab;
+}
+.sub_case {
+  width: 30%;
+  margin-left: 70%;
+}
+.sub_case a {
+  color: #4d4d4d;
+}
+/* 物件標題 */
+.main_case_title {
+  line-height: 30px;
+}
+.main_case_title .section_title {
+  color: #4d4d4d;
+  letter-spacing: 2px;
+}
+.main_case_title .text {
+  font-size: 15px;
+}
+.main_case_title .tag_group .tag {
+  margin-right: 5px;
+}
+/* 物件照片 */
+.main_case_pic_group .carousel_box .carousel_main {
+  height: 360px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.main_case_pic_group .carousel_box .carousel_main .card_block {
+  height: 100%;
+}
+.main_case_pic_group .carousel_box .carousel_main .card_info {
+  height: 100%;
+  text-align: center;
+  margin-bottom: 0;
+  flex: 0 0 100%;
+}
+.main_case_pic_group .carousel_box .carousel_main .card_info .cover {
+  height: 100%;
+}
+.main_case_pic_group .carousel_box .carousel_main .card_info img {
+  width: inherit;
+  height: 100%;
+}
+.main_case_pic_group .carousel_box .carousel_nav {
+  justify-content: space-around;
+}
+.main_case_pic_group .carousel_box .carousel_nav .card_info {
+  flex: 0 0 calc(100% / 6 - 10px);
+}
+/* 物件主副資訊 */
+.main_case_subinfo [data-price="main"] span {
+  font-size: 24px;
+}
+.case_detail .case_detail_box {
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+.case_detail .case_detail_box dt,
+.case_detail .case_detail_box dd {
+  margin: 5px 0;
+  display: inline-block;
+}
+.case_detail .case_detail_box dt {
+  width: 20%;
+  height: 100%;
+}
+.case_detail .case_detail_box dd {
+  width: 80%;
+}
+.case_detail .case_detail_box[data-col="double"] dd {
+  width: 40%;
+}
+.case_detail .case_detail_box[data-col="double"] dd:nth-child(3n+1) {
+  margin-left: 20%;
+}
+.case_detail .case_detail_title {
+  color: #999;
+}
+.case_detail .text {
+  font-size: 13px;
+  color: #999;
+}
+/* 互動區塊 */
+.fix_block {
+  /* 功能選單 */
+}
+.fix_block .btn_form {
+  font-size: 13px;
+  line-height: 30px;
+  background: #fff;
+  margin: 10px 0;
+  border: 1px solid #38cafc;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.fix_block .btn_form a {
+  color: #38cafc;
+}
+.fix_block .function_tab_navbar {
+  font-size: 13px;
+  color: #fff;
+  margin: 15px 0;
+  display: inline-block;
+  /* 選單切換 */
+}
+.fix_block .function_tab_navbar a {
+  color: #4d4d4d;
+}
+.fix_block .function_tab_navbar input[type="text"],
+.fix_block .function_tab_navbar input[type="number"] {
+  width: 100%;
+  font-size: 16px;
+  background: #fff;
+  padding: 10px 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #b3b3b3;
+  box-sizing: border-box;
+}
+.fix_block .function_tab_navbar input[type="text"]:hover,
+.fix_block .function_tab_navbar input[type="number"]:hover,
+.fix_block .function_tab_navbar input[type="text"]:focus,
+.fix_block .function_tab_navbar input[type="number"]:focus {
+  box-shadow: 0 0 0 1px #00d1b3;
+}
+.fix_block .function_tab_navbar > input[type="radio"] ~ label {
+  width: 50%;
+  text-align: center;
+  background: #b3b3b3;
+  padding: 10px 0;
+  float: left;
+  transition: background linear 0.3s;
+}
+.fix_block .function_tab_navbar > input[type="radio"]:checked + label,
+.fix_block .function_tab_navbar > input[type="radio"] + label:hover {
+  background: #00d1b3;
+}
+.fix_block .function_tab_navbar #function_booking:checked ~ #function_tab_booking,
+.fix_block .function_tab_navbar #function_telphone:checked ~ #function_tab_telphone {
+  display: block;
+}
+.fix_block .function_tab_navbar .content_box {
+  color: #4d4d4d;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 50px 20px 20px;
+  display: none;
+}
+.fix_block .function_tab_navbar .content_box li {
+  margin-bottom: 15px;
+}
+.fix_block .function_tab_navbar .content_box a {
+  color: #0dd1ab;
+}
+.fix_block .function_tab_navbar .content_box .text {
+  margin-bottom: 10px;
+}
+.fix_block .function_tab_navbar .content_box .form_data#sex {
+  position: relative;
+}
+.fix_block .function_tab_navbar .content_box .form_data#sex .sex_opt {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.fix_block .function_tab_navbar .content_box .form_data#sex .sex_opt input[type=radio] {
+  vertical-align: middle;
+  display: inline-block;
+}
+.fix_block .function_btn_group a {
+  font-weight: bold;
+  color: #00a689;
+  display: block;
+}
+.fix_block #recommand_case.more_case {
+  font-size: 13px;
+}
+.fix_block #recommand_case.more_case .card_block {
+  overflow: hidden;
+}
+.fix_block #recommand_case.more_case .card_info {
+  color: inherit;
+  margin-bottom: 0;
+  flex: 0 0 100%;
+}
+.fix_block #recommand_case.more_case .case_detail_box {
+  padding: 10px;
+}
+.fix_block #recommand_case.more_case .case_detail_box .case_detail_info {
+  font-size: 12px;
+  line-height: 30px;
+}
+.fix_block #recommand_case.more_case .case_detail_box .case_detail_info span {
+  font-size: 15px;
+}
+.fix_block #recommand_case.more_case .case_detail_box .case_detail_info span ~ span {
+  margin-left: 5px;
+}
+.fix_block #recommand_case.more_case .case_detail_box .case_detail_info .text {
+  font-weight: bold;
+}
+/* //content */
+@media (max-width: 1024px) and (min-width: 800px) {
+  .case_table .case_tbody .carousel_box .carousel_nav {
+    justify-content: space-around;
+  }
+  .case_table .case_tbody .carousel_box .carousel_nav .card_info {
+    flex: 0 0 calc(100% / 4 - 10px);
+  }
+  /* 互動區塊 */
+  .fix_block .case_store dt {
+    text-align: left;
+    flex: 0 0 100%;
+  }
+  .fix_block .case_store dt .cover {
+    display: none;
+  }
+  .fix_block .case_store dt .cover ~ * {
+    display: inline-block;
+  }
+  .fix_block .case_store dd {
+    flex: 0 0 90%;
+  }
+  .fix_block .case_store dd:last-child {
+    flex: 0 0 10%;
+  }
+}
+@media (max-width: 799px) and (min-width: 320px) {
+  .breadcrumb {
+    display: none;
+  }
+  .main_case:not(:first-child) {
+    width: 100%;
+    float: none;
+  }
+  .sub_case {
+    width: 100%;
+    margin-left: 0;
+  }
+  .carousel_box .carousel_nav {
+    display: none;
+  }
+  .main_case_subinfo {
+    background: #fff;
+    padding: 10px 15px;
+    margin: 20px 0;
+    box-sizing: border-box;
+  }
+  .main_case_subinfo .case_detail {
+    padding-top: 20px;
+    border-top: 1px solid #e6e6e6;
+  }
+  .main_case_maininfo > .case_wrap {
+    padding-top: 30px;
+    border-top: 1px solid #e6e6e6;
+  }
+  /* 互動區塊 */
+  .fix_block {
+    /* 功能選單 */
+  }
+  .fix_block .btn_form {
+    display: none;
+  }
+  .fix_block .function_tab_navbar {
+    display: block;
+  }
+  .fix_block .case_store dl {
+    justify-content: space-around;
+  }
+  .fix_block .case_store dt {
+    width: 100px;
+    flex: 0 0 100px;
+  }
+  .fix_block .case_store dt .cover {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+  }
+  .fix_block .case_store dd {
+    flex: 0 0 calc(90% - 140px);
+  }
+  .fix_block .case_store dd:last-child {
+    flex: 0 0 10%;
+  }
+  .fix_block .case_store button {
+    display: none;
+  }
+  .fix_block .function_btn_group {
+    background: #fff;
+    justify-content: space-around;
+  }
+  .fix_block .function_btn_group [data-function=print] {
+    display: none;
+  }
+}
+@media (max-width: 799px) and (min-width: 578px) {
+  /* 互動區塊 */
+  .fix_block .more_case#recommand_case {
+    background: transparent;
+  }
+  .fix_block .more_case#recommand_case .carousel_box .carousel_main {
+    background: inherit;
+    border: 0;
+  }
+  .fix_block .more_case#recommand_case .card_info {
+    width: 33%;
+    flex: 0 0 calc(100% / 3 - 20px);
+    -ms-flex: 0 0 calc(33% - 20px);
+  }
+  .fix_block .more_case#recommand_case .card_info:nth-child(3n) {
+    display: block;
+  }
+}
+@media (max-width: 577px) and (min-width: 360px) {
+  /* 互動區塊 */
+  .fix_block #recommand_case.more_case {
+    font-size: 13px;
+  }
+  .fix_block #recommand_case.more_case .carousel_box .carousel_btn {
+    display: block;
+  }
+  .fix_block #recommand_case.more_case .card_block {
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  .fix_block #recommand_case.more_case .card_info {
+    color: inherit;
+    margin-bottom: 0;
+    flex: 0 0 100%;
+  }
+  .fix_block #recommand_case.more_case .case_detail_box {
+    padding: 10px;
+  }
+  .fix_block #recommand_case.more_case .case_detail_box .case_detail_info {
+    font-size: 12px;
+    line-height: 30px;
+  }
+  .fix_block #recommand_case.more_case .case_detail_box .case_detail_info span {
+    font-size: 15px;
+  }
+  .fix_block #recommand_case.more_case .case_detail_box .case_detail_info span ~ span {
+    margin-left: 5px;
+  }
+  .fix_block #recommand_case.more_case .case_detail_box .case_detail_info .text {
+    font-weight: bold;
+  }
+}
+@media (max-width: 359px) and (min-width: 320px) {
+  /* 互動區塊 */
+  .fix_block #recommand_case.more_case {
+    font-size: 13px;
+  }
+  .fix_block #recommand_case.more_case .card_block {
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  .fix_block #recommand_case.more_case .card_info {
+    color: inherit;
+    margin-bottom: 0;
+    flex: 0 0 100%;
+  }
+  .fix_block #recommand_case.more_case .case_detail_box {
+    padding: 10px;
+  }
+  .fix_block #recommand_case.more_case .case_detail_box .case_detail_info {
+    font-size: 12px;
+    line-height: 30px;
+  }
+  .fix_block #recommand_case.more_case .case_detail_box .case_detail_info span {
+    font-size: 15px;
+  }
+  .fix_block #recommand_case.more_case .case_detail_box .case_detail_info span ~ span {
+    margin-left: 5px;
+  }
+  .fix_block #recommand_case.more_case .case_detail_box .case_detail_info .text {
+    font-weight: bold;
+  }
+}
