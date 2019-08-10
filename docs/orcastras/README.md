@@ -1,5 +1,5 @@
 # 薩摩亞商維鯨資訊
-藉由 Logo 進行網站頁面設計畫面，由客戶指定使用 Bootstrap 及 jstree 進行網站開發。
+藉由 Logo 進行網站頁面設計發想，由客戶指定使用 Bootstrap 及 jstree 進行網站開發。
 
 ###### 首頁
 https://tzuchienkao.github.io/freelance/orcastras/
