@@ -37,7 +37,7 @@
                         });
                         break;
                     case 'member': 
-                        url = 'member.html'
+                        url = 'staff_list.html'
                         return new Promise(function(resolve, reject){
                             $.ajax(url, {
                                 dataType: 'html'
@@ -52,7 +52,7 @@
                         });
                         break;
                     case 'setting': 
-                        url = 'main_menu.html'
+                        url = 'index.html'
                         return new Promise(function(resolve, reject){
                             $.ajax(url, {
                                 dataType: 'html'
