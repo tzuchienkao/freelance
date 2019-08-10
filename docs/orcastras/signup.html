@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>維鯨資訊orcastras</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</script>
+</head>
+<body>
+<div class="navbar">
+<div class="navbar-inner">
+<div class="container">
+<!--navigation-->
+<ul class="nav nav-pills">
+<li class="active"><a href="index.html">Home</a></li>
+<li><a href="workspace_s.html">Workspace</a></li>
+<li><a href="import.html">Import</a></li>
+</ul>
+<div class="btn-group pull-right">
+<a href="signin.html" class="btn">Sing In</a>
+<a href="signup.html" class="btn disabled">Sing Up</a>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<!--searchbar-->
+<div class="row paddingT">
+<div class="span4">
+<div class="logotype"></div>
+</div>
+<div class="span7">
+<form class="form-search">
+<div class="controls">
+<div class="input-prepend search-query">
+<span class="add-on borderR"><i class="icon-search"></i></span><input class="span4" id="inputIcon" type="text" style="border-left:none;">
+</div>
+<button type="submit" class="btn btn-primary">Go</button>
+</div>
+</form>
+</div>
+</div>
+
+<!--result-->
+<div class="alert fade in">
+<h4>Sign up</h4>
+</div>
+
+<div class="container row paddingT">
+<div class="offset1 span8">
+<form class="form-horizontal">
+<fieldset>
+<div class="control-group form">
+<label class="control-label" for="registername">Name</label>
+<div class="controls">
+<input type="text" required="required" class="input-medium" id="registername">
+<span class="alerttxt">Name is required.</span>
+</div>
+</div>
+
+<div class="control-group form">
+<label class="control-label" for="registermail">Email</label>
+<div class="controls">
+<input type="text" required="required" class="input-xlarge" id="registermail">
+<span class="alerttxt">Email is required.</span>
+</div>
+</div>
+<div class="control-group form">
+<label class="control-label" for="registerpwd">Password</label>
+<div class="controls">
+<input type="password" required="required" class="input-medium" id="registerpwd">
+<span class="alerttxt">Password is required.</span>
+</div>
+</div>
+<div class="control-group form">
+<label class="control-label" for="registerpwd">Repeat Password</label>
+<div class="controls">
+<input type="password" required="required" class="input-medium" id="registerpwd">
+</div>
+</div>
+<div class="control-group form">
+<label class="control-label" for="registercode"></label>
+<div class="controls">
+<img src="img/code.jpg" />
+<input type="text" required="required" class="input-mini" id="registercode">
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="form-actions">
+<button type="submit" class="btn btn-primary">Register</button>
+</div>
+</fieldset>
+</form>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>維鯨資訊orcastras</title>
+<link type="text/css" rel="stylesheet" href="../_docs/syntax/!style.css"/>
+<link type="text/css" rel="stylesheet" href="../_docs/!style.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="../_lib/jquery.hotkeys.js"></script>
+<script type="text/javascript" src="../jquery.jstree.js"></script>
+<script type="text/javascript" src="../_docs/syntax/!script.js"></script>
+</head>
+<body>
+<div class="navbar">
+<div class="navbar-inner">
+<div class="container">
+<!--navigation-->
+<ul class="nav nav-pills">
+<li class="active"><a href="index.html">Home</a></li>
+<li><a href="workspace_s.html">Workspace</a></li>
+<li><a href="import.html">Import</a></li>
+</ul>
+<div class="btn-group pull-right">
+<a href="signin.html" class="btn">Sing In</a>
+<a href="signup.html" class="btn disabled">Sing Up</a>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<!--searchbar-->
+<div class="row paddingT">
+<div class="span4">
+<div class="logotype"></div>
+</div>
+<div class="span7">
+<form class="form-search">
+<div class="controls">
+<div class="input-prepend search-query">
+<span class="add-on borderR"><i class="icon-search"></i></span><input class="span4" id="inputIcon" type="text" style="border-left:none;">
+</div>
+<button type="submit" class="btn btn-primary">Go</button>
+</div>
+</form>
+</div>
+</div>
+
+<!--result-->
+<div class="alert fade in">
+<h4>Import</h4>
+</div>
+
+<div class="btn-group pull-right">
+<button class="btn btn-primary">Import</button>
+</div>
+
+<div class="container paddingT">
+
+<div id="double" class="row paddingT">
+
+<div class="span6">
+<div class="borderall">
+<div id="demo" class="importtree"></div>
+</div>
+</div>
+
+<div class="span6">
+<ul id="tab" class="nav nav-tabs">
+<li class="active"><a href="#tab1" data-toggle="tab">Default</a></li>
+<li><a href="#tab2" data-toggle="tab">Tab1</a></li>
+<li><a href="#tab3" data-toggle="tab">Tab2</a></li>
+<li><a href="#tab4" data-toggle="tab">Tab3</a></li>
+<li><a href="#tab5" data-toggle="tab">Tab4</a></li>
+</ul>
+<div id="myTabContent" class="tab-content">
+<div class="tab-pane fade in active borderall borderT" id="tab1">
+<div id="demo2" class="importtree paddingT tab-pane active"></div>
+</div>
+<div class="tab-pane fade borderall borderT" id="tab2">
+<div id="demo3" class="importtree paddingT tab-pane"></div>
+</div>            
+<div class="tab-pane fade borderall borderT" id="tab3">
+<div id="demo4" class="importtree paddingT tab-pane"></div>
+</div>
+<div class="tab-pane fade borderall borderT" id="tab4">
+<div id="demo5" class="importtree paddingT tab-pane"></div>
+</div>
+<div class="tab-pane fade borderall borderT" id="tab5">
+<div id="demo6" class="importtree paddingT tab-pane"></div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+        
+<!-- Tabs -->
+<script>
+  $(function () {
+    $('.tabs a:last').tab('show')
+  })
+</script>
+<!-- JavaScript neccessary for the tree -->
+<script type="text/javascript" class="source below" src="js/jstree_demo.js">
+// Code for the menu buttons
+$(function () { 
+	$("#mmenu input").click(function () {
+		switch(this.id) {
+			case "add_default":
+			case "add_drive":
+				$("#demo").jstree("create", null, "last", { "attr" : { "rel" : this.id.toString().replace("add_", "") } });
+				break;
+			case "add_folder":
+				$("#demo").jstree("create", null, "last", { "attr" : { "rel" : this.id.toString().replace("add_", "") } });
+				break;
+			case "search":
+				$("#demo").jstree("search", document.getElementById("text").value);
+				break;
+			case "text": break;
+			default:
+				$("#demo").jstree(this.id);
+				break;
+		}
+	});
+});
+</script>
+</body>
+</html>
