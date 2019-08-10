@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>維鯨資訊orcastras</title>
+<link type="text/css" rel="stylesheet" href="../_docs/syntax/!style.css"/>
+<link type="text/css" rel="stylesheet" href="../_docs/!style.css"/>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../_lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="../_lib/jquery.hotkeys.js"></script>
+<script type="text/javascript" src="../jquery.jstree.js"></script>
+<script type="text/javascript" src="../_docs/syntax/!script.js"></script>
+</head>
+<body>
+<div class="navbar">
+<div class="navbar-inner">
+<div class="container">
+<!--navigation-->
+<ul class="nav nav-pills">
+<li class="active"><a href="index.html">Home</a></li>
+<li><a href="workspace_s.html">Workspace</a></li>
+<li><a href="import.html">Import</a></li>
+</ul>
+<div class="btn-group pull-right">
+<a href="signin.html" class="btn">Sing In</a>
+<a href="signup.html" class="btn disabled">Sing Up</a>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<!--searchbar-->
+<div class="row paddingT">
+<div class="span4">
+<div class="logotype"></div>
+</div>
+<div class="span7">
+<form class="form-search">
+<div class="controls">
+<div class="input-prepend search-query">
+<span class="add-on borderR"><i class="icon-search"></i></span><input class="span4" id="inputIcon" type="text" style="border-left:none;">
+</div>
+<button type="submit" class="btn btn-primary">Go</button>
+</div>
+</form>
+</div>
+</div>
+
+<!-- workspace -->
+<div class="alert fade in">
+<h4><span>carrielady</span> Workspace</h4>
+</div>
+
+<div class="container paddingT">
+<div class="user span12">
+<form class="form-horizontal">
+<fieldset>
+<div class="user-pic offset1">
+<a href="#imgup" role="button" data-toggle="modal">
+<img src="img/people03.jpg"/>
+</a>
+</div>
+<div class="control-group">
+<input type="text" class="input-xlarge borderno" id="registermail" value="carrielady@mail.com">
+</div>
+<div class="control-group">
+<input type="text" class="input-medium borderno" id="registername" value="carrielady">
+</div>
+<div class="control-group align">
+<textarea class="input-xxlarge" id="textarea" rows="3">Morning Light 
+Track 1/2 
+ Album	 Morning Light	 by Mate
+Listen
+ 
+Download
+ 
+License this music
+15366 plays, 17355 downloads, more stats
+acoustic, summer, sea, sun, vacation</textarea>
+<button type="submit" class="btn btn-primary align">Generate</button>
+</div>
+</fieldset>
+</form>
+</div>
+
+<div id="double" class="row paddingT">
+<div class="btn-group pull-right form-actions offset10 span1">
+<a href="#" class="btn disabled">1</a>
+<a href="workspace_d.html" class="btn">2</a>
+</div>
+
+<div class="span11 offset1">
+<ul id="tab" class="nav nav-tabs">
+<li class="active"><a href="#tab6" data-toggle="tab">Default</a></li>
+<li><a href="#tab7" data-toggle="tab">Tab1</a></li>
+<li><a href="#tab8" data-toggle="tab">Tab2</a></li>
+<li><a href="#tab9" data-toggle="tab">Tab3</a></li>
+<li><a href="#tab10" data-toggle="tab">Tab4</a></li>
+</ul>
+
+<div id="myTabContent" class="tab-content">
+<!-- Tab 1 -->
+<div class="tab-pane fade borderall borderT active in" id="tab6">
+<div class="row">
+<div class="importtree paddingT">
+<div class="btn-group pull-left importtree">
+<button class="btn">Rename</button>
+</div>
+<div class="pull-right importtree control-group">
+<label class="checkbox">
+<input type="checkbox"> Private
+</label>
+</div>
+</div>
+</div>
+
+<div id="demo7" class="paddingT tab-pane"></div>
+</div>
+
+<!-- Tab 2 -->
+<div class="tab-pane fade borderall borderT" id="tab7">
+<div class="row">
+<div class="importtree paddingT">
+<div class="btn-group pull-left importtree">
+<button class="btn">Rename</button>
+</div>
+<div class="pull-right importtree control-group">
+<label class="checkbox">
+<input type="checkbox"> Private
+</label>
+</div>
+</div>
+</div>
+
+<div id="demo8" class="paddingT tab-pane"></div>
+</div>
+
+<!-- Tab 3 -->          
+<div class="tab-pane fade borderall borderT" id="tab8">
+<div class="row">
+<div class="importtree paddingT">
+<div class="btn-group pull-left importtree">
+<button class="btn">Rename</button>
+</div>
+<div class="pull-right importtree control-group">
+<label class="checkbox">
+<input type="checkbox"> Private
+</label>
+</div>
+</div>
+</div>
+
+<div id="demo9" class="paddingT tab-pane"></div>
+</div>
+
+<!-- Tab 4 -->
+<div class="tab-pane fade borderall borderT" id="tab9">
+<div class="row">
+<div class="importtree paddingT">
+<div class="btn-group pull-left importtree">
+<button class="btn">Rename</button>
+</div>
+<div class="pull-right importtree control-group">
+<label class="checkbox">
+<input type="checkbox"> Private
+</label>
+</div>
+</div>
+</div>
+
+<div id="demo10" class="paddingT tab-pane"></div>
+</div>
+
+<!-- Tab 5 -->
+<div class="tab-pane fade borderall borderT" id="tab10">
+<div class="row">
+<div class="importtree paddingT">
+<div class="btn-group pull-left importtree">
+<button class="btn">Rename</button>
+</div>
+<div class="pull-right importtree control-group">
+<label class="checkbox">
+<input type="checkbox"> Private
+</label>
+</div>
+</div>
+</div>
+
+<div id="demo11" class="paddingT tab-pane"></div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="pull-right form-actions">
+<div class="btn-group">
+<button class="btn">Discard</button>
+</div>
+<div class="btn-group">
+<button class="btn btn-primary">Save</button>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- popup -->
+<div id="imgup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-header">
+<a class="close" data-dismiss="modal">×</a>
+<h5 id="myModalLabel">Upload image</h5>
+</div>
+<div class="modal-body">
+<div class="user-pic">
+<img src="img/people03.jpg"/>
+</a>
+</div>
+<div class="control-group">
+<input type="text" class="input-large" id="upload">
+<button class="btn">Browse</button>
+<span class="minword">200x200, png/jpeg/gif</span>
+</div>
+<div class="control-group">
+<button type="submit" class="btn btn-primary">Set as profile photo</button>
+</div>
+</fieldset>
+</form>
+</div>
+</div>
+</div>
+
+<!-- Tabs -->
+<script>
+  $(function () {
+    $('.tabs a:last').tab('show')
+  })
+</script>
+<!-- JavaScript neccessary for the tree -->
+<script type="text/javascript" class="source below" src="js/jstree_demo.js">
+// Code for the menu buttons
+$(function () { 
+	$("#mmenu input").click(function () {
+		switch(this.id) {
+			case "add_default":
+			case "add_drive":
+				$("#demo").jstree("create", null, "last", { "attr" : { "rel" : this.id.toString().replace("add_", "") } });
+				break;
+			case "add_folder":
+				$("#demo").jstree("create", null, "last", { "attr" : { "rel" : this.id.toString().replace("add_", "") } });
+				break;
+			case "search":
+				$("#demo").jstree("search", document.getElementById("text").value);
+				break;
+			case "text": break;
+			default:
+				$("#demo").jstree(this.id);
+				break;
+		}
+	});
+});
+</script>
+</body>
+</html>

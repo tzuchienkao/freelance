@@ -1,0 +1,25 @@
+.logo{width:380px;height:360px;background:url(images/logo.png) center 180px no-repeat;}
+.logotype{width:280px;height:30px;background:url(images/logotype.png) center top no-repeat;}
+.borderall{border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;border-left:1px solid #e5e5e5;border-right:1px solid #e5e5e5;}
+.borderL{border-left:none;}
+.borderR{border-right:none;}
+.borderT{border-top:none;}
+.paddingT{padding-top:20px;}
+.marginB{margin-bottom:0;}
+span.minword{color:#b2b2b2;font-size:11px;line-height:17px;display:block;}
+.result, .form{padding:10px 0;border-bottom:1px dotted #eeeeee;}
+.result:hover{background-color:#fafafa;}
+.resulttxt{width:620px;height:36px;word-wrap:break-word;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;}
+.showpeople{min-width: 160px;padding:4px 0;margin:0;list-style: none;background-color: #ffffff;border-color: #ccc;border-color: rgba(0, 0, 0, 0.2);border-style: solid;border-width: 1px;-webkit-border-radius: 0 0 5px 5px;-moz-border-radius: 0 0 5px 5px;border-radius: 0 0 5px 5px;-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);-webkit-background-clip: padding-box;-moz-background-clip: padding;background-clip: padding-box;*border-right-width: 2px;*border-bottom-width: 2px;}
+.alerttxt{color:#ff0084;font-size:12px;padding:0 10px;}
+.importtree{margin:0 20px;}
+.user{border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;height:180px;padding:10px;position:relative;}
+.user-pic{width:180px;height:180px;margin-right:20px;overflow:hidden;borde:1px solid #ffffff;float:left;}
+.user-picmin{width:30px;height:30px;margin-right:10px;overflow:hidden;float:left;}
+input[type=text].borderno{border-top:0px none;border-bottom:0px none;border-left:0px none;border-right:0px none;box-shadow:none;}
+.user .control-group.align button[type=submit],.user .control-group.align textarea{position:absolute;bottom:0;margin:6px;}
+.user .control-group.align textarea{left:310px;min-height:85px;}
+.user .control-group.align button[type=submit]{right:100px;}
+.user-list{padding:5px;margin:5px;line-height:15px;height:45px;word-wrap:break-word;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;}
+.user-list:hover{background-color:#fafafa;}
+.user-list a{display:block;font-weight:bold;}
