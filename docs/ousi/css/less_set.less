@@ -1,0 +1,86 @@
+@ci_color: #f68833, #dd514c, #aecf28;
+@text_color: #333, #9b9b9b, #262626, #969696;
+@deco_color: #fafafa, #e9e9e9;
+@white_color: #fff;
+.main_title() {
+    font-size: 50px;
+    line-height: 100px;
+    color: extract(@text_color, 1);
+    letter-spacing: 3px;
+}
+.main_description() {
+    font-size: 20px;
+    line-height: 30px;
+    color: extract(@text_color, 2);
+    letter-spacing: 1px;
+}
+.sub_title() {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 40px;
+    color: extract(@text_color, 3);
+    letter-spacing: 3px;
+}
+.sub_description() {
+    font-size: 16px;
+    line-height: 24px;
+    color: extract(@text_color, 4);
+    letter-spacing: 1px;
+}
+.list_title() {
+    font-size: 16px;
+    font-weight: 600;
+    color: extract(@text_color, 3);
+    letter-spacing: 3px;
+}
+.list_description() {
+    font-size: 15px;
+    color: extract(@text_color, 4);
+    letter-spacing: 1px;
+}
+.pos_align_c(@pos: 0) {
+    position: absolute;
+    top: @pos;
+    right: @pos;
+    bottom: @pos;
+    left: @pos;
+}
+.text_overflow() {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+@section_align: left, center, right;
+/*
+@font_size: 12px, 13px, 15px, 16px, 24px;
+@bg_color: #f2f2f2, #fff, #00a689;
+@btn_bg_color: #00d1b3, #38cafc, #b3b3b3;
+@text_color: #666, #999, #ccc;
+@white_color: #fff;
+@title_color: #0dd1ab;
+@subtitle_color: #4d4d4d;
+@border: #e6e6e6;
+@navbar: {
+    member: 0 -1px;
+    viewlog: -16px -1px;
+    post: -32px -1px;
+    news: -48px -1px;
+}
+@search_box: {
+    search_sell: search_sell_box;
+    search_rent: search_rent_box;
+    search_newcase: search_newcase_box;
+    search_townhouse: search_townhouse_box;
+}
+@search_tool: {
+    search_tool_area: search_area;
+    search_tool_type: search_type;
+    search_tool_price: search_price;
+}
+
+.border-radius(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+*/
