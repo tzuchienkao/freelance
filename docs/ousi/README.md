@@ -2,7 +2,7 @@
 透過現有的網站配色進行靜態頁重新排版、切版、RWD 設計。
 
 ###### 公司介紹
-https://tzuchienkao.github.io/freelance/ousi/product_list.html
+https://tzuchienkao.github.io/freelance/ousi/about.html
 
 ###### 最新消息
 https://tzuchienkao.github.io/freelance/ousi/news_list.html
