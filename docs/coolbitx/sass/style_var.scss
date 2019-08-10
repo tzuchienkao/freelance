@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* function */
+$max_W: 1000px !default; //PC版最大寬
+$min_W: 360px; //mobile最小寬
+$fontSize: 16px; //預設字級
+$fontColor: #fff #000; //連結顏色, 文字顏色
+$orderFontColor: #00aa00 #ed2123; //買單, 賣單
+$direction: top right bottom left; //方向
+$display: block inline-block none; //區塊
+$text_deco: none underline; //文字裝飾
+$position: relative absolute; //位置
+$borderColor: #b3b3b3; //預設線框顏色
+$bgColor: #000 #848484 #e0dfd9; //背景顏色: 刊頭刊尾, banner, intro
+$bodyColor: #f2f2f2;
+$standard_color: nth($bgColor,2); //預設背景顏色
+$tableColor: #dcd1b3 #baa367 #ece7d7; //td:first, td:first:hover, td
+//背景深文字淺，背景淺文字深的判斷
+@function txtColor($bgColor) { 
+	@if( lightness($bgColor) > lightness($standard_color) ) {
+		@return nth($fontColor, 2);
+	}
+	@else {
+		@return nth($fontColor, 1);
+	}
+}
+//單位轉換
+@function px2em($px) { 
+	@return $px / $fontSize * 1em;
+}
+//重設實際寬高
+@mixin boxSize() {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+//置中
+@mixin blockCenter() {
+	margin: 0 auto;
+}
+@mixin iCenter($textAlign) {
+	text-align: $textAlign;
+}
+//浮動
+@mixin _float($direction) {
+	float: $direction;
+}
+//區塊
+@mixin _display($display) {
+	display: $display;
+}
+//最大寬度
+@mixin maxWidth($max_W) {
+	max-width: $max_W;
+}
+//最小寬度
+@mixin minWidth($min_W) {
+	min-width: $min_W;
+}
+//預設字級
+@mixin basicFont($fontSize) {
+	font-size: $fontSize;
+}
+//按鈕圓角
+@mixin borderRadius($fontSize) {
+	-webkit-border-radius: $fontSize;
+	        border-radius: $fontSize;
+}
+//邊線
+@mixin borderStyle($borderColor) {
+	border-style: solid;
+	border-color: $borderColor;
+}
+/* function End */

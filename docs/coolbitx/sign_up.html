@@ -1,0 +1,182 @@
+<!-- 基本說明資訊
+**** 案件名稱: CoolBitX 網站切版 ***********************
+**** 客戶名稱: CoolBitX Technology *********************
+	 連絡資料: Michael Ou, michaelo@coolbitx.com *******
+**** 開 發 者: Tzuchien Kao, oyan114@gmail.com *********
+**** 案件描述: 含電腦版與手機版，兩種版型開發。含RWD ***
+**** 程式語言: html, css3, css, javascript, jQuery  ****
+基本說明資訊 End -->
+<!-- 增修說明資訊
+[2015/02/02]
+header: 已登入按鈕增加Acct1~5, 超連結文字修改Trade, Market, Assets, Account, Support, 增加hover樣式
+
+
+[2015/02/10]
+market: Market overview加入Data規則
+index: 修改Market overview html結構
+[2015/02/11]
+sign, trade, market: 增加顏色制定及按鈕變化
+增修說明資訊 End -->
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CoolBitX Technology</title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/style_pc.css" media="only screen and (min-width:581px)" rel="stylesheet" type="text/css">
+	<link href="css/style_m.css" media="only screen and (max-width:580px)" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:600,400,300" rel="stylesheet" type="text/css">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!-- header -->
+	<div class="header clear">
+		<div class="content">
+			<ul class="nav">
+				<li class="m_nav_menu font_24">
+					<a href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+				</li>
+				<li class="nav_logo">
+					<a href="index.html" title="CoolBitX" class="logo"><img src="img/logo.png" alt="CoolBitX"></a>
+				</li>
+				<li class="nav_top">
+					<ul class="nav_setting">
+						<li class="nav_last">
+							<!-- Last price: 小數點前六位 點後兩位 -->
+							<p>Last price: <span>123456.12</span> USD</p>
+						</li>
+						<li class="nav_bala">
+							<!-- Balance: 小數點前八位 點後兩位 -->
+							<label>Balance: </label><span>12345678.12</span> <span>USD</span>
+						</li>
+						<!-- 已登入 -->
+						<li class="nav_acct">
+							<a href="javascript:void(0);" title="" class="main_acct">Acct1: 1000.222 BTC</a>
+							<ul class="sub_acct">
+								<li><a href="javascript:void(0);" title="">Acct1: 1000.222 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct2: 1000.2322 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct3: 1000.23422 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct4: 1000.223452 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct5: 1000.2345622 BTC</a></li>
+							</ul>
+						</li>
+						<!-- 已登入 End -->
+						<li class="nav_lang">
+							<a href="javascript:void(0);" title="Language" class="main_lang">Language</a>
+							<ul class="sub_lang">
+								<li><a href="javascript:void(0);" title="繁體中文">繁體中文</a></li>
+								<li><a href="javascript:void(0);" title="English">English</a></li>
+								<li><a href="javascript:void(0);" title="簡體中文">簡體中文</a></li>
+							</ul>
+						</li>
+						<!-- 已登入 -->
+						<li class="nav_login"><!-- User name: 16位英文數字 -->
+							<a href="javascript:void(0);" title="User name"><span>onetwothree45678</span></a>
+						</li>
+						<li class="nav_signout"><a href="index.html" title="Sign out">Sign out</a></li>
+						<!-- 已登入 End -->
+						<!-- 未登入 -->
+						<li class="nav_signin"><a href="sign_in.html" title="Sign in">Sign in</a></li>
+						<li class="nav_signup"><a href="sign_up.html" title="Sign up">Sign up</a></li>
+						<!-- 未登入 End -->
+					</ul>
+				</li>
+				<li class="nav_bottom">
+					<ul class="nav_menu">
+						<li><a href="trade.html" title="Trade">Trade</a></li>
+						<li><a href="market.html" title="Market">Market</a></li>
+						<li><a href="assets.html" title="Assets">Assets</a></li>
+						<li><a href="account.html" title="Account">Account</a></li>
+						<li><a href="support.html" title="Support">Support</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header End -->
+	<!-- wrapper -->
+	<div class="wrapper login cw_bg clear">
+		<div class="loginBox content">
+			<div class="login_wrap">
+				<form class="loginArea" id="login" action=""  method="post">
+					<div class="acct">
+						<input class="btn required" id="email" type="email" name="email" placeholder="Email" title="Please enter a valid email address" />
+					</div>
+					<div class="acct">
+						<input class="btn required" id="id" type="text" name="id" placeholder="CoolWallet ID" title="Please enter a valid CoolWallet ID" />
+					</div>
+					<div class="acct">
+						<input class="btn required" id="pwd" type="password" name="pwd" placeholder="Password" />
+					</div>
+					<div class="acct">
+						<input class="btn required" id="cfm_pwd" type="password" name="cfm_pwd" placeholder="Confirm Password"  equalTo="#pwd" />
+					</div>
+				</form>
+				<div class="login_term">
+					<input id="terms" type="checkbox" name="terms" />
+					<label for="terms">I read and agreed to <a href="javascript:void(0);" title="Terms and conditions">Terms and conditions</a></label>
+				</div>
+				<input class="btn blue" id="submit" type="submit" value="Sign in" />
+			</div>
+		</div>
+	</div>
+	<!-- wrapper End -->
+	<!-- footer -->
+	<div class="footer clear">
+		<ul class="content">
+			<li class="nav_co">
+				<ul class="clear">
+					<li class="nav_logo">
+						<a href="index.html" title="CoolBitX" class="logo"><img src="img/logo.png" alt="CoolBitX"></a>
+					</li>
+					<li class="nav_share">
+						<ul class="shareIcon">
+							<li><a href="javascript:void(0);" title="" class="icon share_01"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_02"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_03"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_04"></a></li>
+						</ul>
+					</li>
+				</ul>
+				<span class="copyright">Owned by JETSTREAM HOLDING LTD.</span>
+			</li>
+			<li class="nav_sub">
+				<ul class="subnav_menu">
+					<li>
+						<span class="font_bold">About</span>
+						<ul>
+							<li><a href="aboutUs.html" title="About us">About us</a></li>
+							<li><a href="newsList.html" title="News">News</a></li>
+							<li><a href="feeTable.html" title="Fee table">Fee table</a></li>
+							<li><a href="javascript:void(0);" title="Contact us">Contact us</a></li>
+						</ul>
+					</li>
+					<li>
+						<span class="font_bold">Help</span>
+						<ul>
+							<li><a href="javascript:void(0);" title="FAQ">FAQ</a></li>
+							<li><a href="javascript:void(0);" title="What is Bitcoin">What is Bitcoin</a></li>
+						</ul>
+					</li>
+					<li>
+						<span class="font_bold">Legal</span>
+						<ul>
+							<li><a href="javascript:void(0);" title="Privacy">Privacy</a></li>
+							<li><a href="javascript:void(0);" title="Terms of use">Terms of use</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- footer End -->
+	<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+	<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+	<script src="js/coolbitx.js" type="text/javascript"></script>
+	<script>
+
+	</script>
+</body>
+</html>

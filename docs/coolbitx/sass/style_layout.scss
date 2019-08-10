@@ -1,0 +1,1019 @@
+@charset "UTF-8";
+@import 'style_base';
+/* base-css */
+/* 分享按鈕 */
+.shareIcon {
+	li {
+		@include _float(nth($direction, 4));
+		margin-left: 15px;
+		.icon {
+			@include _display(nth($display,1));
+			background-image: url(../img/icon_shareIcon.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: $fontSize * 2;
+			width: $fontSize * 2;
+		}
+		.share_01 {
+			background-position: 0px 0;
+		}
+		.share_02 {
+			background-position: -32px 0;
+		}
+		.share_03 {
+			background-position: -64px 0;
+		}
+		.share_04 {
+			background-position: -96px 0;
+		}
+	}
+}
+/* 分享按鈕 End */
+/* 下拉選單 */
+.acct {
+	min-height: 40px;
+}
+.acct, .dropdown {
+	position: nth($position, 1);
+}
+.dropdown {
+	input {
+		margin: 0;
+	}
+}
+/* acct */
+.drop_acct { //下拉群
+	margin: 15px 0;
+	.btn {
+		@include borderStyle($borderColor);
+		border-width: 1px;
+		background-color: #fff;
+		line-height: 1.5;
+	}
+	.dropdownTog { //下拉開關
+		@include _display(nth($display,1));
+	}
+	.dropdownSel { //下拉選項群
+		@include _display(nth($display,3));
+		position: nth($position, 2);
+		top: 0;
+		left: 0;
+		padding: 30px 15px;
+		@include iCenter(left);
+		width: 100%;
+		li { //下拉選項
+			a {
+				overflow: hidden;
+				@include borderStyle($borderColor);
+				border-top-width: 1px;
+				line-height: 2;
+				text-indent: 5px;
+				span {
+					@include _float(nth($direction, 4));
+					&:first-child {
+						@include borderStyle($borderColor);
+						border-right-width: 1px;
+					}
+				}
+			}
+			&.pageAcct { //page style
+				@include borderStyle($borderColor);
+				border-top-width: 1px;
+				@include iCenter(center);
+				a {
+					@include _display(nth($display,2));
+					margin-bottom: -25px;
+					padding: 5px;
+					border: none;
+				}
+			}
+		}
+	}
+}
+/* acct End */
+/* 貨幣+國家 */
+.drop_asse {
+	@include _display(nth($display,1));
+	position: nth($position, 2);
+	right: 0;
+	overflow: hidden;
+	padding-left: 20px;
+	@include borderStyle($borderColor);
+	border-width: 1px;
+	background-color: #fff;
+	line-height: 1.5;
+	@include iCenter(left);
+	a {
+		@include _display(nth($display,1));
+	}
+	&.search {
+		.dropWrap {
+			input {
+				padding-right: 5px;
+				width: 100%;
+			}
+			i {
+				position: nth($position, 2);
+				top: 8px;
+				right: 8px;
+				color: #888;
+			}
+		}
+		.dropMenu {
+			max-height: 240px;
+		}
+	}
+	&.currency {
+		.dropWrap {
+			.dropInput {
+				&~.dropToggle {
+					position: nth($position, 2);
+					top: 0;
+					right: 0;
+					padding: 0 10px;
+					line-height: 30px;
+					@include borderStyle($borderColor);
+					border-left-width: 1px;
+					width: inherit;
+				}
+			}
+			label.error {
+				opacity: 0;
+			}
+		}
+		.dropMenu {
+			text-indent: 20px;
+			max-height: 180px;
+			li {
+				@include borderStyle($borderColor);
+				border-bottom-width: 1px;
+			}
+		}
+	}
+	.dropMenu {
+		overflow-y: scroll;
+		@include _display(nth($display,3));
+		position: nth($position, 2);
+		top: 30px;
+		left: 0;
+		margin-bottom: 15px;
+		@include borderStyle($borderColor);
+		border-top-width: 1px;
+		text-indent: 10px;
+		line-height: 30px;
+		min-height: 30px;
+		width: 100%;
+		li {
+			&:hover {
+				cursor: pointer;
+				background-color: #9a7c2f;
+			}
+		}
+		&.europe {
+			li {
+				&:hover {
+					background-color: #00aeef;
+				}
+			}
+		}
+	}
+}
+/* 貨幣+國家 End */
+/* 下拉選單 End */
+/* 表格 */
+table {
+	@include borderStyle($borderColor);
+	border-width: 1px;
+	line-height: 2;
+	tr { //兩列分色
+		height: 40px;
+		&:first-child {
+			background-color: nth($tableColor, 1);
+		}
+		&:not(:first-child) {
+			td {
+				@include borderStyle($borderColor);
+				border-right-width: 1px;
+				border-bottom-width: 1px;
+				background-color: nth($tableColor, 3);
+			}
+		}
+		td {
+			padding: 0 10px;
+			vertical-align: middle;
+			&:nth-child(odd) {
+				margin: 0 10px;
+			}
+		}
+	}
+}
+/* 表格 End */
+/* 背景圖 */
+.cw_bg {
+	background-position: bottom center;
+	background-image: url(../img/bg.jpg);
+	background-size: cover;
+}
+/* 背景圖 End */
+/* base-css End */
+/* 登入 */
+.login {
+	display: table;
+	padding: 30px 0;
+	background-color: #929292;
+	height: 85%;
+	width: 100%;
+	.loginBox {
+		display: table-cell;
+		@include blockCenter();
+		@include iCenter(center);
+		vertical-align: middle;
+		height: 351px;
+		width: 400px;
+		.login_wrap {
+			padding: 15px;
+			background-color: $bodyColor;
+			*:not(.error) {
+				margin: 15px auto;
+			}
+			.login_term {
+				@include iCenter(center);
+				font-size: px2em(12px);
+				line-height: 1.5;
+				* {
+					margin: 0;
+					vertical-align: middle;
+				}
+				a {
+					@include _display(nth($display,2));
+					color: #00aeef;
+				}
+			}
+		}
+	}
+	.acct {
+		width: 80%;
+		label.error, input {
+			width: 100%;
+		}
+	}
+}
+/* 登入 End */
+/* header */
+.header, .footer {
+	background-color: nth($bgColor,1);
+	color: txtColor(nth($bgColor,1));
+	font-size: px2em(12px);
+    h2 {
+    	text-indent: -99999px;
+    	height: 0;
+    }
+	a {
+		color: txtColor(nth($bgColor,1));
+	}
+}
+.nav { //header選單
+	position: nth($position, 1);
+	a {
+		@include _display(nth($display,1));
+	}
+}
+.nav_top {
+	.nav_setting {
+		> li {
+			@include _float(nth($direction, 4));
+			padding: 0 10px;
+		}
+	}
+}
+.sub_lang, .sub_acct { //header選單 > 下拉選單
+	@include _display(nth($display,3));
+	position: nth($position, 2);
+	top: 15px;
+	z-index: 1;
+	background-color: nth($bgColor, 1);
+	li {
+		float: none;
+		padding: 5px;
+	}
+}
+.nav_acct { //header選單
+	@include iCenter(center);
+	.main_acct {
+		padding: 0 3px;
+	}
+}
+/* header End */
+
+/* footer */
+.footer {
+	overflow: hidden;
+	.nav_logo {
+		@include _display(nth($display,2));
+		img {
+			height: $fontSize * 2;
+		}
+	}
+	.nav_share {
+		@include _float(nth($direction, 2));
+	}
+	.nav_share, .nav_sub {
+		line-height: $fontSize * 2;
+	}
+	.nav_sub {
+		@include _float(nth($direction, 2));
+		.subnav_menu {
+			> li {
+				@include _float(nth($direction, 4));
+				padding: 0 15px;
+			}
+		}
+	}
+	.copyright {
+		@include _display(nth($display,1));
+		color: #ac903e;
+	}
+}
+/* footer End */
+/* warpper*/
+.wrapper:not(.login) {
+	padding-top: 100px;
+	margin-top: -100px;
+	min-height: 85%;
+}
+/* acct dropdown */
+.wrap_nav_acct {
+	@include _display(nth($display,1));
+	position: nth($position, 1);
+	margin-bottom: 15px;
+	@include iCenter(center);
+	font-size: px2em(12px);
+	.nav_top {
+		@include _display(nth($display,2));
+		@include blockCenter();
+		> li {
+			@include _float(nth($direction, 4));
+			margin: 0 5px;
+			a {
+				@include _display(nth($display,2));
+			}
+		}
+	}
+	.nav_acct {
+		@include iCenter(left);
+		.main_acct {
+			padding: 0 3px;
+		}
+		.sub_acct {
+			position: nth($position, 2);
+			top: 0;
+			z-index: 2;
+			padding-top: 20px;
+			li {
+				background-color: #f2f2f2;
+			}
+		}
+	}
+}
+/* acct dropdown End */
+/* tabs setting */
+.tabsMenu {
+	//tab option
+	@include borderStyle($borderColor);
+	border-width: 1px;
+	li {
+		@include _float(nth($direction, 4));
+		padding: 10px 0;
+		@include borderStyle(#a5a5a5);
+		border-right-width: 1px;
+		background-color: nth($tableColor, 1);
+		line-height: 1.5;
+		@include iCenter(center);
+		width: 25%;
+		&:hover, &:active, &.current {
+			cursor: pointer;
+			background-color: nth($tableColor, 2);
+			a {
+				@include _display(nth($display,2));
+				color: #fff;
+			}
+		}
+		&:last-child {
+			border-right-width: 0;
+		}
+	}
+}
+.tabsWrap {
+	//tab content
+	@include borderStyle($borderColor);
+	border-width: 1px;
+	border-top-width: 0;
+	padding: 15px;
+}
+.tabsTable {
+	//tab content table
+	font-size: px2em(16px);
+	h2 {
+		padding: 15px 0;
+	}
+	table {
+		@include iCenter(center);
+		width: 100%;
+		td:not(:first-child) {
+			@include borderStyle($borderColor);
+			border-left-width: 1px;
+		}
+	}
+}
+/* tabs setting End */
+/* order form */
+.bgGray {
+	background-color: $standard_color;
+}
+.orderForm {
+	&.red a {
+		@extend .red;
+	}
+	&.green a {
+		@extend .green;
+	}
+	&.bgGray td {
+		@extend .bgGray;
+	}
+}
+/* order form End */
+/* index */
+.banner {
+	background-color: nth($bgColor,2);
+    color: txtColor(nth($bgColor,2));
+    @include iCenter(center);
+    //height: 100%;
+    height: 100vmin;
+    .content {
+    	display: table;
+    	//height: 100%;
+    	height: 100vmin;
+    	.main{
+	    	display: table-cell;
+	    	vertical-align: middle;
+		}
+    }
+    .hgroup {
+    	padding: 10px 0;
+    	@include iCenter(center);
+    	line-height: 1.5;
+    	&:after {
+    		@include _display(nth($display,1));
+    		content: '';
+	    	margin: 10px auto;
+    		background-color: #fff;
+	    	height: 1px;
+	    	width: 100%;
+    	}
+    }
+    .btn_setting {
+    	@include _display(nth($display,2));
+    	li {
+    		@include _float(nth($direction, 4));
+    		&:first-child {
+    			margin-right: 10px;
+			}
+    	}
+    }
+}
+.describe {
+	background-color: nth($bgColor,3);
+    color: txtColor(nth($bgColor,3));
+	.des {
+		overflow: hidden;
+		line-height: 1.5;
+		.des_img {
+			@include _float(nth($direction, 4));
+			background-image: url(../img/icon_banner.png);
+			background-repeat: no-repeat;
+			height: 90px;
+			width: 90px;
+		}
+		.des_01 {
+			background-position: 0 0;
+		}
+		.des_02 {
+			background-position: -90px 0;
+		}
+		.des_03 {
+			background-position: -180px 0;
+		}
+		dd {
+			margin-left: 105px;
+		}
+		.des_title {
+			@include iCenter(center);
+			line-height: 2;
+			font-size: px2em(24px);
+		}
+		.des_txt {
+			font-size: px2em(14px);
+		}
+	}
+}
+.marketView {
+	.market.data {
+		padding: 15px 0;
+		dt.font_12 {
+			h2:after {
+				@include _display(nth($display, 2));
+				content: ':';
+			}
+		}
+	}
+}
+.liveTable {
+	margin-bottom: 25px;
+	.live.data {
+		font-size: px2em(16px);
+		h1 {
+			@include _display(nth($display, 2));
+			@include borderRadius(10px);
+			padding: 5px 20px;
+			background-color: #939597;
+			color: #fff;
+			line-height: 1.5;
+			&~span {
+				@include _float(nth($direction, 2));
+				padding: 5px 0;
+				line-height: 1.5;
+				@include iCenter(right);
+				font-size: px2em(16.5px);
+			}
+		}
+		table {
+			tr {
+				td{
+					@include borderStyle($borderColor);
+					border-width: 1px;
+				}
+			}
+		}
+	}
+}
+.newsList {
+	overflow: hidden;
+	.news.data {
+		margin: 10px 0;
+		.news_list {
+			padding: 5px;
+		}
+		.news_link {
+			@include _display(nth($display,1));
+			h3 {
+				font-size: px2em(14px);
+			}
+			h1 {
+				font-size: px2em(20px);
+			}
+		}
+	}
+}
+/* index End */
+/* trade */
+.trade {
+	.tabsWrap {
+		background-color: nth($tableColor, 3);
+	}
+	.tradeFee {
+		padding-bottom: 15px;
+		p {
+			@include _float(nth($direction, 4));
+			padding-right: 15px;
+		}
+	}
+	.tradeCalc { //計算機
+		@include iCenter(center);
+	}
+	.tradeUnit { //輸入框+單位
+		@include _display(nth($display,2));
+		position: nth($position, 1);
+		min-height: 40px;
+		.borderInput { //輸入框
+			padding-right: 50px !important;
+			@include borderStyle($borderColor);
+			border-width: 1px;
+			@include iCenter(right);
+			width: 100%;
+		}
+		.unit { //單位
+			position: nth($position, 2);
+			right: 10px;
+			margin: 6px auto;
+			padding: 2px 3px;
+			background-color: #d2d0d0;
+			font-size: px2em(12px);
+		}
+	}
+	.tabsTable {
+		font-size: px2em(16px);
+		h2 {
+			padding: 15px 0;
+		}
+		table {
+			background-color: #fff;
+			width: 100%;
+			td:not(:first-child) {
+				@include borderStyle($borderColor);
+				border-left-width: 1px;
+			}
+		}
+	}
+}
+/* trade End */
+/* assets, account form */
+.assetsForm {
+	overflow: hidden;
+	> li {
+		position: nth($position, 1);
+		margin-top: 30px;
+		label {
+			@include _display(nth($display,1));
+			line-height: 2;
+			@include iCenter(left);
+			&~.btn {
+				@include borderStyle($borderColor);
+				border-width: 1px;
+			}
+		}
+		&:not(.clear) {
+			label {
+				padding-right: 5px;
+			}
+		}
+	}
+}
+/* assets, account form End */
+/* 各頁共用設定 */
+.assets, .account, .support {
+	.content {
+		margin: 30px auto;
+		> span {
+			@include _display(nth($display,1));
+			margin-top: 30px;
+			@include iCenter(left);
+			line-height: 1.5;
+		}
+	}
+	.main {
+		padding: 15px;
+		@include borderStyle($borderColor);
+		border-width: 1px;
+		border-top-width: 0;
+		background-color: nth($tableColor, 3);
+		@include iCenter(center);
+	}
+	.tabsWrap {
+		padding: 0;
+		border-width: 0;
+	}
+	.tabsTable {
+		table { //三列分色
+			tr:first-child {
+				background-color: nth($tableColor, 2);
+				font-size: px2em(22px);
+				&:nth-child(2) td {
+					background-color: nth($tableColor, 1);
+				}
+			}
+		}
+	}
+}
+.account, .support {
+	.tabsTable {
+		@include borderStyle($borderColor);
+		border-top-width: 1px;
+		background-color: nth($tableColor, 3);
+		.title {
+			@include borderStyle($borderColor);
+			border-width: 1px;
+			border-bottom-width: 0;
+			border-top-width: 0;
+			background-color: nth($tableColor, 1);
+			@include iCenter(center);
+			line-height: px2em(40px);
+			font-size: px2em(24px);
+		}
+	}
+}
+/* 各頁共用設定 End */
+/* assets */
+.assets {
+	.assetsForm { //form
+		> li.clear {
+			@include _display(nth($display,2));
+			@include iCenter(left);
+			width: 100%;
+			> * {
+				float: none;
+				width: 100%;
+			}
+		}
+	}
+	.assetsDep {
+		.content {
+			width: 75%;
+		}
+	}
+	.assetsWith {
+		.tabsMenu {
+			li {
+				width: 50%;
+			}
+		}
+		.tabsWrap {
+			@include blockCenter();
+			width: 75%;
+		}
+	}
+	.orderMag, .orderMsg {
+		a {
+			@include _display(nth($display,2));
+		}
+	}
+}
+/* assets End */
+/* account */
+.account {
+	.assetsForm {
+		> li {
+			width: 100%;
+			> * {
+				width: 100%;
+			}
+			&:last-child {
+				padding-bottom: 10px;
+				label:not(.error) {
+					@include _float(nth($direction, 4));
+					width: 10%;
+				}
+				> *:not(label) {
+					width: 90%;
+				}
+				label.error {
+					top: 25px;
+					margin-left: 10%;
+				}
+			}
+		}
+	}
+	.accountStatus {
+		.tabsTable {
+			table {
+				tr, tr:nth-child(2) {
+					td {
+						@include borderStyle($borderColor);
+						border-bottom-width: 1px;
+						background-color: nth($tableColor, 3);
+					}
+					&.current td {
+						background-color: nth($tableColor, 2) !important;
+					}
+				}
+			}
+		}
+	}
+	.accountVerifi {
+		.tabsTable {
+			@include borderStyle($borderColor);
+			border-width: 1px;
+			border-bottom-width: 0;
+			.title {
+				border-width: 0;
+			}
+			.table {
+				@include borderStyle($borderColor);
+				border-top-width: 1px;
+				border-bottom-width: 1px;
+				span {
+					@include _display(nth($display,1));
+				}
+				.main {
+					border: none;
+					@include iCenter(left);
+				}
+				&.verifiEmail {
+					.main {
+						margin: 30px auto;
+						line-height: 1.5;
+						width: 75%;		
+					}	
+				}
+				&.verifiAcct {
+					.main {
+						margin: 30px;
+						@include iCenter(center);
+						input[type="checkbox"] {
+							margin: 5px;
+							margin-left: 0;
+							&~label {
+								@include _display(nth($display,1));
+							}
+						}
+					}
+					dl {
+						@include iCenter(left);
+						&.verifi_follow {
+							dd {
+								width: 48%;
+							}
+						}
+						dt {
+							line-height: 40px;
+						}
+						dd {
+							margin-bottom: 30px;
+							line-height: 1.5;
+						}
+					}
+					.clickUplaod {
+						position: nth($position, 1);
+						margin: 30px auto;
+						background-color: #fff;
+						@include iCenter(center);
+						line-height: 10;
+						input[type="file"] {
+							position: nth($position, 2);
+							top: 0;
+							left: 0;
+							cursor: pointer;
+							opacity: 0;
+							line-height: 10;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+	.accountSetting {
+		.tabsMenu {
+			li {
+				width: 33.33%;
+			}
+		}
+		label.error {
+			top: 50px;
+		}
+		.tabsWrap {
+			margin-top: -30px;
+			padding: 0 30px;
+			line-height: 1.5;
+		}
+		.tabsWrap > li:last-child {
+			.assetsForm {
+				position: nth($position, 1);
+				li.clear {
+					&:not(:first-child) {
+						margin-top: 0;
+						padding: 10px 0;
+						@include borderStyle($borderColor);
+						border-bottom-width: 1px;
+					}
+					&:not(:last-child) {
+						> *:not(.dropMain) {
+							line-height: 30px;
+						}
+						label {
+							@include _display(nth($display,2));
+							@include _float(nth($direction, 4));
+							width: 70%;
+						}
+					}
+					&:last-child {
+						border: 0;
+						input {
+							margin-bottom: 0;
+							&.error {
+								margin-bottom: 15px;
+								&~label.error {
+									top: 35px;
+								}
+							}
+						}
+					}
+					> .float_r {
+						@include _display(nth($display,1));
+						vertical-align: middle;
+						height: 30px;
+						width: 22%;
+						> * {
+							@include _display(nth($display,2));
+							margin: 0 auto;
+							@include iCenter(center);
+							vertical-align: middle;
+							width: 45%;
+						}
+					}
+				}
+			}
+			.alertPrice { //價格變動通知設定
+				margin-bottom: -10px;
+				@include iCenter(left);
+				.drop_asse {
+					position: nth($position, 1);
+					right: inherit;
+				}
+			}
+		}
+	}
+	.accountLog {
+		.tabsTable {
+			td {
+				vertical-align: middle;
+				line-height: 1.5;
+			}
+		}
+	}
+	.account_ex {
+		@include _display(nth($display,2));
+		@include _float(nth($direction, 2));
+		font-size: px2em(12px);
+		line-height: 20px;
+	}
+}
+/* account End */
+/* support */
+.support {
+	.tabsTable {
+		@include borderStyle($borderColor);
+		border-width: 1px;
+		border-bottom-width: 0;
+		.title {
+			border-width: 0;
+		}
+		.table {
+			@include borderStyle($borderColor);
+			border-top-width: 1px;
+			border-bottom-width: 1px;
+			.main {
+				margin: 30px;
+				border: none;
+				@include iCenter(left);
+				line-height: 1.5;
+			}
+		}
+		.content {
+			@include iCenter(center);
+			form {
+				input, textarea {
+					@include _display(nth($display,1));					
+					width: 100%;
+				}
+			}
+		}
+	}
+	.tabsMenu {
+		li {
+			width: 33.33%;
+		}
+	}
+	.lostCard {
+		.dropdown {
+			li {
+				&:hover {
+					background-color: #00aeef;
+				}
+			}
+		}
+	}
+}
+/* support End */
+/* about */
+.about {
+	@include iCenter(center);
+	h1 {
+		line-height: 1.5;
+	}
+	.tabsTable {
+		margin-bottom: 15px;
+	}
+	.newsList {
+		.news {
+			@include borderStyle($borderColor);
+			border-width: 1px;
+			border-bottom-width: 0;
+			background-color: #ece7d7;
+			.news_list {
+				margin-bottom: 0 !important;
+				padding: 0;
+				@include borderStyle($borderColor);
+				border-bottom-width: 1px;
+				&:hover {
+					background-color: #fbf9f4;
+				}
+			}
+		}
+	}
+	.note {
+		line-height: 1.5;
+		@include iCenter(left);
+	}
+}
+/* about End */
+/* warpper End*/

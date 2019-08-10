@@ -1,0 +1,627 @@
+<!-- 基本說明資訊
+**** 案件名稱: CoolBitX 網站切版 ***********************
+**** 客戶名稱: CoolBitX Technology *********************
+	 連絡資料: Michael Ou, michaelo@coolbitx.com *******
+**** 開 發 者: Tzuchien Kao, oyan114@gmail.com *********
+**** 案件描述: 含電腦版與手機版，兩種版型開發。含RWD ***
+**** 程式語言: html, css3, css, javascript, jQuery  ***
+基本說明資訊 End -->
+<!-- 增修說明資訊
+[2015/02/02]
+全站-header: 已登入按鈕增加Acct1~5, 超連結文字修改Trade, Market, Assets, Account, Support, 增加hover樣式
+[2015/02/10]
+market: Market overview加入Data規則
+index: 修改Market overview html結構
+[2015/02/11]
+sign, trade, market: 增加顏色制定及按鈕變化
+增修說明資訊 End -->
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CoolBitX Technology</title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="">
+	<link href="css/reset.css" rel="stylesheet" type="text/css">
+	<link href="css/style_pc.css" media="only screen and (min-width:581px)" rel="stylesheet" type="text/css">
+	<link href="css/style_m.css" media="only screen and (max-width:580px)" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:600,400,300" rel="stylesheet" type="text/css">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!-- header -->
+	<div class="header clear">
+		<div class="content">
+			<ul class="nav">
+				<li class="m_nav_menu font_24">
+					<a href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+				</li>
+				<li class="nav_logo">
+					<a href="index.html" title="CoolBitX" class="logo"><img src="img/logo.png" alt="CoolBitX"></a>
+				</li>
+				<li class="nav_top">
+					<ul class="nav_setting">
+						<li class="nav_last">
+							<!-- Last price: 小數點前六位 點後兩位 -->
+							<p>Last price: <span>123456.12</span> USD</p>
+						</li>
+						<li class="nav_bala">
+							<!-- Balance: 小數點前八位 點後兩位 -->
+							<label>Balance: </label><span>12345678.12</span> <span>USD</span>
+						</li>
+						<!-- 已登入 -->
+						<li class="nav_acct">
+							<a href="javascript:void(0);" title="" class="main_acct">Acct1: 1000.222 BTC</a>
+							<ul class="sub_acct">
+								<li><a href="javascript:void(0);" title="">Acct1: 1000.222 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct2: 1000.2322 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct3: 1000.23422 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct4: 1000.223452 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct5: 1000.2345622 BTC</a></li>
+							</ul>
+						</li>
+						<!-- 已登入 End -->
+						<li class="nav_lang">
+							<a href="javascript:void(0);" title="Language" class="main_lang">Language</a>
+							<ul class="sub_lang">
+								<li><a href="javascript:void(0);" title="繁體中文">繁體中文</a></li>
+								<li><a href="javascript:void(0);" title="English">English</a></li>
+								<li><a href="javascript:void(0);" title="簡體中文">簡體中文</a></li>
+							</ul>
+						</li>
+						<!-- 已登入 -->
+						<li class="nav_login"><!-- User name: 16位英文數字 -->
+							<a href="javascript:void(0);" title="User name"><span>onetwothree45678</span></a>
+						</li>
+						<li class="nav_signout"><a href="index.html" title="Sign out">Sign out</a></li>
+						<!-- 已登入 End -->
+						<!-- 未登入 -->
+						<li class="nav_signin"><a href="sign_in.html" title="Sign in">Sign in</a></li>
+						<li class="nav_signup"><a href="sign_up.html" title="Sign up">Sign up</a></li>
+						<!-- 未登入 End -->
+					</ul>
+				</li>
+				<li class="nav_bottom">
+					<ul class="nav_menu">
+						<li><a href="trade.html" title="Trade" class="">Trade</a></li>
+						<li><a href="market.html" title="Market" class="">Market</a></li>
+						<li><a href="assets.html" title="Assets" class="">Assets</a></li>
+						<li><a href="account.html" title="Account" class="current">Account</a></li>
+						<li><a href="support.html" title="Support" class="">Support</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- header End -->
+	<!-- wrapper -->
+	<div class="wrapper clear">
+		<div class="content main">
+			<div class="account">
+				<!-- 手機版顯示 -->
+				<div class="wrap_nav_acct clear">
+					<ul class="nav_top clear">
+						<li class="nav_bala">
+							<!-- Balance: 小數點前八位 點後兩位 -->
+							<label>Balance: </label><span>12345678.12</span> <span>USD</span>
+						</li>
+						<!-- 已登入 -->
+						<li class="nav_acct">
+							<a href="javascript:void(0);" title="" class="main_acct">Acct1: 1000.222 BTC</a>
+							<ul class="sub_acct">
+								<li><a href="javascript:void(0);" title="">Acct1: 1000.222 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct2: 1000.2322 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct3: 1000.23422 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct4: 1000.223452 BTC</a></li>
+								<li><a href="javascript:void(0);" title="">Acct5: 1000.2345622 BTC</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- 手機版顯示 End -->
+				<ul class="account_tabs tabsMenu clear">
+					<li class="accountStatus current">
+						<a href="javascript:void(0);" title="Status" class="">Status</a>
+					</li>
+					<li class="accountSetting">
+						<a href="javascript:void(0);" title="Setting" class="">Setting</a>
+					</li>
+					<li class="accountVerifi">
+						<a href="javascript:void(0);" title="Verification" class="">Verification</a>
+					</li>
+					<li class="accountLog">
+						<a href="javascript:void(0);" title="Log" class="">Log</a>
+					</li>
+				</ul>
+				<!-- 預留訊息框，按下按鈕之後會跳出來對話用 不按不會出來 -->
+				<div class="content">
+					<!-- 由後端產生需顯示的文字內容 -->
+					<span class="confirmAlert clear" style="display: none;">
+						<!-- Setting > Profile -->
+						Profile changes saved
+					</span>
+					<span class="confirmAlert clear" style="display: none;">
+						<!-- Setting > Password -->
+						Successfully changes password
+					</span>
+					<span class="confirmAlert clear" style="display: none;">
+						<!-- Setting > Notification -->
+						Notification changes saved
+					</span>
+				</div>
+				<ul class="account_wrap tabsWrap font_12 clear">
+					<li class="accountStatus clear">
+						<div class="content">
+							<div class="account_table tabsTable">
+								<ul class="accountStatusPro">
+									<li class="statusPro title">Promotions</li>
+									<li class="statusPro table">
+										<!-- 無限欄位數 內容由後台發送-->
+										<table class="">
+											<tbody>
+												<tr>
+													<td>Items</td>
+													<td width="20%">Quota</td>
+													<td width="30%">Expiry</td>
+												</tr>
+												<tr>
+													<!-- 彈性格子 欄位無限 -->
+													<td>CoolWallet rebate @ 99 USD</td>
+													<!-- 數字或英文 -->
+													<td>59.21USD</td>
+													<!-- 時間或英文 -->
+													<td>N/A</td>
+												</tr>
+												<tr>
+													<!-- 彈性格子 欄位無限 -->
+													<td>Welcome gift: fee free</td>
+													<!-- 數字或英文 -->
+													<td>unlimited</td>
+													<!-- 時間或英文 -->
+													<td>01/03/2015</td>
+												</tr>
+												<tr>
+													<td>彈性格子 欄位無限</td>
+													<td>數字或英文</td>
+													<td>時間或英文</td>
+												</tr>
+											</tbody>
+										</table>
+									</li>
+								</ul>
+								<ul class="accountStatusLv">
+									<li class="statusLv title">Account level</li>
+									<li class="statusLv table">
+										<!-- 欄位數固定 後台會偵測使用者 帳戶在什麼等級 前台負責在該等級欄位反白 -->
+										<table class="">
+											<tbody>
+												<tr>
+													<td width="20%">Fee %</td>
+													<td>30 days USD volume</td>
+												</tr>
+												<tr>
+													<td>0.50%</td>
+													<td>&lt; $500</td>
+												</tr>
+												<tr>
+													<td>0.48%</td>
+													<td>&lt; $1,000</td>
+												</tr>
+												<tr>
+													<td>0.46%</td>
+													<td>&lt; $2,000</td>
+												</tr>
+												<tr class="current">
+													<td>0.44%</td>
+													<td>&lt; $4,000</td>
+												</tr>
+												<tr>
+													<td>0.42%</td>
+													<td>&lt; $6,500</td>
+												</tr>
+												<tr>
+													<td>0.40%</td>
+													<td>&lt; $10,000</td>
+												</tr>
+												<tr>
+													<td>0.38%</td>
+													<td>&lt; $15,000</td>
+												</tr>
+												<tr>
+													<td>0.36%</td>
+													<td>&lt; $20,000</td>
+												</tr>
+												<tr>
+													<td>0.34%</td>
+													<td>&lt; $25,000</td>
+												</tr>
+												<tr>
+													<td>0.32%</td>
+													<td>&lt; $37,500</td>
+												</tr>
+												<tr>
+													<td>0.30%</td>
+													<td>&lt; $50,000</td>
+												</tr>
+												<tr>
+													<td>0.28%</td>
+													<td>&lt; $62,500</td>
+												</tr>
+												<tr>
+													<td>0.26%</td>
+													<td>&lt; $75,000</td>
+												</tr>
+												<tr>
+													<td>0.24%</td>
+													<td>&lt; $100,000</td>
+												</tr>
+												<tr>
+													<td>0.22%</td>
+													<td>&lt; $150,000</td>
+												</tr>
+												<tr>
+													<td>0.20%</td>
+													<td>&lt; $150,000</td>
+												</tr>
+											</tbody>
+										</table>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="accountSetting clear" style="display:none;">
+						<div class="content">
+							<ul class="account_tabs tabsMenu font_24 clear">
+								<li class="current">
+									<a href="javascript:void(0);">Profile</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">Password</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);">Notification</a>
+								</li>
+							</ul>
+							<div class="main">
+								<ul class="account_wrap tabsWrap">
+									<li>
+										<div class="content">
+											<form action="" id="form_setProfile">
+												<fieldset>
+													<ul class="assetsForm">
+														<li>
+															<label for="form_setProMail">Email:</label>
+															<input type="email" class="btn" name="form_setProMail" required="required" title="Invalid email address">
+														</li>
+														<li>
+															<label for="form_setProName">User Name:</label>
+															<input type="text" class="btn" name="form_setProName">
+														</li>
+														<li>
+															<label for="form_setProMob">Mobile:</label>
+															<input type="text" class="btn" name="form_setProMob">
+														</li>
+														<li>
+															<label for="form_setProOTP">OTP:</label>
+															<input type="text" class="btn" name="form_setProOTP" required="required" title="Incorrect OTP">
+														</li>
+													</ul>
+												</fieldset>
+											</form>
+											<a class="btn blue" href="javascript:submit('form_setProfile')">Confirm</a>
+										</div>
+									</li>
+									<li style="display: none;">
+										<div class="content">
+											<form action="" id="form_setPassword">
+												<fieldset>
+													<ul class="assetsForm">
+														<li>
+															<!-- 必須輸入正確現有密碼才能修改 -->
+															<label for="form_setCurPwd">Current Password:</label>
+															<input type="password" class="btn" name="form_setCurPwd" required="required" title="Wrong password">
+														</li>
+														<li>
+															<label for="form_setNewPwd">New Password:</label>
+															<input type="password" class="btn" name="form_setNewPwd" required="required" title="Wrong password">
+														</li>
+														<li>
+															<!-- 必須跟 New Password一樣 -->
+															<label for="form_setConPwd">Confirm New Password:</label>
+															<input type="password" class="btn" name="form_setConPwd" required="required" title="Wrong password">
+														</li>
+														<li>
+															<!-- 若要更新資料則必須輸入 -->
+															<label for="form_setProOTP">OTP:</label>
+															<input type="text" class="btn" name="form_setProOTP" required="required" title="Incorrect OTP">
+														</li>
+													</ul>
+												</fieldset>
+											</form>
+											<a class="btn blue" href="javascript:submit('form_setPassword')">Confirm</a>
+										</div>
+									</li>
+									<li style="display: none;">
+										<div class="content">
+											<form action="" id="form_setNotification">
+												<fieldset>
+													<ul class="assetsForm">
+														<li class="clear">
+															<div class="float_r">
+																<span>app</span>
+																<span>email</span>
+															</div>
+														</li>
+														<li class="clear">
+															<!-- 必須輸入正確現有密碼才能修改 -->
+															<label for="form_noticeSignin">Account sign in</label>
+															<div class="float_r">
+																<span>
+																	<input type="checkbox">
+																</span>
+																<span>
+																	<input type="checkbox">
+																</span>
+															</div>
+														</li>
+														<li class="clear">
+															<label for="form_noticeFailed">Failed sign-in attempt</label>
+															<div class="float_r">
+																<span>
+																	<input type="checkbox">
+																</span>
+																<span>
+																	<input type="checkbox">
+																</span>
+															</div>
+														</li>
+														<li class="clear">
+															<label for="form_noticeChanges">Account changes</label>
+															<div class="float_r">
+																<span>
+																	<input type="checkbox">
+																</span>
+																<span>
+																	<input type="checkbox">
+																</span>
+															</div>
+														</li>
+														<li class="clear">
+															<label for="form_noticeFund">Fund deposit/withdraw</label>
+															<div class="float_r">
+																<span>
+																	<input type="checkbox">
+																</span>
+																<span>
+																	<input type="checkbox">
+																</span>
+															</div>
+														</li>
+														<li class="clear">
+															<label for="form_noticeAnno">Announcements/Promotions</label>
+															<div class="float_r">
+																<span>
+																	<input type="checkbox">
+																</span>
+																<span>
+																	<input type="checkbox">
+																</span>
+															</div>
+														</li>
+														<li class="clear">
+															<ul class="alertPrice">
+																<li class="font_bold clear">Price alert</li>
+																<li class="clear">
+																	<label for="form_noticePrice">
+																		<span class="float_l">Price above &nbsp;</span>
+																		<div class="drop_asse dropdown btn currency">
+																			<div class="dropWrap">
+																				<!-- 輸入金額不能超過帳戶餘額，不能低於50 -->
+																				<input type="text" class="dropInput Toggle">
+																				<a href="javascript:void(0);" class="dropToggle">USD</a>
+																			</div>
+																			<ul class="dropMenu currency">
+																			</ul>
+																		</div>
+																	</label>
+																	<div class="float_r">
+																		<span>
+																			<input type="checkbox">
+																		</span>
+																		<span>
+																			<input type="checkbox">
+																		</span>
+																	</div>
+																</li>
+																<li class="clear">
+																	<label for="form_noticePrice">
+																		<span class="float_l">Price below &nbsp;</span>
+																		<div class="drop_asse dropdown btn currency">
+																			<div class="dropWrap">
+																				<!-- 輸入金額不能超過帳戶餘額，不能低於50 -->
+																				<input type="text" class="dropInput Toggle">
+																				<a href="javascript:void(0);" class="dropToggle">USD</a>
+																			</div>
+																			<ul class="dropMenu currency">
+																			</ul>
+																		</div>
+																	</label>
+																	<div class="float_r">
+																		<span>
+																			<input type="checkbox">
+																		</span>
+																		<span>
+																			<input type="checkbox">
+																		</span>
+																	</div>
+																</li>
+															</ul>
+														</li>
+														<li class="clear">
+															<!-- 若要更新資料則必須輸入 -->
+															<label for="form_setProOTP">OTP:</label>
+															<input type="text" class="btn" name="form_setProOTP" required="required" title="Incorrect OTP">
+														</li>
+													</ul>
+												</fieldset>
+											</form>
+											<a class="btn blue" href="javascript:submit('form_setNotification')">Confirm</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="accountVerifi clear" style="display:none;">
+						<div class="content">
+							<div class="account_table tabsTable">
+								<ul class="accountVerifiEmail">
+									<li class="verifiEmail title">Email Verification</li>
+									<li class="verifiEmail table">
+										<div class="main">
+											<span>Your email is verified</span>
+											<span>Your email is being verified</span>
+											<span>Your email is not verified</span>
+											<span>Your email is protected under privacy tems</span>
+										</div>
+									</li>
+								</ul>
+								<ul class="accountVerifiAcct">
+									<li class="verifiAcct title">Account Verification</li>
+									<li class="verifiAcct table">
+										<div class="main">
+											<dl class="verifi_follow font_16 clear">
+												<dt>Please upload the following document:</dt>
+												<dd class="float_l clear">
+													<p class="font_bold">Identity Proof</p>
+													<span>Acceptable Identification proof issued by Government : National Passport, Identity Card, Permanent Driving License (all both sides)</span>
+												</dd>
+												<dd class="float_r clear">
+													<p class="font_bold">Address Proof</p>
+													<span>Acceptable Identification proof issued by Government : National Passport, Identity Card, Permanent Driving License (all both sides)</span>
+												</dd>
+											</dl>
+											<form action="" id="form_setVerify">
+												<fieldset>
+													<div class="clickUplaod font_24">
+														<label>Drop files to upload or click to choose files</label>
+														<input type="file">
+													</div>
+													<dl class="verifi_notice font_16 clear">
+														<dt>Any problem for uploading the documents?  support@coolbitx.com</dt>
+														<dd class="float_l clear">
+															<p class="font_bold">Notice:</p>
+															<span>Documents Format: Accept colored and fully visible jpg, png, gif (not lower than 300 dpi) only.</span>
+															<span>Document quantity: Maximum documents upload: 5</span>
+															<span>The address proof must be sent by mail , rather than e-mail issued. The electronic version of the address proof will not be accepted.</span>
+														</dd>
+														<dd class="float_r clear">
+															<p class="font_bold">Declaration:</p>
+															<input type="checkbox" class="clear" id="declaration">
+															<label for="declaration">I hereby declare that all information provided to the KBBEX is true. If there is any changes in the future, it is my responsibility to notify KBBEX immediately. I understand and agree that KBBEX will collect information as to prevent money laundering and terrorist ﬁnancing issues. I declare that my transaction at KBBEX does not make any relations to money laundering , terrorist activity ﬁnancing terrorists or linked to any criminal activity. If I breach one or more of the above activities , I will make compensation for the loss of KBBEX.</label>
+														</dd>
+													</dl>
+												</fieldset>
+											</form>
+											<a href="javascript:submit('form_setVerify')" class="btn blue" id="submit">Confirm</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li class="accountLog clear" style="display:none;">
+						<div class="content">
+							<div class="account_table tabsTable">
+								<!-- 無限欄位數 欄高：40 px font size: 16 px -->
+								<table>
+									<tbody>
+										<tr>
+											<td colspan="3">
+												<span>Transactions</span><a href="javascript:void(0);" class="account_ex" title="Export">Export</a></td>
+										</tr>
+										<tr>
+											<td width="20%">Date andTime</td>
+											<td width="30%">IP Address</td>
+											<td>Activity</td>
+										</tr>
+										<tr>
+											<td><span>01/01/15</span> <span>16:32</span></td>
+											<td>92.234.125.190</td>
+											<td>Bought XRP for 1 USD. Sent to rLpRedc6Nnivdr4gXDKDpLuhA6q-ETZr1DG, order id: 768e95cd-79f8-46ec-bf46-d982668c3bcb</td>
+										</tr>
+										<tr>
+											<td><span>01/01/15</span> <span>07:11</span></td>
+											<td>92.234.125.190</td>
+											<td>Logged in</td>
+										</tr>
+										<tr>
+											<td><span>01/01/15</span> <span>13:11</span></td>
+											<td>92.234.125.190</td>
+											<td>Opened international wire transfer deposit for $100.00</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- wrapper End -->
+	<!-- footer -->
+	<div class="footer clear">
+		<ul class="content">
+			<li class="nav_co">
+				<ul class="clear">
+					<li class="nav_logo">
+						<a href="index.html" title="CoolBitX" class="logo"><img src="img/logo.png" alt="CoolBitX"></a>
+					</li>
+					<li class="nav_share">
+						<ul class="shareIcon">
+							<li><a href="javascript:void(0);" title="" class="icon share_01"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_02"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_03"></a></li>
+							<li><a href="javascript:void(0);" title="" class="icon share_04"></a></li>
+						</ul>
+					</li>
+				</ul>
+				<span class="copyright">Owned by JETSTREAM HOLDING LTD.</span>
+			</li>
+			<li class="nav_sub">
+				<ul class="subnav_menu">
+					<li>
+						<span class="font_bold">About</span>
+						<ul>
+							<li><a href="aboutUs.html" title="About us">About us</a></li>
+							<li><a href="newsList.html" title="News">News</a></li>
+							<li><a href="feeTable.html" title="Fee table">Fee table</a></li>
+							<li><a href="javascript:void(0);" title="Contact us">Contact us</a></li>
+						</ul>
+					</li>
+					<li>
+						<span class="font_bold">Help</span>
+						<ul>
+							<li><a href="javascript:void(0);" title="FAQ">FAQ</a></li>
+							<li><a href="javascript:void(0);" title="What is Bitcoin">What is Bitcoin</a></li>
+						</ul>
+					</li>
+					<li>
+						<span class="font_bold">Legal</span>
+						<ul>
+							<li><a href="javascript:void(0);" title="Privacy">Privacy</a></li>
+							<li><a href="javascript:void(0);" title="Terms of use">Terms of use</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- footer End -->
+	<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+	<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+	<script src="js/coolbitx.js" type="text/javascript"></script>
+</body>
+</html>

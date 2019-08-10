@@ -1,0 +1,530 @@
+@charset "UTF-8";
+@import 'style_layout';
+/* 
+Mobile style
+Version: v1
+Last Updated: 2015/03/09
+Author: Tzuchien Kao, oyan114@gmail.com
+*/
+/* base-css */
+body {
+	@extend body;
+}
+.triangle {
+	@include _display(nth($display,2));
+	position: nth($position, 1);
+	height: 24px;
+	&.green:after {
+		//正成長箭頭
+		border-top-width: 0;
+		border-bottom-color: #9dc13e;
+	}
+	&.red:after {
+		//負成長箭頭
+		border-bottom-width: 0;
+		border-top-color: #ea4f71;
+	}
+	&:after {
+		@include _display(nth($display,1));
+		position: nth($position, 2);
+		top: 0;
+		left: 0;
+		content: '';
+		border-style: solid;
+		border-top-width: 5px;
+		border-right-width: 5px;
+		border-bottom-width: 5px;
+		border-left-width: 5px;
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		border-left-color: transparent;
+		height: 0;
+		width: 0;
+	}
+}
+/* 下拉選單 */
+/* acct */
+.dropdown {
+	.dropdownSel { //下拉群
+		li { //下拉選項群
+			a { //下拉選項
+				span {
+					&:first-child {
+						word-wrap: break-word;
+						word-break: normal;
+						line-height: 1.2;
+						width: 67%;
+					}
+					&:last-child {
+						width: 33%;
+					}
+				}
+			}
+		}
+	}
+}
+/* acct End */
+/* 下拉選單 End */
+/* 背景圖 */
+.cw_bg {
+	background-image: none;
+}
+/* 背景圖 End */
+/* base-css End */
+/* header */
+.header {
+	padding-top: 10px;
+}
+.nav {
+	display: nth($display, 1);
+	> li:not(.nav_bottom) {
+		display: nth($display, 2);
+	}
+	.m_nav_menu {
+		//手機版選單
+		position: nth($position, 2);
+		top: 6px;
+		left: 10px;
+		color: txtColor(nth($bgColor,2));
+	}
+	.nav_logo {
+		.logo {
+			display: nth($display, 2);
+			margin-left: 34px;
+			padding-bottom: 10px;
+			line-height: 1;
+			img {
+				padding: 7px 0;
+				height: 32px;
+			}
+		}
+	}
+	.nav_top {
+		position: nth($position, 1);
+		@include _float(nth($direction, 2));
+		padding-right: 10px;
+		font-size: px2em(12px);
+		.nav_setting {
+			> li {
+				padding: 0;
+				padding-left: 10px;
+				line-height: 1;
+			}
+			.nav_login, .nav_signout {
+				position: nth($position, 2);
+				top: 22px;
+				padding-left: 0;
+			}
+			.nav_login {
+				right: 65px;
+			}
+			.nav_signout, .nav_signup {
+				right: 10px;
+			}
+			.nav_signin {
+				right: 60px;
+			}
+		}
+	}
+	.nav_bottom {
+		.nav_menu {
+				font-size: px2em(18px);
+			li {
+				display: nth($display, 1);
+				padding: 0 10px;
+				line-height: 2;
+				&:hover {
+					background-color: #bca668;
+					color: nth($fontColor, 1);
+				}
+			}
+		}
+	}
+}
+.sub_lang { //header選單 > 下拉選單
+	padding-top: 10px;
+}
+.sub_acct { //header選單 > 下拉選單
+	background-color: transparent;
+}
+/* header End */
+/* footer */
+.footer {
+	padding: 10px;
+	.nav_co {
+		@include _display(nth($display,1));
+	}
+	.nav_logo {
+		margin-bottom: 15px;
+		a {
+			@include _display(nth($display, 1));
+		}
+	}
+	.nav_share {
+		@include _float(nth($direction, 2));
+		.shareIcon {
+			li {
+				margin-left: 5px;
+			}
+		}
+	}
+	.nav_sub {
+		line-height: $fontSize * 2;
+		width: 100%;
+		.subnav_menu {
+			> li {
+				clear: both;
+				float: none;
+				padding: 5px 0;
+				a {
+					@include _display(nth($display, 1));
+				}
+			}
+		}
+	}
+	.copyright {
+		padding-bottom: 15px;
+	}
+}
+/* footer End */
+/* 登入 */
+.login {
+	.loginBox {
+		.login_wrap {
+			@include blockCenter();
+			margin: 0 30px;
+			padding: 30px;
+		}
+	}
+	.acct {
+		min-height: 45px;
+		width: 100%;
+	}
+}
+/* 登入 End */
+.tabsTable {
+	//tab content table
+	table {
+		td {
+			padding: 5px 0;
+			vertical-align: middle;
+			word-break: break-word;
+			line-height: 1;
+			min-height: 40px;
+			height: inherit;
+		}
+	}
+}
+/* warpper*/
+/* index */
+.banner {
+	height: 90vmin;
+	.content {
+		@extend .banner;
+	}
+    .hgroup {
+    	margin: 0 15px;
+    	h1 {
+    		font-size: px2em(36px*0.8);
+    	}
+    	h2 {
+    		font-size: px2em(18px*0.8);
+    	}
+    }
+}
+.describe {
+	background-color: nth($bgColor,3);
+    color: txtColor(nth($bgColor,3));
+    .des {
+		padding: 15px;
+		.des_img {
+			margin-right: 15px;
+		}
+	}
+}
+.marketView {
+	margin-bottom: 15px;
+	.main {
+		@include borderStyle($borderColor);
+		border-width: 1px;
+		background-color: nth($tableColor, 3);
+	}
+	.market.data {
+		dt.font_12 {
+			@include _float(nth($direction, 4));
+			width: 30%;
+		}
+	}
+}
+.liveTable {
+	.live.data {
+		&:last-child {
+			h1 {
+				@include _display(nth($display,3));
+			}
+		}
+		h1 {
+			margin-bottom: 10px;
+		}
+		table {
+			margin-bottom: 15px;
+			@include borderStyle($borderColor);
+			border-width: 1px;
+			line-height: px2em(40px);
+			width: 100%;
+			tr {
+				&:first-child {
+					font-size: px2em(12px);
+				}
+				td {
+					padding: 0 10px;
+					&:nth-child(odd) {
+						margin: 0 10px;
+					}
+				}
+			}
+		}
+	}
+}
+.newsList {
+	margin: 0 10px 25px;
+	p {
+		@include borderStyle($borderColor);
+		border-bottom-width: 1px;
+		line-height: 2;
+		text-indent: 5px;
+	}
+	.news.data {
+		.news_list {
+			margin-bottom: 15px;
+			line-height: 1.2;
+			.float_l {
+				float: none;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+/* index End */
+/* trade */
+.trade {
+	.tradeUnit {
+		width: 100%;
+		&:after, &~span:after {
+			@include _display(nth($display,1));
+			content: '';
+			vertical-align: middle;
+			height: 0;
+			width: 0;
+		}
+		&~span:after {
+			padding-bottom: 15px;
+		}
+	}
+	.tabsTable {
+		padding-bottom: 15px;
+		width: 100%;
+	}
+}
+/* trade End */
+/* 各頁共用設定 */
+.trade, .support {
+	.tabsMenu {
+		li, li:hover, li:active, li.current {
+			display: table;
+			height: 71px;
+			a {
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+.assets, .account, .supprot {
+	.content {
+		width: 100%;
+	}
+	label.error {
+		position: nth($position, 2);
+		top: 50px;
+		width: 100%;
+	}
+}
+/* 各頁共用設定 End */
+/* assets */
+.assets {
+	.assetsForm { //form
+		> li:not(.clear) {
+			@include _display(nth($display,2));
+			float: none;
+			margin-top: 0;
+			min-height: 90px;
+			width: 100%;
+			label {
+				width: 100%;
+			}
+			> * {
+				float: none;
+				width: 100%;
+			}
+		}
+		> li.clear {
+			margin-top: 0;
+		}
+	}
+	.content {
+		> span {
+			margin-bottom: 30px;
+		}
+	}
+	.tabsTable {
+		width: inherit;
+	}
+	.assetsOverview {
+		.tabsTable {
+			&:first-child {
+				padding-right: 0;
+				padding-bottom: 30px;
+			}
+			&:last-child {
+				padding-left: 0;
+			}
+		}
+	}
+	.assetsHistory {
+		.tabsTable {
+			td {
+				&:nth-child(3), &:nth-child(4) { //電腦版顯示(手機版隱藏)
+					@include _display(nth($display,3));
+					width: inherit;
+				}
+				&:nth-child(2), &:nth-child(5) {
+					width: 27%;
+				}
+			}
+		}
+	}
+	.assetsWith .tabsWrap, .assetsDep .content {
+		width: inherit;
+	}
+}
+/* assets End */
+/* account */
+.account {
+	.accountSetting {
+		.dropdown {
+			padding: 5px 0;
+			.dropInput {
+				@include borderRadius($fontSize);
+				width: 50%;
+			}
+		}
+	}
+	.accountVerifi {
+		.tabsTable {
+			.table {
+				&.verifiEmail {
+					.main {
+						margin: 15px;
+						@include iCenter(left);
+						width: inherit;
+					}	
+				}
+				&.verifiAcct {
+					.main {
+						margin: 15px;
+					}
+					.clickUplaod {
+						margin: 15px auto;
+						padding: 15px;
+						line-height: 2;
+					}
+					.btn {
+						@include blockCenter();
+					}
+				}
+			}
+		}
+	}
+}
+/* account End */
+/* about */
+.about {
+	.aboutUs {
+		padding-bottom: 30px;
+	}
+	.newsList {
+		.news {
+			.news_list {
+				dl {
+					dt, dd {
+						padding: 15px;
+						@include iCenter(left);
+					}
+					dt {
+						overflow: hidden;
+						@include borderStyle($borderColor);
+						border-bottom-width: 1px;
+						.news_via {
+							@include _float(nth($direction, 4));
+						}
+						.news_date {
+							@include _float(nth($direction, 2));
+						}
+					}
+				}
+				p {
+					border: none;
+					line-height: 1;
+					text-indent: 0;
+				}
+			}
+		}
+	}
+}
+/* about End */
+/* warpper End*/
+@media screen and (max-width:359px) {
+	html, body {
+		@include minWidth($min_W);
+	}
+}
+@media screen and (min-width:360px) and (max-width:580px) {
+	html, body {
+		min-width: 100%;
+	}	
+}
+@media screen and (max-width:474px) {
+	.nav {
+		.nav_top {
+			.nav_setting {
+				> li {
+					padding-left: 5px;
+					&:first-child {
+					padding-left: 0;
+					}
+				}
+			}
+		}
+	}
+	.assets {
+		.assetsOverview {
+			.assets_table {
+				width: inherit;
+			}
+		}
+	}
+}
+/* for PC */
+//未登入按鈕(登入時隱藏)
+.nav {
+	.nav_bala, .nav_acct, .nav_signin, .nav_signup {
+		display: nth($display, 3);
+	}
+}
+//電腦版顯示(手機版隱藏)
+.nav_bottom, .charting {
+	display: nth($display, 3);
+}
+/* for PC End */
