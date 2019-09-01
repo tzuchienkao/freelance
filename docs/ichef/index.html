@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>整體會員風險診斷</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/site-style.css">
 </head>
 <body>
+    <header>
+        <h1>iCHEF</h1>
+        <p>2.39.22</p>
+    </header>
     <section class="page">
         <div class="box-container top">
             <h4>整體會員風險診斷</h4>
@@ -17,38 +21,61 @@
             <div class="flex-contain filter-bar">
                 <dl class="flex-contain">
                     <dt>風險分級</dt>
-                    <dd>
-                        <select>
+                    <dd class="dropdown">
+                        <select class="dropdown-select">
                             <option value="">全部</option>
+                            <option value="">A高風險</option>
+                            <option value="">B中高風險</option>
+                            <option value="">C中風險</option>
+                            <option value="">D低風險</option>
+                            <option value="">E極低風險</option>
                         </select>
                     </dd>
                 </dl>
                 <dl class="flex-contain">
                     <dt>地區</dt>
-                    <dd>
-                        <select>
-                            <option value="">台北市</option>
+                    <dd class="dropdown">
+                        <select id="loc-city" class="dropdown-select">
+                            <option value="">全部</option>
                         </select>
                     </dd>
-                    <dd>
-                        <select>
-                            <option value="">松山區</option>
+                    <dd class="dropdown">
+                        <select id="loc-country" class="dropdown-select">
+                            <option value="">全部</option>
                         </select>
                     </dd>
                 </dl>
                 <dl class="flex-contain">
                     <dt>會員類別</dt>
-                    <dd>
-                        <select>
-                            <option value="">咖啡廳</option>
+                    <dd class="dropdown">
+                        <select class="dropdown-select">
+                            <option value="">全部</option>
+                            <option value="">中式料理</option>
+                            <option value="">中東料理</option>
+                            <option value="">拉丁美洲料理</option>
+                            <option value="">歐洲料理</option>
+                            <option value="">日式料理</option>
+                            <option value="">韓式料理</option>
+                            <option value="">南洋料理</option>
+                            <option value="">異國料理</option>
+                            <option value="">健康飲食</option>
+                            <option value="">甜點零食</option>
+                            <option value="">海鮮</option>
+                            <option value="">燒烤</option>
+                            <option value="">輕食</option>
+                            <option value="">速食</option>
+                            <option value="">小吃</option>
+                            <option value="">酒精飲料</option>
+                            <option value="">果汁/咖啡/茶</option>
+                            <option value="">其他餐廳</option>
                         </select>
                     </dd>
                 </dl>
             </div>
             <div class="flex-contain flex-justify result-top">
-                <p class="result-sum">為您搜尋到<span>1,238</span>筆資料</p>
+                <p class="result-sum">為您搜尋到<span class="highlight">1,238</span>筆資料</p>
                 <div class="flex-contain result-pages">
-                    <a class="page-btn page-prev" href="javascript:void(0)">&lt;</a>
+                    <a class="highlight page-prev" href="javascript:void(0)">&lt;</a>
                     <a class="active" href="javascript:void(0)">1</a>
                     <a href="javascript:void(0)">2</a>
                     <a href="javascript:void(0)">3</a>
@@ -59,7 +86,7 @@
                     <a href="javascript:void(0)">8</a>
                     <a href="javascript:void(0)">9</a>
                     <a href="javascript:void(0)">10</a>
-                    <a class="page-btn page-next" href="javascript:void(0)">&gt;</a>
+                    <a class="highlight page-next" href="javascript:void(0)">&gt;</a>
                 </div>
             </div>
             <div class="result-contain">
@@ -75,7 +102,7 @@
                     <li class="table-row">
                         <div class="table-cell result-1">1</div>
                         <div class="table-cell result-2">
-                            <a href="custom-result.html">
+                            <a class="highlight" href="custom-result.html">
                                 小明星咖啡
                             </a>
                         </div>
@@ -87,9 +114,9 @@
                         </div>
                     </li>
                     <li class="table-row">
-                        <div class="table-cell result-1">1</div>
+                        <div class="table-cell result-1">2</div>
                         <div class="table-cell result-2">
-                            <a href="custom-result.html">
+                            <a class="highlight" href="custom-result.html">
                                 小明星咖啡
                             </a>
                         </div>
@@ -101,9 +128,9 @@
                         </div>
                     </li>
                     <li class="table-row">
-                        <div class="table-cell result-1">1</div>
+                        <div class="table-cell result-1">3</div>
                         <div class="table-cell result-2">
-                            <a href="custom-result.html">
+                            <a class="highlight" href="custom-result.html">
                                 小明星咖啡
                             </a>
                         </div>
@@ -115,9 +142,9 @@
                         </div>
                     </li>
                     <li class="table-row">
-                        <div class="table-cell result-1">1</div>
+                        <div class="table-cell result-1">4</div>
                         <div class="table-cell result-2">
-                            <a href="custom-result.html">
+                            <a class="highlight" href="custom-result.html">
                                 小明星咖啡
                             </a>
                         </div>
@@ -129,9 +156,9 @@
                         </div>
                     </li>
                     <li class="table-row">
-                        <div class="table-cell result-1">1</div>
+                        <div class="table-cell result-1">5</div>
                         <div class="table-cell result-2">
-                            <a href="custom-result.html">
+                            <a class="highlight" href="custom-result.html">
                                 小明星咖啡
                             </a>
                         </div>
@@ -146,5 +173,6 @@
             </div>
         </div>
     </section>
+    <script src="js/select-loc.js"></script>
 </body>
 </html>

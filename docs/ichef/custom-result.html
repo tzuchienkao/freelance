@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>客戶風險診斷</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/site-style.css">
+    <link rel="stylesheet" href="css/chart-style.css">
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 <body>
+    <header>
+        <h1>iCHEF</h1>
+        <p>2.39.22</p>
+    </header>
     <section id="custom-result" class="page result-level">
         <div class="flex-contain flex-justify box-container top result-level-head">
             <div class="result-level-title">
@@ -76,7 +81,7 @@
                             <dd>95% =87/91</dd>
                         </dl>
                     </div>
-                    <div id="radar-chart" class="probability-sum">
+                    <div id="radar-chart-1" class="radar-chart probability-sum">
                     </div>
                 </div>
             </div>
@@ -87,7 +92,7 @@
                         <div class="table-cell">影響因子</div>
                         <div class="table-cell">因子分數</div>
                     </li>
-                    <li class="table-row">
+                    <li class="table-row highlight">
                         <div class="table-cell result-1">商業登記</div>
                         <div class="table-cell result-2">商業登記</div>
                         <div class="table-cell result-3">2.6112</div>
@@ -103,7 +108,7 @@
                         </div>
                         <div class="table-cell result-3">83.1%</div>
                     </li>
-                    <li class="table-row">
+                    <li class="table-row highlight">
                         <div class="table-cell result-1">店家位置</div>
                         <div class="table-cell result-2">位置</div>
                         <div class="table-cell result-3">1.4836</div>
@@ -134,259 +139,114 @@
                     </li>
                 </ul>
             </div>
-        </div>      
+        </div> 
+        <div class="flex-contain flex-justify box-container content">
+            <div class="flex-contain flex-justify result-chart">
+                <h2 class="level-head">2020.1.26 倒閉機率 <span class="level-2">84.1%</span></h2>
+                <div class="flex-contain flex-bottom chart-detail">
+                    <div class="chart-description">
+                        <h6 class="head-title sub-head-title">模型版本</h6>
+                        <p class="sub-head-description">2019年8月31日更新</p>
+                        <dl class="flex-contain">
+                            <dt>Accuracy</dt>
+                            <dd>98 %</dd>
+                        </dl>
+                        <dl class="flex-contain">
+                            <dt>Recall</dt>
+                            <dd>93% =87/93</dd>
+                        </dl>
+                        <dl class="flex-contain">
+                            <dt>Precision</dt>
+                            <dd>95% =87/91</dd>
+                        </dl>
+                    </div>
+                    <div id="radar-chart-2" class="radar-chart probability-sum">
+                    </div>
+                </div>
+            </div>
+            <div class="result-contain">
+                <ul class="result-list">
+                    <li class="table-row result-list-title">
+                        <div class="table-cell">因子類別</div>
+                        <div class="table-cell">影響因子</div>
+                        <div class="table-cell">因子分數</div>
+                    </li>
+                    <li class="table-row highlight">
+                        <div class="table-cell result-1">商業登記</div>
+                        <div class="table-cell result-2">商業登記</div>
+                        <div class="table-cell result-3">2.6112</div>
+                    </li>
+                    <li class="table-row">
+                        <div class="table-cell result-1">Google評論</div>
+                        <div class="table-cell result-2">
+                            <p>成立時間</p>
+                            <p>近期Google評論狀況</p>
+                            <p>長期Google評論狀況</p>
+                            <p>店家倒閉前之近期Google評論狀況</p>
+                            <p>店家倒閉前之長期Google評論狀況</p>
+                        </div>
+                        <div class="table-cell result-3">83.1%</div>
+                    </li>
+                    <li class="table-row highlight">
+                        <div class="table-cell result-1">店家位置</div>
+                        <div class="table-cell result-2">位置</div>
+                        <div class="table-cell result-3">1.4836</div>
+                    </li>
+                    <li class="table-row">
+                        <div class="table-cell result-1">營業時間</div>
+                        <div class="table-cell result-2">
+                            <p>營業時間</p>
+                            <p>熱門時段</p></div>
+                        <div class="table-cell result-3">0.1035</div>
+                    </li>
+                    <li class="table-row">
+                        <div class="table-cell result-1">餐廳類型</div>
+                        <div class="table-cell result-2">餐廳類型</div>
+                        <div class="table-cell result-3">0.1035</div>
+                    </li>
+                    <li class="table-row">
+                        <div class="table-cell result-1">營業時間</div>
+                        <div class="table-cell result-2">
+                            <p>營業時間</p>
+                            <p>熱門時段</p></div>
+                        <div class="table-cell result-3">0.1035</div>
+                    </li>
+                    <li class="table-row">
+                        <div class="table-cell result-1">餐廳類型</div>
+                        <div class="table-cell result-2">餐廳類型</div>
+                        <div class="table-cell result-3">0.1035</div>
+                    </li>
+                </ul>
+            </div>
+        </div>     
     </section>
 </body>
 
-<script src="data/stock-prices.js"></script>
+<script src="js/chart-series.js"></script>
+<script src="js/chart-type-line.js"></script>
+<script src="js/chart-type-radar-1.js"></script>
+<script src="js/chart-type-radar-2.js"></script>
 <script>
-    var count_percent = 100;
-    var line_options = {
-      chart: {
-        toolbar: {
-          show: true,
-          tools: {
-            download: false,
-            selection: false,
-            zoom: false,
-            zoomin: true,
-            zoomout: true,
-            pan: false,
-            reset: false
-          } 
-        },
-        height: 350,
-        type: 'line',
-        id: 'areachart-2'
-      },
-      dataLabels: {
-        enabled: false
-      },
-      stroke: {
-        curve: 'straight',
-        width: 2,
-        colors: ['#4e81b8', '#fc9e03', '#f55753']
-      },
-      markers: {
-        strokeWidth: 0,
-        colors: ['#4e81b8', '#fc9e03', '#f55753'],
-        size: 5,
-        hover: {
-          size: 7
-        }
-      },
-      tooltip: {
-        custom: function({series, seriesIndex, dataPointIndex, w}) {
-        return `
-            <dl class="arrow_box">
-                <dt>${w.config.labels[seriesIndex]}</dt>
-                <dd>
-                    風險值<span>${series[seriesIndex][dataPointIndex]}%</span>
-                </dd>
-            </dl>
-            `
-        }
-    },
-    series: [{
-        name: 'name1',
-        data: [{
-            x: '29 Dec 2019',
-            y: 58.5
-        }, {
-            x: '1 Jan 2020',
-            y: 65
-        }]
-    }, {
-        name: 'name2',
-        data: [{
-            x: '1 Jan 2020',
-            y: 65
-        }, {
-            x: '3 Jan 2020',
-            y: 73.4
-        }, {
-            x: '4 Jan 2020',
-            y: 76.2
-        }, {
-            x: '5 Jan 2020',
-            y: 79.1
-        }]
-    },{
-        name: 'name3',
-        data: [{
-            x: '19 Jan 2020',
-            y: 58.5
-        }, {
-            x: '20 Jan 2020',
-            y: 65
-        }]
-    },{
-        name: 'name5',
-        data: [{
-            x: '3 Jan 2020',
-            y: 58.5
-        }, {
-            x: '2 Jan 2020',
-            y: 65
-        }]
-    }, {
-        name: 'name4',
-        data: [{
-            x: '20 Jan 2020',
-            y: 65
-        }, {
-            x: '24 Jan 2020',
-            y: 73.4
-        }, {
-            x: '26 Jan 2020',
-            y: 76.2
-        }]
-    }],
-    title: {
-        text: '倒閉機率',
-        align: 'left',
-        style: {
-            fontSize: '20px',
-            fontWeight: '600',
-            color: '#5d687e'
-        }
-    },
-    grid: {
-        borderColor: '#c3d0ea',
-        yaxis: {
-            lines: {
-                offsetX: -30,
-            }
-        },
-    },
-    xaxis: {
-        type: 'datetime',
-        formatter: 'dd MMM',
-        labels: {
-            borderWidth: 2,
-            // offsetX: 60,
-            style: {
-                fontSize: 16,
-            }
-        },
-        axisBorder: {
-            show: false
-        },
-        axisTicks: {
-            show: false
-        },
-        tooltip: {
-            formatter: 'dd MMM YYYY'
-        }
-    },
-    yaxis: {
-        tickAmount: 5,
-        min: 0,
-        max: 100,
-        axisBorder: {
-            show: true,
-            color: '#c3d0ea',
-            offsetX: 0,
-            offsetY: -99999
-        },
-        axisTicks: {
-            show: true,
-            borderType: 'solid',
-            color: '#c3d0ea',
-            width: 80,
-            offsetX: 20,
-            offsetY: 10
-        },
-        labels: {
-            offsetX: 2,
-            offsetY: -10,
-            align: 'left',
-            style: {
-                fontSize: 16,
-            },
-            formatter: function (val, index) {
-                if (index >= 0 && count_percent <= 100 && count_percent >= 0) {
-                    let basic_num = count_percent;
-                    count_percent = count_percent - 20;
-                    return basic_num + '%';
-                }
-            },
-        }
-    },
-    legend: {
-        show: false
-    }
-}
+    var min_data = 1577548800000;
+    var month_str = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+    var run_time = 0;
+    var tmp = [];
 
     var line_chart = new ApexCharts(
       document.querySelector("#line-chart"),
       line_options
     );
-
-    line_chart.render();
-
-    var options = {
-        chart: {
-            toolbar: {
-                show: false
-            },
-            height: 345,
-            type: 'radar',
-        },
-        dataLabels: {
-            offsetX: 10,
-            offsetY: 10,
-            style: {
-                fontSize: '13px',
-                colors: ['#858fa4']
-            }
-        },
-        plotOptions: {
-            radar: {
-                size: 145,
-                offsetX: 300,
-                polygons: {
-                    strokeColors: '#c3d0ea',
-                    connectorColors: '#c3d0ea',
-                    fill: {
-                    colors: undefined
-                    }
-                }
-            }
-        },
-        series: [{
-            name: 'Series 1',
-            data: [80, 50, 30, 40, 100, 20, 40],
-        }],
-        yaxis: {
-            show: false,
-            tickAmount: 2,
-            min: 2,
-        },
-        markers: {
-            colors: ['#fc9e03', '#fecd07'],
-            strokeWidth: 0,
-            size: 5,
-            hover: {
-                size: 7
-            }
-        },
-        fill: {
-            colors: ['#fc9e03'],
-            opacity: 0.15
-        },
-        stroke: {
-            width: 2,
-            colors: ['#fc9e03']
-        },
-        labels: ['商業登記', '營運狀況', '訴訟紀錄', '餐廳類別', '營業時間', '店家位址', 'Google評論']
-    }
-
-    var chart = new ApexCharts(
-        document.querySelector("#radar-chart"),
-        options
+    var radar_chart_1 = new ApexCharts(
+        document.querySelector("#radar-chart-1"),
+        radar_options_1
+    );
+    var radar_chart_2 = new ApexCharts(
+        document.querySelector("#radar-chart-2"),
+        radar_options_2
     );
 
-    chart.render();
+    line_chart.render();
+    radar_chart_1.render();
+    radar_chart_2.render();
 </script>
 </html>

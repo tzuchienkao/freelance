@@ -1,7 +1,11 @@
 body {
     background-color: #f8f8f8;
 }
-/* reset style */
+/*
+ * reset style
+ */
+body,
+h1,
 h2,
 h4,
 h6,
@@ -23,7 +27,18 @@ li {
 a {
     text-decoration: none;
 }
-/* main style */
+/*
+ * main style
+ */
+header {
+    font-size: 16px;
+    color: #4a4a4a;
+    background-color: #000;
+    padding: 9px 22px;
+}
+header h1 {
+    font-size: 30px;
+}
 .page {
     width: 1100px;
     font-family: PingFangTC, DIN;
@@ -55,12 +70,71 @@ a {
 }
 .content {
     padding: 30px;
+    margin-top: 30px;
+}
+.highlight,
+.result-pages a.highlight,
+.result-pages a:hover {
+    color: #1bb2c6;
 }
 .filter-bar dl {
-    margin-right: 65px;
+    align-items: center;
 }
-.filter-bar select {
+.filter-bar dl:not(:last-child) {
+    margin-right: 50px;
+}
+.filter-bar .dropdown-select {
+    width: 170px;
+    height: 40px;
+    font-size: 16px;
+    color: #5d687e;
+    background: url('../img/icon-arrow.svg') transparent center right 12px no-repeat;
+    padding: 9px 15px;
     margin-left: 20px;
+    border: 1px solid #c3d0ea;
+    border-radius: 5px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    outline: none;
+}
+.filter-bar .dropdown {
+    position: relative;
+}
+.filter-bar .dropdown::before {
+    width: 1px;
+    height: 40px;
+    background-color: #c3d0ea;
+    position: absolute;
+    right: 40px;
+    content: '';
+    display: block;
+}
+.icon {
+    width: 28px;
+    height: 28px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 28px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    display: inline-block;
+    overflow: hidden;
+}
+.icon[data-icon="type-a"] {
+    background-image: linear-gradient(to bottom, #fb908b, #f55753);
+}
+.icon[data-icon="type-b"] {
+    background-image: linear-gradient(to bottom, #ffe77a, #fc9e03);
+}
+.icon[data-icon="type-c"] {
+    background-image: linear-gradient(to bottom, #85b7dd, #4e81b8);
+}
+.icon[data-icon="type-d"] {
+    background-image: linear-gradient(to bottom, #9ee9f5, #64cfe7);
+}
+.icon[data-icon="type-e"] {
+    background-image: linear-gradient(to bottom, #dcf1fa, #b6e0f3);
 }
 .result-top {
     padding: 38px 0;
@@ -69,8 +143,7 @@ a {
     font-size: 20px;
     font-weight: 600;
 }
-.result-sum span {
-    color: #1bb2c6;
+.result-sum .highlight {
     padding: 0 5px;
 }
 .result-pages a {
@@ -85,9 +158,6 @@ a {
     background-color: #1bb2c6;
     color: #fff;
     border-radius: 5px;
-}
-.result-pages a.page-btn {
-    color: #1bb2c6;
 }
 .result-contain {
     height: 635px;
@@ -116,36 +186,6 @@ a {
 }
 .result-list .table-row .table-cell.result-2 {
     text-align: left;
-}
-.result-list .table-row .table-cell.result-2 a {
-    color: #1bb2c6;
-}
-.icon {
-    width: 28px;
-    height: 28px;
-    font-weight: 500;
-    color: #fff;
-    line-height: 28px;
-    text-align: center;
-    margin: 0 auto;
-    border-radius: 5px;
-    display: inline-block;
-    overflow: hidden;
-}
-.icon[data-icon="type-a"] {
-    background-image: linear-gradient(to bottom, #fb908b, #f55753);
-}
-.icon[data-icon="type-b"] {
-    background-image: linear-gradient(to bottom, #ffe77a, #fc9e03);
-}
-.icon[data-icon="type-c"] {
-    background-image: linear-gradient(to bottom, #85b7dd, #4e81b8);
-}
-.icon[data-icon="type-d"] {
-    background-image: linear-gradient(to bottom, #9ee9f5, #64cfe7);
-}
-.icon[data-icon="type-e"] {
-    background-image: linear-gradient(to bottom, #dcf1fa, #b6e0f3);
 }
 .result-level .result-level-head {
     position: relative;
@@ -276,6 +316,7 @@ a {
 }
 .result-level .result-contain .result-list-title,
 .result-level .result-contain .table-cell:first-child {
+    font-weight: 600;
     word-break: keep-all;
 }
 .result-level .result-contain .table-cell p {
@@ -314,22 +355,6 @@ a {
     position: absolute;
     left: 0;
 }
-#line-chart {
-    width: 100%;
-}
-#radar-chart {
-    max-width: 100%;
-    min-width: 420px;
-}
-#radar-chart .apexcharts-canvas {
-    top: 50px;
-}
-.apexcharts-custom-class {
-    width: 10px;
-    height: 10px;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
-    background-image: linear-gradient(to top, #f55753, #fb908b);
-}
 .head-title {
     color: #5d687e;
 }
@@ -347,7 +372,4 @@ a {
     color: #4e81b8;
     padding-left: 5px;
 
-}
-.axis-label {
-    color: #5d687e;
 }

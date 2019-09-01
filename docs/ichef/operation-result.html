@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>營運體質診斷</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/site-style.css">
+    <link rel="stylesheet" href="css/chart-style.css">
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 <body>
+    <header>
+        <h1>iCHEF</h1>
+        <p>2.39.22</p>
+    </header>
     <section id="operation-result" class="page result-level">
         <div class="flex-contain flex-justify box-container top result-level-head">
             <div class="result-level-title">
@@ -42,8 +47,7 @@
                         <dd>企業體質排名低50%</dd>
                     </dl>
                 </div>
-                <div class="probability-sum">
-                    chart-1
+                <div id="radar-chart-3" class="radar-chart probability-sum">
                 </div>
                 <div class="result-contain">
                     <ul class="result-list">
@@ -51,7 +55,7 @@
                             <div class="table-cell">因子類別</div>
                             <div class="table-cell">影響因子</div>
                         </li>
-                        <li class="table-row">
+                        <li class="table-row highlight">
                             <div class="table-cell result-1">商業登記</div>
                             <div class="table-cell result-2">商業登記</div>
                         </li>
@@ -65,7 +69,7 @@
                                 <p>店家倒閉前之長期Google評論狀況</p>
                             </div>
                         </li>
-                        <li class="table-row">
+                        <li class="table-row highlight">
                             <div class="table-cell result-1">店家位置</div>
                             <div class="table-cell result-2">位置</div>
                         </li>
@@ -95,4 +99,14 @@
         </div>
     </section>
 </body>
+<script src="js/chart-series.js"></script>
+<script src="js/chart-type-radar-3.js"></script>
+<script>
+    var radar_chart_3 = new ApexCharts(
+        document.querySelector("#radar-chart-3"),
+        radar_options_3
+    );
+
+    radar_chart_3.render();
+</script>
 </html>
