@@ -1,0 +1,13 @@
+/* 
+ * custom apexcharts style
+ */
+#line-chart {
+    width: 100%;
+}
+.radar-chart {
+    max-width: 100%;
+    min-width: 420px;
+}
+.radar-chart .apexcharts-canvas {
+    top: 50px;
+}
