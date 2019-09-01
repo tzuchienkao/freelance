@@ -1,4 +1,3 @@
-var count_percent = 100;
 var line_options = {
     chart: {
         height: 350,
@@ -107,11 +106,7 @@ var line_options = {
                 cssClass: "y-label"
             },
             formatter: function(val, index) {
-                if (index >= 0 && count_percent <= 100 && count_percent >= 0) {
-                    let basic_num = count_percent;
-                    count_percent = count_percent - 20;
-                    return basic_num + "%";
-                }
+                return val + '%';
             }
         }
     },
